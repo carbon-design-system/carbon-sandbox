@@ -1,0 +1,16 @@
+$font-path: './../assets/fonts';
+$css--reset: true;
+$css--font-face: true;
+
+@import '../../../node_modules/carbon-components/scss/globals/scss/styles';
+@import './sidebar';
+@import './components';
+
+html, body, #app, .container {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+}

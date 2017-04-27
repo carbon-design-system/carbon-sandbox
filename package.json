@@ -1,0 +1,69 @@
+{
+  "name": "carbon-sandbox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "fix": "eslint --fix **/*.js",
+    "style": "gulp serve",
+    "dev": "webpack-dev-server --config ./webpack.config.dev.js",
+    "build": "webpack --config ./webpack.config.dev.js -p || gulp sass",
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "6.9.4"
+  },
+  "dependencies": {
+    "@console/bluemix-components-react": "^2.1.2",
+    "babel-preset-react": "^6.23.0",
+    "body-parser": "^1.17.1",
+    "browser-sync": "^2.18.8",
+    "carbon-components": "^7.3.2",
+    "classnames": "^2.2.5",
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router-dom": "^4.0.0",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.18.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.3",
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^7.2.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-stage-1": "^6.24.1",
+    "eslint": "^3.19.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^3.1.0",
+    "ignore-loader": "^0.1.2",
+    "react-hot-loader": "3.0.0-beta.6",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "plugins": [
+      "react"
+    ],
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    }
+  }
+}
