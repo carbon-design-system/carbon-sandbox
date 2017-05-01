@@ -47,7 +47,7 @@ export default class Sidebar extends Component {
           </ul>
           <ul className="variables__list">
             <Variable name="inverse-01" hex="#ffffff" />
-            <Variable name="field-01" hex="#EBF0F7" />
+            <Variable name="field-01" hex="#ebf0f7" />
           </ul>
           <ul className="variables__list">
             <Variable name="support-01" hex="#e71d32" />
