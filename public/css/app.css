@@ -4454,15 +4454,60 @@ textarea[data-invalid] {
 
 .sidebar {
   height: 100vh;
-  width: 280px;
-  background-color: #fff;
-  padding: 2rem 1.5rem; }
+  width: 18.75rem;
+  background-color: #fff; }
+  .sidebar header {
+    padding: 1.5rem; }
 
 .sidebar__title {
   font-size: 1.25rem;
-  font-weight: 700; }
+  font-weight: 700;
+  margin-bottom: .5rem; }
   .sidebar__title span {
     font-weight: 300; }
+
+.variables {
+  border-top: 1px solid #dfe3e6;
+  padding: 2rem 1.5rem; }
+  .variables .variables__heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem; }
+  .variables .variables__subtitle {
+    font-size: 0.6875rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #5a6872; }
+  .variables .variables__list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    border-bottom: 1px solid #dfe3e6; }
+    .variables .variables__list:last-child {
+      border: 0; }
+
+.variable {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-preferred-size: 33.3333333%;
+  flex-basis: 33.3333333%;
+  margin: .25rem 0; }
+  .variable .variable__input {
+    border: 0;
+    padding: 0;
+    background-color: #fff;
+    width: 100%;
+    min-height: 30px; }
+  .variable .variable__name {
+    font-size: 0.75rem;
+    font-weight: 700; }
+  .variable .variable__hex {
+    font-size: 0.75rem;
+    color: #5a6872; }
 
 .components {
   height: 100%;
