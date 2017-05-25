@@ -1,11 +1,19 @@
 const express = require('express');
+const session = require('express-session');
 const resolve = require('path').resolve;
 const setup = require('./middlewares/frontendMiddleware');
 const bodyParser = require('body-parser');
-// const apiRoutes = require('./api');
+const apiRoutes = require('./api');
 
 const port = process.env.PORT || 8080;
 const app = express();
+
+app.use(
+  session({
+    secret: 'carbon',
+    cookie: { maxAge: 60000 },
+  })
+);
 
 // static
 app.use(express.static('./public'));
@@ -15,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // API
-// app.use('/api', apiRoutes);
+app.use('/api', apiRoutes);
 
 // front-end
 setup(app, {
