@@ -4,12 +4,10 @@ const sass = require('node-sass');
 const sassFunctions = require('./sass');
 
 const updateSheet = (req, res) => {
-  console.log(req.body);
   const data = req.body.data;
   const id = req.session.id;
 
   const dataString = sassFunctions.generateVariablesString(data);
-  console.log(dataString);
 
   fs.readFile(
     path.resolve(__dirname, 'partial', 'style.scss'),
