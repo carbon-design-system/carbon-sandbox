@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import debounce from 'lodash.debounce';
 
 export default class Variable extends Component {
   render() {
@@ -8,7 +9,7 @@ export default class Variable extends Component {
         <input
           className="variable__input"
           onChange={evt => {
-            this.props.updateColor(name, evt.target.value);
+            debounce(this.props.updateColor(name, evt.target.value), 150);
           }}
           type="color"
           value={hex}

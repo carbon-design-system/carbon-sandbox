@@ -25,6 +25,7 @@
     "express": "^4.15.2",
     "express-session": "^1.15.2",
     "fs-extra": "^3.0.1",
+    "lodash.debounce": "^4.0.8",
     "node-sass": "^4.5.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

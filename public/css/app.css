@@ -4543,7 +4543,7 @@ textarea[data-invalid] {
   border-top: 1px solid #dfe3e6;
   border-bottom: 1px solid #dfe3e6; }
 
-.components {
+#app .components {
   height: 100%;
   width: calc(100% - 300px);
   display: -ms-flexbox;
@@ -4552,7 +4552,7 @@ textarea[data-invalid] {
   flex-wrap: wrap;
   padding: 5%; }
 
-.component__container {
+#app .component__container {
   -ms-flex-preferred-size: 75%;
   flex-basis: 75%;
   min-width: 100%;
@@ -4565,19 +4565,19 @@ textarea[data-invalid] {
   -ms-flex-align: start;
   align-items: flex-start;
   margin: 2rem 0; }
-  .component__container:first-child {
+  #app .component__container:first-child {
     margin-top: 0; }
-  .component__container > * {
+  #app .component__container > * {
     margin: 1rem; }
-  .component__container .bx--interior-left-nav {
+  #app .component__container .bx--interior-left-nav {
     top: 0;
     position: relative;
     min-height: 400px; }
-    .component__container .bx--interior-left-nav .bx--interior-left-nav-collapse {
+    #app .component__container .bx--interior-left-nav .bx--interior-left-nav-collapse {
       margin-bottom: 0; }
-  .component__container .bx--footer {
+  #app .component__container .bx--footer {
     position: relative; }
-  .component__container .bx--module--double {
+  #app .component__container .bx--module--double {
     width: 100%; }
 
 html, body, #app, .container {

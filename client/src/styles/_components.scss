@@ -1,4 +1,5 @@
-.components {
+#app {
+  .components {
   height: 100%;
   width: calc(100% - 300px);
   display: flex;
@@ -40,4 +41,6 @@
   .bx--module--double {
     width: 100%;
   }
+}
+
 }
