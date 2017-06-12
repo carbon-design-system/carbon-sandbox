@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Button from 'carbon-react/components/Button';
-import Dropdown from 'carbon-react/components/Dropdown';
-import DropdownItem from 'carbon-react/components/DropdownItem';
+import Button from 'carbon-components-react/dist/components/Button';
+import Dropdown from 'carbon-components-react/dist/components/Dropdown';
+import DropdownItem from 'carbon-components-react/dist/components/DropdownItem';
 import Filter from './Filter';
 import Variable from './Variable';
 
@@ -27,33 +27,36 @@ export default class Sidebar extends Component {
   };
 
   updateColor = (variable, hex) => {
-    this.setState(
-      {
-        [variable]: hex,
-      },
-      () => {
-        const sendData = {
-          data: this.state,
-        };
+    const previousValue = this.state.variable;
 
-        fetch('/api/updateSheet', {
-          method: 'POST',
-          body: JSON.stringify(sendData),
-          headers: { 'Content-Type': 'application/json' },
-        })
-          .then(data => data.json())
-          .then(data => {
-            const link = document.createElement('link');
-            link.href = data.route;
-            link.type = 'text/css';
-            link.rel = 'stylesheet';
-            document.getElementsByTagName('head')[0].appendChild(link);
-          });
-      }
-    );
+    this.setState({
+      [variable]: hex,
+    });
+  };
+
+  getNewStyles = () => {
+    const sendData = {
+      data: this.state,
+    };
+
+    fetch('/api/updateSheet', {
+      method: 'POST',
+      body: JSON.stringify(sendData),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then(data => data.json())
+      .then(data => {
+        const link = document.createElement('link');
+        link.href = data.route;
+        link.type = 'text/css';
+        link.rel = 'stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(link);
+      });
   };
 
   render() {
+    this.getNewStyles();
+
     return (
       <div className="sidebar">
         <header>
@@ -73,7 +76,8 @@ export default class Sidebar extends Component {
         <div className="variables">
           <h5 className="variables__heading">COLOR VARIABLES</h5>
           <p className="variables__subtitle">
-            Click on a swatch to change a color variable’s value across the theme.
+            Click on a swatch to change a color variable’s value across the
+            theme.
           </p>
           <ul className="variables__list">
             <Variable

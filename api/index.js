@@ -1,5 +1,5 @@
 const express = require('express');
-const sandbox = require('./sandbox'); // this is where you'd put the actual functions
+const sandbox = require('./sandbox');
 
 const router = express.Router();
 

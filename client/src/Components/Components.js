@@ -1,61 +1,62 @@
 import React, { Component } from 'react';
-import Accordion from 'carbon-react/components/Accordion';
-import AccordionItem from 'carbon-react/components/AccordionItem';
-import Breadcrumb from 'carbon-react/components/Breadcrumb';
-import BreadcrumbItem from 'carbon-react/components/BreadcrumbItem';
-import Button from 'carbon-react/components/Button';
-import Card from 'carbon-react/components/Card';
-import CardFooter from 'carbon-react/components/CardFooter';
-import CardContent from 'carbon-react/components/CardContent';
-import Checkbox from 'carbon-react/components/Checkbox';
-import CodeSnippet from 'carbon-react/components/CodeSnippet';
-import ContentSwitcher from 'carbon-react/components/ContentSwitcher';
-import Dropdown from 'carbon-react/components/Dropdown';
-import DropdownItem from 'carbon-react/components/DropdownItem';
-import FileUploader from 'carbon-react/components/FileUploader';
-import Footer from 'carbon-react/components/Footer';
-import FormGroup from 'carbon-react/components/FormGroup';
-import InteriorLeftNav from 'carbon-react/components/InteriorLeftNav';
-import InteriorLeftNavItem from 'carbon-react/components/InteriorLeftNavItem';
-import InteriorLeftNavList from 'carbon-react/components/InteriorLeftNavList';
-import Link from 'carbon-react/components/Link';
-import ListItem from 'carbon-react/components/ListItem';
-import Loading from 'carbon-react/components/Loading';
-import Modal from 'carbon-react/components/Modal';
-import ModalWrapper from 'carbon-react/components/ModalWrapper';
+import Accordion from 'carbon-components-react/dist/components/Accordion';
+import AccordionItem from 'carbon-components-react/dist/components/AccordionItem';
+import Breadcrumb from 'carbon-components-react/dist/components/Breadcrumb';
+import BreadcrumbItem from 'carbon-components-react/dist/components/BreadcrumbItem';
+import Button from 'carbon-components-react/dist/components/Button';
+import Card from 'carbon-components-react/dist/components/Card';
+import CardFooter from 'carbon-components-react/dist/components/CardFooter';
+import CardContent from 'carbon-components-react/dist/components/CardContent';
+import Checkbox from 'carbon-components-react/dist/components/Checkbox';
+import CodeSnippet from 'carbon-components-react/dist/components/CodeSnippet';
+import ContentSwitcher from 'carbon-components-react/dist/components/ContentSwitcher';
+import Dropdown from 'carbon-components-react/dist/components/Dropdown';
+import DropdownItem from 'carbon-components-react/dist/components/DropdownItem';
+import FileUploader from 'carbon-components-react/dist/components/FileUploader';
+import Footer from 'carbon-components-react/dist/components/Footer';
+import FormGroup from 'carbon-components-react/dist/components/FormGroup';
+import InteriorLeftNav from 'carbon-components-react/dist/components/InteriorLeftNav';
+import InteriorLeftNavItem from 'carbon-components-react/dist/components/InteriorLeftNavItem';
+import InteriorLeftNavList from 'carbon-components-react/dist/components/InteriorLeftNavList';
+import Link from 'carbon-components-react/dist/components/Link';
+import ListItem from 'carbon-components-react/dist/components/ListItem';
+import Loading from 'carbon-components-react/dist/components/Loading';
+import Modal from 'carbon-components-react/dist/components/Modal';
+import ModalWrapper from 'carbon-components-react/dist/components/ModalWrapper';
 import {
   Module,
   ModuleHeader,
   ModuleBody,
-} from 'carbon-react/components/Module';
-import Notification from 'carbon-react/components/Notification';
-import NumberInput from 'carbon-react/components/NumberInput';
-import OrderedList from 'carbon-react/components/OrderedList';
-import OverflowMenu from 'carbon-react/components/OverflowMenu';
-import OverflowMenuItem from 'carbon-react/components/OverflowMenuItem';
-import Pagination from 'carbon-react/components/Pagination';
+} from 'carbon-components-react/dist/components/Module';
+import Notification from 'carbon-components-react/dist/components/Notification';
+import NumberInput from 'carbon-components-react/dist/components/NumberInput';
+import OrderedList from 'carbon-components-react/dist/components/OrderedList';
+import OverflowMenu from 'carbon-components-react/dist/components/OverflowMenu';
+import OverflowMenuItem from 'carbon-components-react/dist/components/OverflowMenuItem';
+import Pagination from 'carbon-components-react/dist/components/Pagination';
 import {
   ProgressIndicator,
   ProgressStep,
-} from 'carbon-react/components/ProgressIndicator';
-import RadioButtonGroup from 'carbon-react/components/RadioButtonGroup';
-import RadioButton from 'carbon-react/components/RadioButton';
-import Search from 'carbon-react/components/Search';
-import Select from 'carbon-react/components/Select';
-import SelectItem from 'carbon-react/components/SelectItem';
-import SelectItemGroup from 'carbon-react/components/SelectItemGroup';
-import Switch from 'carbon-react/components/Switch';
-import Tab from 'carbon-react/components/Tab';
-import Tabs from 'carbon-react/components/Tabs';
-import Tag, { types } from 'carbon-react/components/Tag';
-import Textarea from 'carbon-react/components/Textarea';
-import TextInput from 'carbon-react/components/TextInput';
-import Toggle from 'carbon-react/components/Toggle';
-import Tooltip from 'carbon-react/components/Tooltip';
-import UnorderedList from 'carbon-react/components/UnorderedList';
+} from 'carbon-components-react/dist/components/ProgressIndicator';
+import RadioButtonGroup from 'carbon-components-react/dist/components/RadioButtonGroup';
+import RadioButton from 'carbon-components-react/dist/components/RadioButton';
+import Search from 'carbon-components-react/dist/components/Search';
+import Select from 'carbon-components-react/dist/components/Select';
+import SelectItem from 'carbon-components-react/dist/components/SelectItem';
+import SelectItemGroup from 'carbon-components-react/dist/components/SelectItemGroup';
+import Switch from 'carbon-components-react/dist/components/Switch';
+import Tab from 'carbon-components-react/dist/components/Tab';
+import Tabs from 'carbon-components-react/dist/components/Tabs';
+import Tag, { types } from 'carbon-components-react/dist/components/Tag';
+import TextArea from 'carbon-components-react/dist/components/TextArea';
+import TextInput from 'carbon-components-react/dist/components/TextInput';
+import Toggle from 'carbon-components-react/dist/components/Toggle';
+import TooltipSimple from 'carbon-components-react/dist/components/TooltipSimple';
+import UnorderedList from 'carbon-components-react/dist/components/UnorderedList';
 
 export default class Components extends Component {
   render() {
+    console.log(types);
     return (
       <div className="components">
         <div className="component__container">
@@ -483,7 +484,7 @@ export default class Components extends Component {
         </div>
 
         <div className="component__container">
-          <Textarea />
+          <TextArea />
         </div>
 
         <div className="component__container">
@@ -495,9 +496,9 @@ export default class Components extends Component {
         </div>
 
         <div className="component__container">
-          <Tooltip text="This is some tooltip text">
+          <TooltipSimple text="hello">
             <Link href="#">Tooltip - hover</Link>
-          </Tooltip>
+          </TooltipSimple>
         </div>
 
       </div>

@@ -15,15 +15,15 @@ app.use(
   })
 );
 
-// static
-app.use(express.static('./public'));
-
 // body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // API
 app.use('/api', apiRoutes);
+
+// static
+app.use(express.static('./public'));
 
 // front-end
 setup(app, {

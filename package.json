@@ -8,7 +8,7 @@
     "fix": "eslint --fix **/*.js",
     "style": "gulp serve",
     "dev": "webpack-dev-server --config ./webpack.config.dev.js",
-    "build": "webpack --config ./webpack.config.dev.js -p || gulp sass",
+    "build": "webpack --optimize-minimize --define process.env.NODE_ENV=\"'production'\" || gulp sass",
     "start": "node app.js"
   },
   "engines": {
@@ -19,13 +19,12 @@
     "body-parser": "^1.17.1",
     "browser-sync": "^2.18.8",
     "carbon-components": "^7.3.2",
-    "carbon-react": "git+ssh://git@github.ibm.com:Bluemix/bluemix-components-react.git#3.x",
+    "carbon-components-react": "next",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
     "fs-extra": "^3.0.1",
-    "lodash.debounce": "^4.0.8",
     "node-sass": "^4.5.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
