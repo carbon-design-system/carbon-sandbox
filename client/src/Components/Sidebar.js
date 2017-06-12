@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Button from 'carbon-components-react/dist/components/Button';
-import Dropdown from 'carbon-components-react/dist/components/Dropdown';
-import DropdownItem from 'carbon-components-react/dist/components/DropdownItem';
+import { Button, Dropdown, DropdownItem } from 'carbon-components-react';
 import Filter from './Filter';
 import Variable from './Variable';
 

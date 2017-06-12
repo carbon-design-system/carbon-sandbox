@@ -1,74 +1,76 @@
 import React, { Component } from 'react';
-import Accordion from 'carbon-components-react/dist/components/Accordion';
-import AccordionItem from 'carbon-components-react/dist/components/AccordionItem';
-import Breadcrumb from 'carbon-components-react/dist/components/Breadcrumb';
-import BreadcrumbItem from 'carbon-components-react/dist/components/BreadcrumbItem';
-import Button from 'carbon-components-react/dist/components/Button';
-import Card from 'carbon-components-react/dist/components/Card';
-import CardFooter from 'carbon-components-react/dist/components/CardFooter';
-import CardContent from 'carbon-components-react/dist/components/CardContent';
-import Checkbox from 'carbon-components-react/dist/components/Checkbox';
-import CodeSnippet from 'carbon-components-react/dist/components/CodeSnippet';
-import ContentSwitcher from 'carbon-components-react/dist/components/ContentSwitcher';
-import Dropdown from 'carbon-components-react/dist/components/Dropdown';
-import DropdownItem from 'carbon-components-react/dist/components/DropdownItem';
-import FileUploader from 'carbon-components-react/dist/components/FileUploader';
-import Footer from 'carbon-components-react/dist/components/Footer';
-import FormGroup from 'carbon-components-react/dist/components/FormGroup';
-import InteriorLeftNav from 'carbon-components-react/dist/components/InteriorLeftNav';
-import InteriorLeftNavItem from 'carbon-components-react/dist/components/InteriorLeftNavItem';
-import InteriorLeftNavList from 'carbon-components-react/dist/components/InteriorLeftNavList';
-import Link from 'carbon-components-react/dist/components/Link';
-import ListItem from 'carbon-components-react/dist/components/ListItem';
-import Loading from 'carbon-components-react/dist/components/Loading';
-import Modal from 'carbon-components-react/dist/components/Modal';
-import ModalWrapper from 'carbon-components-react/dist/components/ModalWrapper';
 import {
+  Accordion,
+  AccordionItem,
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  Card,
+  CardFooter,
+  CardContent,
+  Checkbox,
+  CodeSnippet,
+  ContentSwitcher,
+  Dropdown,
+  DropdownItem,
+  Footer,
+  FormGroup,
+  InteriorLeftNav,
+  InteriorLeftNavItem,
+  InteriorLeftNavList,
+  Link,
+  ListItem,
+  Loading,
+  Modal,
+  ModalWrapper,
   Module,
   ModuleHeader,
   ModuleBody,
-} from 'carbon-components-react/dist/components/Module';
-import Notification from 'carbon-components-react/dist/components/Notification';
-import NumberInput from 'carbon-components-react/dist/components/NumberInput';
-import OrderedList from 'carbon-components-react/dist/components/OrderedList';
-import OverflowMenu from 'carbon-components-react/dist/components/OverflowMenu';
-import OverflowMenuItem from 'carbon-components-react/dist/components/OverflowMenuItem';
-import Pagination from 'carbon-components-react/dist/components/Pagination';
-import {
+  Notification,
+  NumberInput,
+  OrderedList,
+  OverflowMenu,
+  OverflowMenuItem,
+  Pagination,
   ProgressIndicator,
   ProgressStep,
-} from 'carbon-components-react/dist/components/ProgressIndicator';
-import RadioButtonGroup from 'carbon-components-react/dist/components/RadioButtonGroup';
-import RadioButton from 'carbon-components-react/dist/components/RadioButton';
-import Search from 'carbon-components-react/dist/components/Search';
-import Select from 'carbon-components-react/dist/components/Select';
-import SelectItem from 'carbon-components-react/dist/components/SelectItem';
-import SelectItemGroup from 'carbon-components-react/dist/components/SelectItemGroup';
-import Switch from 'carbon-components-react/dist/components/Switch';
-import Tab from 'carbon-components-react/dist/components/Tab';
-import Tabs from 'carbon-components-react/dist/components/Tabs';
-import Tag, { types } from 'carbon-components-react/dist/components/Tag';
-import TextArea from 'carbon-components-react/dist/components/TextArea';
-import TextInput from 'carbon-components-react/dist/components/TextInput';
-import Toggle from 'carbon-components-react/dist/components/Toggle';
-import TooltipSimple from 'carbon-components-react/dist/components/TooltipSimple';
-import UnorderedList from 'carbon-components-react/dist/components/UnorderedList';
+  RadioButtonGroup,
+  RadioButton,
+  Search,
+  Select,
+  SelectItem,
+  Switch,
+  Tab,
+  Tabs,
+  Tag,
+  TextArea,
+  TextInput,
+  Toggle,
+  TooltipSimple,
+  UnorderedList,
+} from 'carbon-components-react';
+import { types } from 'carbon-components-react/es/components/Tag'; // bug with export
+import FileUploader from 'carbon-components-react/es/components/FileUploader'; // bug with export
+import SelectItemGroup from 'carbon-components-react/es/components/SelectItemGroup'; // bug with export
 
 export default class Components extends Component {
   render() {
-    console.log(types);
     return (
       <div className="components">
         <div className="component__container">
           <Accordion>
             <AccordionItem title="Label">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip
               ex ea commodo consequat.
             </AccordionItem>
             <AccordionItem title="Label with multiple words">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip
               ex ea commodo consequat.
             </AccordionItem>
           </Accordion>
@@ -282,9 +284,12 @@ export default class Components extends Component {
             <ModuleHeader>Module Example</ModuleHeader>
             <ModuleBody>
               <p>
-                Lorem Ipsum is dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the
-                1500s, when an unknown printer took a galley of type and scrambled it
+                Lorem Ipsum is dummy text of the printing and typesetting
+                industry.
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the
+                1500s, when an unknown printer took a galley of type and
+                scrambled it
                 to make a type specimen book.
               </p>
               <p>
@@ -298,9 +303,12 @@ export default class Components extends Component {
             <ModuleHeader>Module Example</ModuleHeader>
             <ModuleBody>
               <p>
-                Lorem Ipsum is dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the
-                1500s, when an unknown printer took a galley of type and scrambled it
+                Lorem Ipsum is dummy text of the printing and typesetting
+                industry.
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the
+                1500s, when an unknown printer took a galley of type and
+                scrambled it
                 to make a type specimen book.
               </p>
               <p>
@@ -478,9 +486,9 @@ export default class Components extends Component {
         </div>
 
         <div className="component__container">
-          {types.map(type => (
+          {types.map(type =>
             <Tag key={type} className="some-class" type={type} />
-          ))}
+          )}
         </div>
 
         <div className="component__container">

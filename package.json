@@ -19,7 +19,7 @@
     "body-parser": "^1.17.1",
     "browser-sync": "^2.18.8",
     "carbon-components": "^7.3.2",
-    "carbon-components-react": "next",
+    "carbon-components-react": "^3.0.1",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "express": "^4.15.2",
