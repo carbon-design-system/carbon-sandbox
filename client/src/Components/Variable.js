@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import debounce from 'lodash.debounce';
+import React, { PureComponent } from 'react';
 
-export default class Variable extends Component {
+export default class Variable extends PureComponent {
+  handleChange = (evt, name) => {
+    this.props.updateColor(name, evt.target.value);
+  };
+
   render() {
     const { name, hex } = this.props;
     return (
       <li className="variable">
         <input
           className="variable__input"
-          onChange={evt => {
-            debounce(this.props.updateColor(name, evt.target.value), 150);
-          }}
+          onChange={evt => this.handleChange(evt, name)}
           type="color"
           value={hex}
         />

@@ -1,58 +1,57 @@
 import React, { Component } from 'react';
-import Accordion from 'carbon-react/components/Accordion';
-import AccordionItem from 'carbon-react/components/AccordionItem';
-import Breadcrumb from 'carbon-react/components/Breadcrumb';
-import BreadcrumbItem from 'carbon-react/components/BreadcrumbItem';
-import Button from 'carbon-react/components/Button';
-import Card from 'carbon-react/components/Card';
-import CardFooter from 'carbon-react/components/CardFooter';
-import CardContent from 'carbon-react/components/CardContent';
-import Checkbox from 'carbon-react/components/Checkbox';
-import CodeSnippet from 'carbon-react/components/CodeSnippet';
-import ContentSwitcher from 'carbon-react/components/ContentSwitcher';
-import Dropdown from 'carbon-react/components/Dropdown';
-import DropdownItem from 'carbon-react/components/DropdownItem';
-import FileUploader from 'carbon-react/components/FileUploader';
-import Footer from 'carbon-react/components/Footer';
-import FormGroup from 'carbon-react/components/FormGroup';
-import InteriorLeftNav from 'carbon-react/components/InteriorLeftNav';
-import InteriorLeftNavItem from 'carbon-react/components/InteriorLeftNavItem';
-import InteriorLeftNavList from 'carbon-react/components/InteriorLeftNavList';
-import Link from 'carbon-react/components/Link';
-import ListItem from 'carbon-react/components/ListItem';
-import Loading from 'carbon-react/components/Loading';
-import Modal from 'carbon-react/components/Modal';
-import ModalWrapper from 'carbon-react/components/ModalWrapper';
 import {
+  Accordion,
+  AccordionItem,
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  Card,
+  CardFooter,
+  CardContent,
+  Checkbox,
+  CodeSnippet,
+  ContentSwitcher,
+  Dropdown,
+  DropdownItem,
+  Footer,
+  FormGroup,
+  InteriorLeftNav,
+  InteriorLeftNavItem,
+  InteriorLeftNavList,
+  Link,
+  ListItem,
+  Loading,
+  Modal,
+  ModalWrapper,
   Module,
   ModuleHeader,
   ModuleBody,
-} from 'carbon-react/components/Module';
-import Notification from 'carbon-react/components/Notification';
-import NumberInput from 'carbon-react/components/NumberInput';
-import OrderedList from 'carbon-react/components/OrderedList';
-import OverflowMenu from 'carbon-react/components/OverflowMenu';
-import OverflowMenuItem from 'carbon-react/components/OverflowMenuItem';
-import Pagination from 'carbon-react/components/Pagination';
-import {
+  Notification,
+  NumberInput,
+  OrderedList,
+  OverflowMenu,
+  OverflowMenuItem,
+  Pagination,
   ProgressIndicator,
   ProgressStep,
-} from 'carbon-react/components/ProgressIndicator';
-import RadioButtonGroup from 'carbon-react/components/RadioButtonGroup';
-import RadioButton from 'carbon-react/components/RadioButton';
-import Search from 'carbon-react/components/Search';
-import Select from 'carbon-react/components/Select';
-import SelectItem from 'carbon-react/components/SelectItem';
-import SelectItemGroup from 'carbon-react/components/SelectItemGroup';
-import Switch from 'carbon-react/components/Switch';
-import Tab from 'carbon-react/components/Tab';
-import Tabs from 'carbon-react/components/Tabs';
-import Tag, { types } from 'carbon-react/components/Tag';
-import Textarea from 'carbon-react/components/Textarea';
-import TextInput from 'carbon-react/components/TextInput';
-import Toggle from 'carbon-react/components/Toggle';
-import Tooltip from 'carbon-react/components/Tooltip';
-import UnorderedList from 'carbon-react/components/UnorderedList';
+  RadioButtonGroup,
+  RadioButton,
+  Search,
+  Select,
+  SelectItem,
+  Switch,
+  Tab,
+  Tabs,
+  Tag,
+  TextArea,
+  TextInput,
+  Toggle,
+  TooltipSimple,
+  UnorderedList,
+} from 'carbon-components-react';
+import { types } from 'carbon-components-react/es/components/Tag'; // bug with export
+import FileUploader from 'carbon-components-react/es/components/FileUploader'; // bug with export
+import SelectItemGroup from 'carbon-components-react/es/components/SelectItemGroup'; // bug with export
 
 export default class Components extends Component {
   render() {
@@ -61,13 +60,17 @@ export default class Components extends Component {
         <div className="component__container">
           <Accordion>
             <AccordionItem title="Label">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip
               ex ea commodo consequat.
             </AccordionItem>
             <AccordionItem title="Label with multiple words">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation ullamco laboris nisi ut aliquip
               ex ea commodo consequat.
             </AccordionItem>
           </Accordion>
@@ -281,9 +284,12 @@ export default class Components extends Component {
             <ModuleHeader>Module Example</ModuleHeader>
             <ModuleBody>
               <p>
-                Lorem Ipsum is dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the
-                1500s, when an unknown printer took a galley of type and scrambled it
+                Lorem Ipsum is dummy text of the printing and typesetting
+                industry.
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the
+                1500s, when an unknown printer took a galley of type and
+                scrambled it
                 to make a type specimen book.
               </p>
               <p>
@@ -297,9 +303,12 @@ export default class Components extends Component {
             <ModuleHeader>Module Example</ModuleHeader>
             <ModuleBody>
               <p>
-                Lorem Ipsum is dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the
-                1500s, when an unknown printer took a galley of type and scrambled it
+                Lorem Ipsum is dummy text of the printing and typesetting
+                industry.
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the
+                1500s, when an unknown printer took a galley of type and
+                scrambled it
                 to make a type specimen book.
               </p>
               <p>
@@ -477,13 +486,13 @@ export default class Components extends Component {
         </div>
 
         <div className="component__container">
-          {types.map(type => (
+          {types.map(type =>
             <Tag key={type} className="some-class" type={type} />
-          ))}
+          )}
         </div>
 
         <div className="component__container">
-          <Textarea />
+          <TextArea />
         </div>
 
         <div className="component__container">
@@ -495,9 +504,9 @@ export default class Components extends Component {
         </div>
 
         <div className="component__container">
-          <Tooltip text="This is some tooltip text">
+          <TooltipSimple text="hello">
             <Link href="#">Tooltip - hover</Link>
-          </Tooltip>
+          </TooltipSimple>
         </div>
 
       </div>

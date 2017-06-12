@@ -23,6 +23,7 @@ const updateSheet = (req, res) => {
       sass.render(
         {
           data: dataString + '\n' + data,
+          includePaths: [path.resolve(__dirname, '../node_modules/carbon-components')]
         },
         (err, result) => {
           if (err) throw err;
