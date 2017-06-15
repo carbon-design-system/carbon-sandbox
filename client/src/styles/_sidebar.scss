@@ -3,7 +3,7 @@
   right: 0;
   height: 100vh;
   width: rem(300px);
-  background-color: $ui-01;
+  background-color: #ffffff;
   overflow-y: scroll;
   z-index: 10000;
 
@@ -23,7 +23,7 @@
 }
 
 .variables {
-  border-top: 1px solid $ui-04;
+  border-top: 1px solid #dfe3e6;
   padding: 2rem 1.5rem;
 
   .variables__heading {
@@ -36,14 +36,14 @@
     @include font-size('11');
     display: inline-block;
     margin-bottom: 1rem;
-    color: $text-03;
+    color: #5a6872;
   }
 
   .variables__list {
     display: flex;
     flex-wrap: wrap;
     padding: 1rem 0;
-    border-bottom: 1px solid $ui-04;
+    border-bottom: 1px solid #dfe3e6;
 
     &:last-child {
       border: 0;
@@ -65,7 +65,7 @@
     min-height: 30px;
 
     &::-webkit-color-swatch {
-      border-color: $ui-04;
+      border-color: #dfe3e6;
     }
   }
 
@@ -76,7 +76,7 @@
 
   .variable__hex {
     @include font-size('12');
-    color: $text-03;
+    color: #5a6872;
   }
 }
 
@@ -85,6 +85,6 @@
   justify-content: center;
   align-items: center;
   padding: 1rem 0;
-  border-top: 1px solid $ui-04;
-  border-bottom: 1px solid $ui-04;
+  border-top: 1px solid #dfe3e6;
+  border-bottom: 1px solid #dfe3e6;
 }

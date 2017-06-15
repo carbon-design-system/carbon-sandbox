@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Button, Dropdown, DropdownItem } from 'carbon-components-react';
 import Filter from './Filter';
 import Variable from './Variable';
-import watson from '../../../tmp/test';
+import watson from '../assets/themes/watson';
+import darkui from '../assets/themes/dark-ui';
 
 const defaultTheme = {
   'brand-01': '#3d70b2',
@@ -22,6 +23,13 @@ const defaultTheme = {
   'support-02': '#5aa700',
   'support-03': '#efc100',
   'support-04': '#5aaafa',
+  'button-font-weight': '700',
+  'button-font-size': '.875rem',
+  'button-border-radius': '0',
+  'button-height': '40px',
+  'button-padding': '0 1rem',
+  'button-padding-sm': '0 .5rem',
+  'button-border-width': '2px',
 };
 
 export default class Sidebar extends Component {
@@ -74,28 +82,18 @@ export default class Sidebar extends Component {
   };
 
   handleThemeChange = theme => {
+    const links = document.getElementsByTagName('head')[0].querySelectorAll('link');
+    [...links].forEach(link => {
+      if (link.href.includes('/tmp')) {
+        link.parentNode.removeChild(link);
+      }
+    });
+
     if (theme.value === 'default') {
-      const links = document.getElementsByTagName('head')[0].querySelectorAll('link');
-      [...links].forEach(link => {
-        if (link.href.includes('/tmp')) {
-          link.parentNode.removeChild(link);
-        }
-      });
-
       this.setState(defaultTheme);
-
-      // Object.keys(defaultTheme).map(i => {
-      //   this.setState({
-      //     [i]: defaultTheme[i],
-      //   });
-      // });
-    } else {
-      // console.log(links);
-      // Object.keys(watson).map(i => {
-      //   this.setState({
-      //     [i]: watson[i],
-      //   });
-      // });
+    } else if (theme.value === 'darkui') {
+      this.setState(darkui);
+    } else if (theme.value === 'watson') {
       this.setState(watson);
     }
   };
@@ -109,9 +107,8 @@ export default class Sidebar extends Component {
           <h1 className="sidebar__title">Carbon <span>Themes</span></h1>
           <Dropdown defaultText="Default" value="default" onChange={this.handleThemeChange}>
             <DropdownItem itemText="Default" value="default" />
-            <DropdownItem itemText="Dark" value="dark" />
+            <DropdownItem itemText="Dark" value="darkui" />
             <DropdownItem itemText="Watson" value="watson" />
-            <DropdownItem itemText="Analytics" value="analytics" />
           </Dropdown>
         </header>
 
