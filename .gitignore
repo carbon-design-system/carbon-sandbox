@@ -4,4 +4,4 @@ content
 decks
 sketch
 .npmrc
-public/tmp
+public/tmp/*
