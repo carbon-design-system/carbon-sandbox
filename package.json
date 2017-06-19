@@ -5,7 +5,7 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "preinstall": "node utils/styles.js",
+    "postinstall": "node utils/styles.js",
     "fix": "eslint --fix **/*.js",
     "style": "gulp serve",
     "dev": "webpack-dev-server --config ./webpack.config.dev.js",
