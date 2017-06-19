@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const files = fs.readdirSync(path.resolve(__dirname, 'node_modules/carbon-themes/themes'));
+const files = fs.readdirSync(path.resolve(__dirname, '../node_modules/carbon-themes/themes'));
 
 files.forEach(file => {
   const name = file.split('.')[0];
 
   fs.readFile(
-    path.resolve(__dirname, `node_modules/carbon-themes/themes/${file}`),
+    path.resolve(__dirname, `../node_modules/carbon-themes/themes/${file}`),
     'utf-8',
     (err, data) => {
       let text = 'module.exports = {';
@@ -23,7 +23,7 @@ files.forEach(file => {
         });
 
       fs.writeFile(
-        path.resolve(__dirname, `client/src/assets/themes/${name}.js`),
+        path.resolve(__dirname, `../client/src/assets/themes/${name}.js`),
         `${text} \n };`,
         err => {
           if (err) console.log(err); // eslint-disable-line
