@@ -5635,8 +5635,14 @@ span.bx--date-picker__weekday {
   height: 100vh;
   width: 18.75rem;
   background-color: #ffffff;
+  color: #152934;
   overflow-y: scroll;
   z-index: 10000; }
+  .sidebar .bx--dropdown {
+    color: #152934;
+    background-color: #ebf0f7; }
+  .sidebar .bx--dropdown--open .bx--dropdown-list {
+    background-color: #fff; }
   .sidebar header {
     padding: 1.5rem; }
 

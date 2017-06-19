@@ -4,8 +4,18 @@
   height: 100vh;
   width: rem(300px);
   background-color: #ffffff;
+  color: #152934;
   overflow-y: scroll;
   z-index: 10000;
+
+  .bx--dropdown {
+    color: #152934;
+    background-color: #ebf0f7;
+  }
+
+  .bx--dropdown--open .bx--dropdown-list {
+    background-color: #fff;
+  }
 
   header {
     padding: 1.5rem;

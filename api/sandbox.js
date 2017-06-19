@@ -9,6 +9,14 @@ const updateSheet = (req, res) => {
 
   const dataString = sassFunctions.generateVariablesString(data);
 
+  fs.writeFile(`public/tmp/export.scss`, dataString, writeErr => {
+    if (err) {
+      console.log(err);
+      throw err;
+    }
+    console.log('sass file created');
+  });
+
   fs.readFile(path.resolve(__dirname, 'partial', 'style.scss'), 'utf-8', (err, data) => {
     if (err) throw err;
 

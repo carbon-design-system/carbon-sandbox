@@ -74,8 +74,6 @@ export default class Sidebar extends Component {
   };
 
   updateColor = (variable, hex) => {
-    const previousValue = this.state.variable;
-
     this.setState({
       [variable]: hex,
     });
@@ -200,7 +198,9 @@ export default class Sidebar extends Component {
         </div>
 
         <div className="export">
-          <Button>Export theme SCSS</Button>
+          <Button href="tmp/export.scss" download="export.scss">
+            Export theme SCSS
+          </Button>
         </div>
       </div>
     );
