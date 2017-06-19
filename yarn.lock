@@ -1252,7 +1252,7 @@ carbon-components-react@^3.0.1:
     react-addons-css-transition-group "^15.4.2"
     warning "3.0.0"
 
-carbon-components@^7.3.2:
+carbon-components@^7.8.0:
   version "7.8.0"
   resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-7.8.0.tgz#7aac3f0f06a27c67cad9bf131b2cc7f4f592e29d"
   dependencies:
@@ -1263,6 +1263,10 @@ carbon-components@^7.3.2:
 carbon-icons@^6.0.4:
   version "6.0.4"
   resolved "https://registry.yarnpkg.com/carbon-icons/-/carbon-icons-6.0.4.tgz#5c222d94cd445cea494413b0b1b4a3e867a17ce6"
+
+carbon-themes@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/carbon-themes/-/carbon-themes-1.1.2.tgz#654804c0ba875711b7de72e4e93e3e03e6589f64"
 
 caseless@~0.11.0:
   version "0.11.0"
