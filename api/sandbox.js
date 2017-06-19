@@ -9,7 +9,7 @@ const updateSheet = (req, res) => {
 
   const dataString = sassFunctions.generateVariablesString(data);
 
-  fs.writeFile(`public/tmp/export.scss`, dataString, writeErr => {
+  fs.writeFile(`public/tmp/export.scss`, dataString, err => {
     if (err) {
       console.log(err);
       throw err;
@@ -33,7 +33,11 @@ const updateSheet = (req, res) => {
       (err, result) => {
         if (err) throw err;
 
-        fs.writeFile(`public/tmp/${id}.css`, result.css, writeErr => {
+        fs.writeFile(`public/tmp/${id}.css`, result.css, err => {
+          if (err) {
+            console.log(err);
+            throw err;
+          }
           console.log('new file');
 
           res.json({
