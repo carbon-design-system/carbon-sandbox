@@ -40,6 +40,12 @@ import {
   Select,
   SelectItem,
   Switch,
+  Table,
+  TableBody,
+  TableData,
+  TableHead,
+  TableHeader,
+  TableRow,
   Tab,
   Tabs,
   Tag,
@@ -156,10 +162,7 @@ export default class Components extends Component {
         </div>
 
         <div className="component__container">
-          <ContentSwitcher
-            selectedIndex={1}
-            onChange={() => console.log('change')}
-          >
+          <ContentSwitcher selectedIndex={1} onChange={() => console.log('change')}>
             <Switch kind="anchor" name="one" text="First section" />
             <Switch kind="anchor" name="two" text="Second section" />
             <Switch kind="anchor" name="three" text="Third section" />
@@ -195,49 +198,19 @@ export default class Components extends Component {
         <div className="component__container">
           <InteriorLeftNav>
             <InteriorLeftNavList title="Example Item 1">
-              <InteriorLeftNavItem
-                href="#example-item-1A"
-                label="Example Item 1A"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-1B"
-                label="Example Item 1B"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-1C"
-                label="Example Item 1C"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-1D"
-                label="Example Item 1D"
-              />
+              <InteriorLeftNavItem href="#example-item-1A" label="Example Item 1A" />
+              <InteriorLeftNavItem href="#example-item-1B" label="Example Item 1B" />
+              <InteriorLeftNavItem href="#example-item-1C" label="Example Item 1C" />
+              <InteriorLeftNavItem href="#example-item-1D" label="Example Item 1D" />
             </InteriorLeftNavList>
             <InteriorLeftNavList title="Example Item 2">
-              <InteriorLeftNavItem
-                href="#example-item-2A"
-                label="Example Item 2A"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-2B"
-                label="Example Item 2B"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-2C"
-                label="Example Item 2C"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-2D"
-                label="Example Item 2D"
-              />
+              <InteriorLeftNavItem href="#example-item-2A" label="Example Item 2A" />
+              <InteriorLeftNavItem href="#example-item-2B" label="Example Item 2B" />
+              <InteriorLeftNavItem href="#example-item-2C" label="Example Item 2C" />
+              <InteriorLeftNavItem href="#example-item-2D" label="Example Item 2D" />
             </InteriorLeftNavList>
-            <InteriorLeftNavItem
-              href="#example-item-3"
-              label="Example Item 3"
-            />
-            <InteriorLeftNavItem
-              href="#example-item-4"
-              label="Example Item 4"
-            />
+            <InteriorLeftNavItem href="#example-item-3" label="Example Item 3" />
+            <InteriorLeftNavItem href="#example-item-4" label="Example Item 4" />
           </InteriorLeftNav>
         </div>
 
@@ -276,7 +249,23 @@ export default class Components extends Component {
         </div>
 
         <div className="component__container">
-          Modal
+          <ModalWrapper
+            id="transactional-modal"
+            buttonTriggerText="Transactional Modal"
+            modalLabel="Label (optional)"
+            modalText="This is a transactional modal"
+            modalHeading="Transactional Modal"
+          >
+            <p className="bx--modal-content__text">
+              Transactional modals are used to validate user decisions os to gain secondary confirmation from the user. Typically, the modal requests either a 'yes' or 'no' response.
+            </p>
+            <p className="bx--modal-content__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus fermentum risus, sit amet fringilla nunc pellentesque quis. Duis quis odio ultrices, cursus lacus ac, posuere felis. Donec dignissim libero in augue mattis, a molestie metus vestibulum. Aliquam placerat felis ultrices lorem condimentum, nec ullamcorper felis porttitor. Nunc at maximus purus. Curabitur sodales eros sit amet dolor bibendum gravida. Sed efficitur, arcu imperdiet vestibulum ultrices, risus diam ullamcorper arcu, sit amet gravida metus ligula quis metus.
+            </p>
+            <p className="bx--modal-content__text">
+              Donec id sapien ex. Duis aliquam tortor nec mollis pulvinar. Fusce sit amet libero blandit, sollicitudin est in, tempor lectus. Donec convallis condimentum mi eu ultrices. Sed risus ipsum, fermentum ut fringilla sed, rutrum eget purus. Morbi molestie dui nisi, consectetur posuere ante viverra non. Integer cursus quis risus ut cursus. Aenean ut dictum nibh. Cras at leo interdum, ornare elit non, posuere enim. Mauris hendrerit nunc eget malesuada congue. Nam velit leo, convallis et lobortis ac, semper ut urna. Etiam nec neque urna. Donec sagittis eros urna, at aliquet erat consectetur ac. Proin faucibus sed erat tempus accumsan. Nam pretium malesuada commodo. Mauris mollis elementum neque, sed ornare urna vestibulum non. Curabitur elementum in ex in commodo. Donec laoreet consequat sapien. Sed eget tortor aliquam, facilisis est vitae, commodo magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a lobortis ex. Nulla mollis tincidunt sodales.
+            </p>
+          </ModalWrapper>
         </div>
 
         <div className="component__container">
@@ -391,26 +380,11 @@ export default class Components extends Component {
 
         <div className="component__container">
           <ProgressIndicator currentIndex={3}>
-            <ProgressStep
-              label="Step 1"
-              description="Step 1: Getting Started with Node.js"
-            />
-            <ProgressStep
-              label="Step 2"
-              description="Step 2: Getting Started with Node.js"
-            />
-            <ProgressStep
-              label="Step 3"
-              description="Step 3: Getting Started with Node.js"
-            />
-            <ProgressStep
-              label="Step 4"
-              description="Step 4: Getting Started with Node.js"
-            />
-            <ProgressStep
-              label="Step 5"
-              description="Step 5: Getting Started with Node.js"
-            />
+            <ProgressStep label="Step 1" description="Step 1: Getting Started with Node.js" />
+            <ProgressStep label="Step 2" description="Step 2: Getting Started with Node.js" />
+            <ProgressStep label="Step 3" description="Step 3: Getting Started with Node.js" />
+            <ProgressStep label="Step 4" description="Step 4: Getting Started with Node.js" />
+            <ProgressStep label="Step 5" description="Step 5: Getting Started with Node.js" />
           </ProgressIndicator>
         </div>
 
@@ -421,11 +395,7 @@ export default class Components extends Component {
               defaultSelected="default-selected"
               legend="Group Legend"
             >
-              <RadioButton
-                value="standard"
-                id="radio-1"
-                labelText="Standard Radio Button"
-              />
+              <RadioButton value="standard" id="radio-1" labelText="Standard Radio Button" />
               <RadioButton
                 value="default-selected"
                 labelText="Default Selected Radio Button"
@@ -469,6 +439,70 @@ export default class Components extends Component {
         </div>
 
         <div className="component__container">
+          <Table>
+            <TableHead>
+              <TableRow header>
+                <TableHeader>
+                  First Name
+                </TableHeader>
+                <TableHeader>
+                  Last Name
+                </TableHeader>
+                <TableHeader>
+                  House
+                </TableHeader>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableData>
+                  Harry
+                </TableData>
+                <TableData>
+                  Potter
+                </TableData>
+                <TableData>
+                  Gryffindor
+                </TableData>
+              </TableRow>
+              <TableRow>
+                <TableData>
+                  Hermoine
+                </TableData>
+                <TableData>
+                  Granger
+                </TableData>
+                <TableData>
+                  Gryffindor
+                </TableData>
+              </TableRow>
+              <TableRow>
+                <TableData>
+                  Blaise
+                </TableData>
+                <TableData>
+                  Zambini
+                </TableData>
+                <TableData>
+                  Slytherin
+                </TableData>
+              </TableRow>
+              <TableRow>
+                <TableData>
+                  Jon
+                </TableData>
+                <TableData>
+                  Snow
+                </TableData>
+                <TableData>
+                  Stark
+                </TableData>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+
+        <div className="component__container">
           <Tabs>
             <Tab label="Overview">
               <div>Overview Content</div>
@@ -486,9 +520,7 @@ export default class Components extends Component {
         </div>
 
         <div className="component__container">
-          {types.map(type =>
-            <Tag key={type} className="some-class" type={type} />
-          )}
+          {types.map(type => <Tag key={type} className="some-class" type={type} />)}
         </div>
 
         <div className="component__container">
