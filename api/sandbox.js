@@ -5,7 +5,7 @@ const sassFunctions = require('./sass');
 
 const updateSheet = (req, res) => {
   const data = req.body.data;
-  const id = req.session.id;
+  const id = req.body.id;
 
   const dataString = sassFunctions.generateVariablesString(data);
 

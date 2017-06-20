@@ -53,9 +53,20 @@ export default class Sidebar extends Component {
     'support-04': '#5aaafa',
   };
 
+  componentDidMount = () => {
+    let id = '';
+    if (window.localStorage && window.localStorage.getItem('id')) {
+      return;
+    } else {
+      id = Math.random().toString(36).substring(7);
+      window.localStorage.setItem('id', id);
+    }
+  };
+
   getNewStyles = () => {
     const sendData = {
       data: this.state,
+      id: window.localStorage.getItem('id'),
     };
 
     fetch('/api/updateSheet', {
