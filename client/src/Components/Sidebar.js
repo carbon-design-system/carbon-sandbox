@@ -4,33 +4,8 @@ import Filter from './Filter';
 import Variable from './Variable';
 import watson from '../assets/themes/watson';
 import darkui from '../assets/themes/dark-ui';
-
-const defaultTheme = {
-  'brand-01': '#3d70b2',
-  'brand-02': '#5596e6',
-  'brand-03': '#41d6c3',
-  'ui-01': '#ffffff',
-  'ui-02': '#f5f7fa',
-  'ui-03': '#f0f3f6',
-  'ui-04': '#dfe3e6',
-  'ui-05': '#8c9ba5',
-  'text-01': '#152934',
-  'text-02': '#5a6872',
-  'text-03': '#5a6872',
-  'inverse-01': '#ffffff',
-  'field-01': '#ebf0f7',
-  'support-01': '#e71d32',
-  'support-02': '#5aa700',
-  'support-03': '#efc100',
-  'support-04': '#5aaafa',
-  'button-font-weight': '700',
-  'button-font-size': '.875rem',
-  'button-border-radius': '0',
-  'button-height': '40px',
-  'button-padding': '0 1rem',
-  'button-padding-sm': '0 .5rem',
-  'button-border-width': '2px',
-};
+import carbon from '../assets/themes/carbon';
+import genesis from '../assets/themes/genesis';
 
 export default class Sidebar extends Component {
   state = {
@@ -91,19 +66,14 @@ export default class Sidebar extends Component {
   };
 
   handleThemeChange = theme => {
-    const links = document.getElementsByTagName('head')[0].querySelectorAll('link');
-    [...links].forEach(link => {
-      if (link.href.includes('/tmp')) {
-        link.parentNode.removeChild(link);
-      }
-    });
-
     if (theme.value === 'default') {
-      this.setState(defaultTheme);
+      this.setState(carbon);
     } else if (theme.value === 'darkui') {
       this.setState(darkui);
     } else if (theme.value === 'watson') {
       this.setState(watson);
+    } else if (theme.value === 'genesis') {
+      this.setState(genesis);
     }
   };
 
@@ -118,6 +88,7 @@ export default class Sidebar extends Component {
             <DropdownItem itemText="Default" value="default" />
             <DropdownItem itemText="Dark" value="darkui" />
             <DropdownItem itemText="Watson" value="watson" />
+            <DropdownItem itemText="Genesis" value="genesis" />
           </Dropdown>
         </header>
 

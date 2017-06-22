@@ -9,7 +9,7 @@ module.exports = {
  'ui-04': '#20343e',
  'ui-05': '#8c9ba5',
  'text-01': '#ffffff',
- 'text-02': '#def6eb',
+ 'text-02': '#dfe6eb',
  'text-03': '#8c9ba5',
  'field-01': 'rgba(255, 255, 255, .1)',
  'support-01': '#ff5050',
