@@ -176,7 +176,7 @@ export default class Sidebar extends Component {
         </div>
 
         <div className="filter">
-          <Filter />
+          <Filter callbackParent={this.props.callbackParent} />
         </div>
 
         <div className="export">
