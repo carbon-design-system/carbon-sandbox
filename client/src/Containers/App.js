@@ -4,14 +4,25 @@ import Components from './../Components/Components';
 // import { Icon } from '@console/bluemix-components-react';
 
 export default class App extends Component {
+  state = {
+    isFiltering: false,
+    checkedItems: [],
+  };
   onChildChanged = newState => {
-    console.log(newState);
+    this.setState({
+      checkedItems: newState,
+      isFiltering: newState.length > 0,
+    });
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="container">
-        <Components />
+        <Components
+          checkedItems={this.state.checkedItems}
+          isFiltering={this.state.isFiltering}
+        />
         <Sidebar callbackParent={newState => this.onChildChanged(newState)} />
       </div>
     );
