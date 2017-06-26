@@ -13,7 +13,7 @@
     "start": "node app.js"
   },
   "engines": {
-    "node": "8.0.0"
+    "node": "6.10.3"
   },
   "dependencies": {
     "babel-preset-react": "^6.23.0",
