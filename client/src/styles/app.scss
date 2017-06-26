@@ -6,6 +6,7 @@ $css--font-face: true;
 @import './sidebar';
 @import './components';
 @import './filter';
+@import './footer';
 
 html, body, #app, .container {
   min-height: 100%;
