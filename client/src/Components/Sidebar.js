@@ -9,6 +9,7 @@ import genesis from '../assets/themes/genesis';
 
 export default class Sidebar extends Component {
   state = {
+    edited: false,
     'brand-01': '#3d70b2',
     'brand-02': '#5596e6',
     'brand-03': '#41d6c3',
@@ -61,14 +62,26 @@ export default class Sidebar extends Component {
 
   updateColor = (variable, hex) => {
     this.setState({
+      edited: true,
       [variable]: hex,
     });
+  };
+
+  resetColors = () => {
+    const sidebar = document.querySelector('.sidebar');
+    const theme = {
+      value: sidebar.querySelector('.bx--dropdown-text').textContent.toLowerCase(),
+    };
+    this.setState({
+      edited: false,
+    });
+    this.handleThemeChange(theme);
   };
 
   handleThemeChange = theme => {
     if (theme.value === 'default') {
       this.setState(carbon);
-    } else if (theme.value === 'darkui') {
+    } else if (theme.value === 'darkui' || theme.value === 'dark') {
       this.setState(darkui);
     } else if (theme.value === 'watson') {
       this.setState(watson);
@@ -93,9 +106,32 @@ export default class Sidebar extends Component {
         </header>
 
         <div className="variables">
-          <h5 className="variables__heading">COLOR VARIABLES</h5>
+          <h5 className="variables__heading">
+            COLOR VARIABLES
+            <button
+              className={
+                this.state.edited
+                  ? 'bx--link variables-reset'
+                  : 'bx--link variables-reset variables-reset--hidden'
+              }
+              onClick={this.resetColors}
+            >
+              Reset
+            </button>
+          </h5>
           <p className="variables__subtitle">
-            Click on a swatch to change a color variable’s value across the
+            Click on a swatch to change a
+            {' '}
+            <a
+              href="http://carbondesignsystem.com/style/colors/usage"
+              className="bx--link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              color variable’s
+            </a>
+            {' '}
+            value across the
             theme.
           </p>
           <ul className="variables__list">
@@ -176,7 +212,7 @@ export default class Sidebar extends Component {
         </div>
 
         <div className="filter">
-          <Filter />
+          <Filter callbackParent={this.props.callbackParent} />
         </div>
 
         <div className="export">
@@ -184,6 +220,18 @@ export default class Sidebar extends Component {
             Export theme SCSS
           </Button>
         </div>
+        <footer className="footer">
+          <div className="social" />
+          <a
+            href="http://www.carbondesignsystem.com/"
+            className="bx--link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Carbon Design System
+          </a>
+          <span className="footer-copy">Copyright © 2017 IBM</span>
+        </footer>
       </div>
     );
   }

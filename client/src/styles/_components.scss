@@ -24,6 +24,10 @@
     margin: 1rem;
   }
 
+  &--hidden {
+    display: none;
+  }
+
   .bx--interior-left-nav {
     top: 0;
     position: relative;
