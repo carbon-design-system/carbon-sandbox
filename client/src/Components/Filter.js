@@ -117,8 +117,8 @@ export default class Filter extends Component {
           <Checkbox onChange={this.onChange} id="select" labelText="Select" />
           <Checkbox onChange={this.onChange} id="tabs" labelText="Tabs" />
           <Checkbox onChange={this.onChange} id="tag" labelText="Tag" />
+          <Checkbox onChange={this.onChange} id="textarea" labelText="Text Area" />
           <Checkbox onChange={this.onChange} id="text-input" labelText="Text Input" />
-          <Checkbox onChange={this.onChange} id="textarea" labelText="Textarea" />
           <Checkbox onChange={this.onChange} id="toggle" labelText="Toggle" />
           <Checkbox onChange={this.onChange} id="tooltip" labelText="Tooltip" />
         </section>

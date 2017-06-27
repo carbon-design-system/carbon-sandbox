@@ -1,5 +1,5 @@
 ---
 applications:
 - name: carbon-sandbox-tj
-  memory: 128M
+  memory: 1G
   buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git

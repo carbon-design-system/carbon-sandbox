@@ -7,7 +7,6 @@ import watson from '../assets/themes/watson';
 import darkui from '../assets/themes/dark-ui';
 import carbon from '../assets/themes/carbon';
 import genesis from '../assets/themes/genesis';
-// import dribbble from '../assets/icons/dribbble.svg';
 
 export default class Sidebar extends Component {
   state = {

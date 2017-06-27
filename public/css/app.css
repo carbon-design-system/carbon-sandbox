@@ -6105,7 +6105,8 @@ span.bx--date-picker__weekday {
   background-color: #ffffff;
   color: #152934;
   overflow-y: scroll;
-  z-index: 10000; }
+  z-index: 10000;
+  border-left: 1px solid #dfe3e6; }
   .sidebar .bx--dropdown {
     color: #152934;
     background-color: #ebf0f7; }
@@ -6170,7 +6171,11 @@ span.bx--date-picker__weekday {
   flex-direction: column;
   -ms-flex-preferred-size: 33.3333333%;
   flex-basis: 33.3333333%;
-  margin: .25rem 0; }
+  margin: .25rem 0;
+  padding: 0 .25rem .5rem;
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: border 250ms; }
   .variable .variable__input {
     border: 0;
     padding: 0;
@@ -6179,12 +6184,19 @@ span.bx--date-picker__weekday {
     min-height: 30px; }
     .variable .variable__input::-webkit-color-swatch {
       border-color: #dfe3e6; }
+    .variable .variable__input:hover {
+      cursor: pointer; }
   .variable .variable__name {
     font-size: 0.75rem;
-    font-weight: 700; }
+    font-weight: 700;
+    padding-left: 0.125rem; }
   .variable .variable__hex {
     font-size: 0.75rem;
-    color: #5a6872; }
+    color: #5a6872;
+    padding-left: 0.125rem; }
+  .variable:hover {
+    border: 1px solid #dfe3e6;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); }
 
 .export {
   display: -ms-flexbox;
@@ -6225,6 +6237,8 @@ span.bx--date-picker__weekday {
     margin: 1rem; }
   #app .component__container--hidden {
     display: none; }
+  #app .component__container .bx--radio-button__appearance {
+    min-width: 1.125rem; }
   #app .component__container .bx--interior-left-nav {
     top: 0;
     position: relative;
@@ -6235,6 +6249,9 @@ span.bx--date-picker__weekday {
     position: relative; }
   #app .component__container .bx--module--double {
     width: 100%; }
+
+#app .dropdown > div {
+  width: 100%; }
 
 .filter-container {
   display: -ms-flexbox;
@@ -6331,7 +6348,12 @@ span.bx--date-picker__weekday {
   -ms-flex-pack: justify;
   justify-content: space-between; }
   .social svg {
-    fill: #8c9ba5; }
+    fill: #8c9ba5;
+    height: 24px;
+    width: 24px;
+    transition: fill 250ms; }
+    .social svg:hover {
+      fill: #3d70b2; }
 
 html, body, #app, .container {
   min-height: 100%;

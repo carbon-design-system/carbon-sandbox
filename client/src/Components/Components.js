@@ -73,18 +73,22 @@ export default class Components extends Component {
         >
           <Accordion>
             <AccordionItem title="Label">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat.
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+              </p>
             </AccordionItem>
             <AccordionItem title="Label with multiple words">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat.
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+              </p>
             </AccordionItem>
           </Accordion>
         </div>
@@ -97,9 +101,9 @@ export default class Components extends Component {
           }
         >
           <Breadcrumb>
-            <BreadcrumbItem href="www.google.com">Breadcrumb 1</BreadcrumbItem>
-            <BreadcrumbItem href="www.google.com">Breadcrumb 2</BreadcrumbItem>
-            <BreadcrumbItem href="www.google.com">Breadcrumb 3</BreadcrumbItem>
+            <BreadcrumbItem href="">Breadcrumb 1</BreadcrumbItem>
+            <BreadcrumbItem href="">Breadcrumb 2</BreadcrumbItem>
+            <BreadcrumbItem href="">Breadcrumb 3</BreadcrumbItem>
           </Breadcrumb>
         </div>
 
@@ -285,7 +289,7 @@ export default class Components extends Component {
         <div
           className={
             checkedItems.includes('dropdown') || !isFiltering
-              ? 'component__container'
+              ? 'component__container dropdown'
               : 'component__container component__container--hidden'
           }
         >
@@ -729,7 +733,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          <Toggle />
+          <Toggle id="toggle-demo" />
         </div>
 
         <div

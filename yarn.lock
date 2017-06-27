@@ -1243,9 +1243,9 @@ caniuse-lite@^1.0.30000670:
   version "1.0.30000683"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000683.tgz#a7573707cf2acc9217ca6484d1dfbc9f13898364"
 
-carbon-components-react@^3.1.6:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-3.1.6.tgz#b2af1fddccad4d59728e1b899e20d10db7ca198b"
+carbon-components-react@^3.1.7:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-3.1.7.tgz#6617873d2dc3929f9bd496c663831383fa5ae6df"
   dependencies:
     classnames "2.2.5"
     lodash.debounce "^4.0.8"

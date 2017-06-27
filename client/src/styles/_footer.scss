@@ -23,5 +23,12 @@
 
   svg {
     fill: #8c9ba5;
+    height: 24px;
+    width: 24px;
+    transition: fill $transition--base;
+
+    &:hover {
+      fill: #3d70b2;
+    }
   }
 }
