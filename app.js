@@ -1,4 +1,5 @@
 const express = require('express');
+const compression = require('compression');
 const session = require('express-session');
 const resolve = require('path').resolve;
 const setup = require('./middlewares/frontendMiddleware');
@@ -7,6 +8,9 @@ const apiRoutes = require('./api');
 
 const port = process.env.PORT || 8080;
 const app = express();
+
+// gzip
+app.use(compression());
 
 app.use(
   session({
