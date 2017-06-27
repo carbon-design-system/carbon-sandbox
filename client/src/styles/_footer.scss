@@ -1,0 +1,34 @@
+.footer {
+  flex: 1;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 5rem 1.5rem 2rem;
+
+  .bx--link {
+    @include font-size('12');
+    margin: 1rem 0;
+  }
+
+  .footer-copy {
+    @include font-size('11');
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  svg {
+    fill: #8c9ba5;
+    height: 24px;
+    width: 24px;
+    transition: fill $transition--base;
+
+    &:hover {
+      fill: #3d70b2;
+    }
+  }
+}

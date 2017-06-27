@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Dropdown, DropdownItem } from 'carbon-components-react';
 import Filter from './Filter';
 import Variable from './Variable';
+import Social from './Social';
 import watson from '../assets/themes/watson';
 import darkui from '../assets/themes/dark-ui';
 import carbon from '../assets/themes/carbon';
@@ -221,7 +222,7 @@ export default class Sidebar extends Component {
           </Button>
         </div>
         <footer className="footer">
-          <div className="social" />
+          <Social />
           <a
             href="http://www.carbondesignsystem.com/"
             className="bx--link"
