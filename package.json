@@ -10,7 +10,7 @@
     "style": "gulp serve",
     "dev": "webpack-dev-server --config ./webpack.config.dev.js",
     "build": "webpack --optimize-minimize --define process.env.NODE_ENV=\"'production'\" || gulp sass",
-    "start": "node app.js"
+    "start": "NODE_ENV=production node app.js"
   },
   "engines": {
     "node": "6.10.3"
