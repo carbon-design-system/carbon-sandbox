@@ -101,9 +101,9 @@ export default class Components extends Component {
           }
         >
           <Breadcrumb>
-            <BreadcrumbItem href="">Breadcrumb 1</BreadcrumbItem>
-            <BreadcrumbItem href="">Breadcrumb 2</BreadcrumbItem>
-            <BreadcrumbItem href="">Breadcrumb 3</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
           </Breadcrumb>
         </div>
 
