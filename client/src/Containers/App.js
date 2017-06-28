@@ -22,7 +22,10 @@ export default class App extends Component {
           checkedItems={this.state.checkedItems}
           isFiltering={this.state.isFiltering}
         />
-        <Sidebar callbackParent={newState => this.onChildChanged(newState)} />
+        <Sidebar
+          callbackParent={newState => this.onChildChanged(newState)}
+          isFiltering={this.state.isFiltering}
+        />
       </div>
     );
   }

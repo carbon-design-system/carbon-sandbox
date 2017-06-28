@@ -49,7 +49,9 @@ export default class Sidebar extends Component {
       id: window.localStorage.getItem('id'),
     };
 
-    this.isLoading(true);
+    if (!this.props.isFiltering) {
+      this.isLoading(true);
+    }
     fetch('/api/updateSheet', {
       method: 'POST',
       body: JSON.stringify(sendData),
