@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Dropdown, DropdownItem } from 'carbon-components-react';
+import { Button, Dropdown, DropdownItem, Loading } from 'carbon-components-react';
 import Filter from './Filter';
 import Variable from './Variable';
 import Social from './Social';
@@ -30,6 +30,18 @@ export default class Sidebar extends Component {
     'support-04': '#5aaafa',
   };
 
+  isLoading = loading => {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+      const loader = sidebar.querySelector('.bx--loading-overlay');
+      if (loading) {
+        loader.style.display = 'flex';
+      } else {
+        loader.style.display = 'none';
+      }
+    }
+  };
+
   componentDidMount = () => {
     let id = '';
     if (window.localStorage && window.localStorage.getItem('id')) {
@@ -46,6 +58,7 @@ export default class Sidebar extends Component {
       id: window.localStorage.getItem('id'),
     };
 
+    this.isLoading(true);
     fetch('/api/updateSheet', {
       method: 'POST',
       body: JSON.stringify(sendData),
@@ -58,6 +71,7 @@ export default class Sidebar extends Component {
         link.type = 'text/css';
         link.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(link);
+        this.isLoading(false);
       });
   };
 
@@ -96,6 +110,7 @@ export default class Sidebar extends Component {
 
     return (
       <div className="sidebar">
+        <Loading withOverlay />
         <header>
           <h1 className="sidebar__title">Carbon <span>Themes</span></h1>
           <Dropdown defaultText="Default" value="default" onChange={this.handleThemeChange}>
