@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Dropdown, DropdownItem, Loading } from 'carbon-components-react';
+import debounce from 'lodash.debounce';
 import Filter from './Filter';
 import Variable from './Variable';
 import Social from './Social';
@@ -30,19 +31,9 @@ export default class Sidebar extends Component {
     'support-04': '#5aaafa',
   };
 
-  isLoading = loading => {
-    const sidebar = document.querySelector('.sidebar');
-    if (sidebar) {
-      const loader = sidebar.querySelector('.bx--loading-overlay');
-      if (loading) {
-        loader.style.display = 'flex';
-      } else {
-        loader.style.display = 'none';
-      }
-    }
-  };
-
   componentDidMount = () => {
+    this.getNewStyles = debounce(this.getNewStyles, 25);
+
     let id = '';
     if (window.localStorage && window.localStorage.getItem('id')) {
       return;
@@ -58,7 +49,9 @@ export default class Sidebar extends Component {
       id: window.localStorage.getItem('id'),
     };
 
-    this.isLoading(true);
+    if (!this.props.isFiltering) {
+      this.isLoading(true);
+    }
     fetch('/api/updateSheet', {
       method: 'POST',
       body: JSON.stringify(sendData),
@@ -73,6 +66,18 @@ export default class Sidebar extends Component {
         document.getElementsByTagName('head')[0].appendChild(link);
         this.isLoading(false);
       });
+  };
+
+  isLoading = loading => {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+      const loader = sidebar.querySelector('.bx--loading-overlay');
+      if (loading) {
+        loader.style.display = 'flex';
+      } else {
+        loader.style.display = 'none';
+      }
+    }
   };
 
   updateColor = (variable, hex) => {

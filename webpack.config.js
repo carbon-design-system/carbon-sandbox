@@ -2,9 +2,7 @@ const webpack = require('webpack');
 const { resolve } = require('path');
 
 module.exports = {
-  entry: [
-    './index.js',
-  ],
+  entry: ['babel-polyfill', 'whatwg-fetch', './index.js'],
   output: {
     filename: 'app.js',
     path: resolve(__dirname, 'public'),
