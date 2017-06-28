@@ -209,7 +209,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          <ContentSwitcher selectedIndex={1}>
+          <ContentSwitcher selectedIndex={1} onChange={() => console.log('change')}>
             <Switch kind="anchor" name="one" text="First section" />
             <Switch kind="anchor" name="two" text="Second section" />
             <Switch kind="anchor" name="three" text="Third section" />
@@ -358,7 +358,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          <Link href="#">A simple link</Link>
+          <Link href="#">Link</Link>
         </div>
 
         <div
@@ -414,7 +414,6 @@ export default class Components extends Component {
             id="transactional-modal"
             buttonTriggerText="Transactional Modal"
             modalLabel="Label (optional)"
-            modalText="This is a transactional modal"
             modalHeading="Transactional Modal"
           >
             <p className="bx--modal-content__text">
@@ -560,7 +559,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          <NumberInput />
+          <NumberInput id="number-input-demo" />
         </div>
 
         <div
@@ -723,7 +722,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          <TextInput placeholder="Hint text here" />
+          <TextInput id="text-input-demo" placeholder="Hint text here" />
         </div>
 
         <div

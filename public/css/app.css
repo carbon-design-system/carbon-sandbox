@@ -1697,16 +1697,7 @@ select[data-invalid] {
     padding-right: 2rem; }
 
 .bx--structured-list-input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-  visibility: visible;
-  white-space: nowrap; }
+  display: none; }
 
 .bx--structured-list {
   font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
@@ -1735,7 +1726,7 @@ select[data-invalid] {
   [data-structured-list] .bx--structured-list-row:hover:not(.bx--structured-list-row--header-row) {
     background-color: rgba(85, 150, 230, 0.1);
     cursor: pointer; }
-  .bx--structured-list-input:checked + .bx--structured-list-row {
+  .bx--structured-list-row.bx--structured-list-row--selected {
     background-color: rgba(85, 150, 230, 0.1); }
   .bx--structured-list-row.bx--structured-list-row--header-row {
     border-bottom: 2px solid #3d70b2;
@@ -1779,9 +1770,6 @@ select[data-invalid] {
   .bx--structured-list-td:last-child {
     padding-right: 2rem; }
 
-.bx--structured-list-content {
-  font-size: 0.875rem; }
-
 .bx--structured-list-content--nowrap {
   white-space: nowrap; }
 
@@ -1792,8 +1780,12 @@ select[data-invalid] {
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1); }
   .bx--structured-list-row:hover .bx--structured-list-svg {
     fill: rgba(85, 150, 230, 0.1); }
-  .bx--structured-list-input:checked + .bx--structured-list-row .bx--structured-list-svg {
+  .bx--structured-list-input:checked + .bx--structured-list-row .bx--structured-list-svg,
+  .bx--structured-list-input:checked + .bx--structured-list-td .bx--structured-list-svg {
     fill: #5596e6; }
+
+.bx--structured-list-content {
+  font-size: 0.875rem; }
 
 .bx--snippet--code {
   font-family: monospace;
@@ -6239,6 +6231,8 @@ span.bx--date-picker__weekday {
     display: none; }
   #app .component__container .bx--radio-button__appearance {
     min-width: 1.125rem; }
+  #app .component__container .bx--modal {
+    z-index: 10001; }
   #app .component__container .bx--interior-left-nav {
     top: 0;
     position: relative;
