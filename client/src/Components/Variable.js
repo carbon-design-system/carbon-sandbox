@@ -2,9 +2,7 @@ import React, { PureComponent } from 'react';
 
 export default class Variable extends PureComponent {
   handleChange = (evt, name) => {
-    if (evt.target.value.length === 7) {
-      this.props.updateColor(name, evt.target.value);
-    }
+    this.props.updateColor(name, evt.target.value);
   };
 
   render() {
@@ -12,6 +10,7 @@ export default class Variable extends PureComponent {
     return (
       <li className="variable">
         <input
+          disabled={this.props.isSafari}
           className="variable__input"
           onChange={evt => this.handleChange(evt, name)}
           type="color"
