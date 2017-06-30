@@ -781,6 +781,14 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
+babel-polyfill@^6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.23.0.tgz#8364ca62df8eafb830499f699177466c3b03499d"
+  dependencies:
+    babel-runtime "^6.22.0"
+    core-js "^2.4.0"
+    regenerator-runtime "^0.10.0"
+
 babel-preset-env@^1.1.8:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.5.2.tgz#cd4ae90a6e94b709f97374b33e5f8b983556adef"
@@ -1259,9 +1267,9 @@ carbon-components-react@^3.1.7:
     warning "3.0.0"
     window-or-global "^1.0.1"
 
-carbon-components@^7.12.0:
-  version "7.12.2"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-7.12.2.tgz#5c16768e12140690585f0df373bddac5b6e1e44e"
+carbon-components@^7.13.2:
+  version "7.13.2"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-7.13.2.tgz#e532fe9aa6154df0ffbcbebf3aedea1cab83c64a"
   dependencies:
     carbon-icons "^6.0.4"
     flatpickr "2.6.3"
@@ -5544,7 +5552,7 @@ weinre@^2.0.0-pre-I0Z7U9OV:
     nopt "3.0.x"
     underscore "1.7.x"
 
-whatwg-fetch@>=0.10.0:
+whatwg-fetch@>=0.10.0, whatwg-fetch@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 

@@ -57,7 +57,8 @@ import {
 } from 'carbon-components-react';
 import { types } from 'carbon-components-react/es/components/Tag'; // bug with export
 import FileUploader from 'carbon-components-react/es/components/FileUploader'; // bug with export
-import SelectItemGroup from 'carbon-components-react/es/components/SelectItemGroup'; // bug with export
+import SelectItemGroup
+  from 'carbon-components-react/es/components/SelectItemGroup'; // bug with export
 
 export default class Components extends Component {
   render() {
@@ -124,8 +125,14 @@ export default class Components extends Component {
             Small Button
           </Button>
           <Button disabled>Disabled</Button>
-          <Button icon="search--glyph" iconDescription="Search">With an Icon</Button>
-          <Button kind="secondary" icon="search--glyph" iconDescription="Search">
+          <Button icon="search--glyph" iconDescription="Search">
+            With an Icon
+          </Button>
+          <Button
+            kind="secondary"
+            icon="search--glyph"
+            iconDescription="Search"
+          >
             With an Icon
           </Button>
           <Button kind="danger" className="some-class">
@@ -209,7 +216,10 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          <ContentSwitcher selectedIndex={1} onChange={() => console.log('change')}>
+          <ContentSwitcher
+            selectedIndex={1}
+            onChange={() => console.log('change')}
+          >
             <Switch kind="anchor" name="one" text="First section" />
             <Switch kind="anchor" name="two" text="Second section" />
             <Switch kind="anchor" name="three" text="Third section" />
@@ -335,19 +345,49 @@ export default class Components extends Component {
         >
           <InteriorLeftNav>
             <InteriorLeftNavList title="Example Item 1">
-              <InteriorLeftNavItem href="#example-item-1A" label="Example Item 1A" />
-              <InteriorLeftNavItem href="#example-item-1B" label="Example Item 1B" />
-              <InteriorLeftNavItem href="#example-item-1C" label="Example Item 1C" />
-              <InteriorLeftNavItem href="#example-item-1D" label="Example Item 1D" />
+              <InteriorLeftNavItem
+                href="#example-item-1A"
+                label="Example Item 1A"
+              />
+              <InteriorLeftNavItem
+                href="#example-item-1B"
+                label="Example Item 1B"
+              />
+              <InteriorLeftNavItem
+                href="#example-item-1C"
+                label="Example Item 1C"
+              />
+              <InteriorLeftNavItem
+                href="#example-item-1D"
+                label="Example Item 1D"
+              />
             </InteriorLeftNavList>
             <InteriorLeftNavList title="Example Item 2">
-              <InteriorLeftNavItem href="#example-item-2A" label="Example Item 2A" />
-              <InteriorLeftNavItem href="#example-item-2B" label="Example Item 2B" />
-              <InteriorLeftNavItem href="#example-item-2C" label="Example Item 2C" />
-              <InteriorLeftNavItem href="#example-item-2D" label="Example Item 2D" />
+              <InteriorLeftNavItem
+                href="#example-item-2A"
+                label="Example Item 2A"
+              />
+              <InteriorLeftNavItem
+                href="#example-item-2B"
+                label="Example Item 2B"
+              />
+              <InteriorLeftNavItem
+                href="#example-item-2C"
+                label="Example Item 2C"
+              />
+              <InteriorLeftNavItem
+                href="#example-item-2D"
+                label="Example Item 2D"
+              />
             </InteriorLeftNavList>
-            <InteriorLeftNavItem href="#example-item-3" label="Example Item 3" />
-            <InteriorLeftNavItem href="#example-item-4" label="Example Item 4" />
+            <InteriorLeftNavItem
+              href="#example-item-3"
+              label="Example Item 3"
+            />
+            <InteriorLeftNavItem
+              href="#example-item-4"
+              label="Example Item 4"
+            />
           </InteriorLeftNav>
         </div>
 
@@ -559,7 +599,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          <NumberInput id="number-input-demo" />
+          <NumberInput label="Number Input" id="number-input-demo" />
         </div>
 
         <div
@@ -596,11 +636,26 @@ export default class Components extends Component {
           }
         >
           <ProgressIndicator currentIndex={3}>
-            <ProgressStep label="Step 1" description="Step 1: Getting Started with Node.js" />
-            <ProgressStep label="Step 2" description="Step 2: Getting Started with Node.js" />
-            <ProgressStep label="Step 3" description="Step 3: Getting Started with Node.js" />
-            <ProgressStep label="Step 4" description="Step 4: Getting Started with Node.js" />
-            <ProgressStep label="Step 5" description="Step 5: Getting Started with Node.js" />
+            <ProgressStep
+              label="Step 1"
+              description="Step 1: Getting Started with Node.js"
+            />
+            <ProgressStep
+              label="Step 2"
+              description="Step 2: Getting Started with Node.js"
+            />
+            <ProgressStep
+              label="Step 3"
+              description="Step 3: Getting Started with Node.js"
+            />
+            <ProgressStep
+              label="Step 4"
+              description="Step 4: Getting Started with Node.js"
+            />
+            <ProgressStep
+              label="Step 5"
+              description="Step 5: Getting Started with Node.js"
+            />
           </ProgressIndicator>
         </div>
 
@@ -617,7 +672,11 @@ export default class Components extends Component {
               defaultSelected="default-selected"
               legend="Group Legend"
             >
-              <RadioButton value="standard" id="radio-1" labelText="Standard Radio Button" />
+              <RadioButton
+                value="standard"
+                id="radio-1"
+                labelText="Standard Radio Button"
+              />
               <RadioButton
                 value="default-selected"
                 labelText="Default Selected Radio Button"
@@ -702,7 +761,9 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          {types.map(type => <Tag key={type} className="some-class" type={type} />)}
+          {types.map(type => (
+            <Tag key={type} className="some-class" type={type} />
+          ))}
         </div>
 
         <div
@@ -712,7 +773,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          <TextArea />
+          <TextArea labelText="Text Area" />
         </div>
 
         <div
@@ -722,7 +783,11 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          <TextInput id="text-input-demo" placeholder="Hint text here" />
+          <TextInput
+            labelText="Text Input"
+            id="text-input-demo"
+            placeholder="Hint text here"
+          />
         </div>
 
         <div

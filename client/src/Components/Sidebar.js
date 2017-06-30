@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Button, Dropdown, DropdownItem, Loading } from 'carbon-components-react';
+import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  Loading,
+} from 'carbon-components-react';
 import debounce from 'lodash.debounce';
 import Filter from './Filter';
 import Variable from './Variable';
@@ -90,7 +95,9 @@ export default class Sidebar extends Component {
   resetColors = () => {
     const sidebar = document.querySelector('.sidebar');
     const theme = {
-      value: sidebar.querySelector('.bx--dropdown-text').textContent.toLowerCase(),
+      value: sidebar
+        .querySelector('.bx--dropdown-text')
+        .textContent.toLowerCase(),
     };
     this.setState({
       edited: false,
@@ -118,11 +125,15 @@ export default class Sidebar extends Component {
         <Loading withOverlay />
         <header>
           <h1 className="sidebar__title">Carbon <span>Themes</span></h1>
-          <Dropdown defaultText="Default" value="default" onChange={this.handleThemeChange}>
+          <Dropdown
+            defaultText="Default"
+            value="default"
+            onChange={this.handleThemeChange}
+          >
             <DropdownItem itemText="Default" value="default" />
             <DropdownItem itemText="Dark" value="darkui" />
             <DropdownItem itemText="Watson" value="watson" />
-            <DropdownItem itemText="Genesis" value="genesis" />
+            <DropdownItem itemText="White" value="genesis" />
           </Dropdown>
         </header>
 
@@ -173,11 +184,31 @@ export default class Sidebar extends Component {
             />
           </ul>
           <ul className="variables__list">
-            <Variable updateColor={this.updateColor} name="ui-01" hex={this.state['ui-01']} />
-            <Variable updateColor={this.updateColor} name="ui-02" hex={this.state['ui-02']} />
-            <Variable updateColor={this.updateColor} name="ui-03" hex={this.state['ui-03']} />
-            <Variable updateColor={this.updateColor} name="ui-04" hex={this.state['ui-04']} />
-            <Variable updateColor={this.updateColor} name="ui-05" hex={this.state['ui-05']} />
+            <Variable
+              updateColor={this.updateColor}
+              name="ui-01"
+              hex={this.state['ui-01']}
+            />
+            <Variable
+              updateColor={this.updateColor}
+              name="ui-02"
+              hex={this.state['ui-02']}
+            />
+            <Variable
+              updateColor={this.updateColor}
+              name="ui-03"
+              hex={this.state['ui-03']}
+            />
+            <Variable
+              updateColor={this.updateColor}
+              name="ui-04"
+              hex={this.state['ui-04']}
+            />
+            <Variable
+              updateColor={this.updateColor}
+              name="ui-05"
+              hex={this.state['ui-05']}
+            />
           </ul>
           <ul className="variables__list">
             <Variable
