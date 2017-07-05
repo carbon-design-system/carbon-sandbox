@@ -39,14 +39,6 @@ export default class Sidebar extends Component {
   componentDidMount = () => {
     this.getNewStyles = debounce(this.getNewStyles, 25);
 
-    const isSafari =
-      /Safari/.test(navigator.userAgent) &&
-      /Apple Computer/.test(navigator.vendor);
-
-    this.setState({
-      isSafari,
-    });
-
     let id = '';
     if (window.localStorage && window.localStorage.getItem('id')) {
       return;
@@ -65,6 +57,7 @@ export default class Sidebar extends Component {
     if (!this.props.isFiltering) {
       this.isLoading(true);
     }
+
     fetch('/api/updateSheet', {
       method: 'POST',
       body: JSON.stringify(sendData),
@@ -132,9 +125,7 @@ export default class Sidebar extends Component {
     );
 
     if (theme.value === 'watson') {
-      notifications.style.display = 'none';
-    } else {
-      notifications.style.display = 'flex';
+      notifications.classList.add('component__container--hidden');
     }
 
     this.removeOldStyles();
@@ -152,11 +143,12 @@ export default class Sidebar extends Component {
 
   render() {
     this.getNewStyles();
-    const { isSafari } = this.state;
+    const { isNotSupported } = this.props;
 
     return (
       <div className="sidebar">
         <Loading withOverlay />
+        <div className={this.state.isSafari ? 'banner' : 'banner--hidden'} />
         <header>
           <h1 className="sidebar__title">Carbon <span>Themes</span></h1>
           <Dropdown
@@ -205,19 +197,19 @@ export default class Sidebar extends Component {
               updateColor={this.updateColor}
               name="brand-01"
               hex={this.state['brand-01']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="brand-02"
               hex={this.state['brand-02']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="brand-03"
               hex={this.state['brand-03']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
           </ul>
           <ul className="variables__list">
@@ -225,31 +217,31 @@ export default class Sidebar extends Component {
               updateColor={this.updateColor}
               name="ui-01"
               hex={this.state['ui-01']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="ui-02"
               hex={this.state['ui-02']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="ui-03"
               hex={this.state['ui-03']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="ui-04"
               hex={this.state['ui-04']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="ui-05"
               hex={this.state['ui-05']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
           </ul>
           <ul className="variables__list">
@@ -257,19 +249,19 @@ export default class Sidebar extends Component {
               updateColor={this.updateColor}
               name="text-01"
               hex={this.state['text-01']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="text-02"
               hex={this.state['text-02']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="text-03"
               hex={this.state['text-03']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
           </ul>
           <ul className="variables__list">
@@ -277,13 +269,13 @@ export default class Sidebar extends Component {
               updateColor={this.updateColor}
               name="inverse-01"
               hex={this.state['inverse-01']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="field-01"
               hex={this.state['field-01']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
           </ul>
           <ul className="variables__list">
@@ -291,25 +283,25 @@ export default class Sidebar extends Component {
               updateColor={this.updateColor}
               name="support-01"
               hex={this.state['support-01']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="support-02"
               hex={this.state['support-02']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="support-03"
               hex={this.state['support-03']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="support-04"
               hex={this.state['support-04']}
-              isSafari={isSafari}
+              isNotSupported={isNotSupported}
             />
           </ul>
         </div>

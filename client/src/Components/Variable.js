@@ -10,7 +10,7 @@ export default class Variable extends PureComponent {
     return (
       <li className="variable">
         <input
-          disabled={this.props.isSafari}
+          disabled={this.props.isNotSupported}
           className="variable__input"
           onChange={evt => this.handleChange(evt, name)}
           type="color"
