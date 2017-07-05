@@ -19,7 +19,6 @@
 .social {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   svg {
     fill: #8c9ba5;
@@ -29,6 +28,14 @@
 
     &:hover {
       fill: #3d70b2;
+    }
+  }
+
+  a {
+    margin-right: rem(24px);
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
