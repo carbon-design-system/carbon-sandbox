@@ -65,7 +65,6 @@ export default class Sidebar extends Component {
     })
       .then(data => data.json())
       .then(data => {
-        this.removeOldStyles();
         const link = document.createElement('link');
         link.href = data.route;
         link.type = 'text/css';
@@ -107,34 +106,18 @@ export default class Sidebar extends Component {
     this.handleThemeChange(theme);
   };
 
-  removeOldStyles = () => {
-    const links = document
-      .getElementsByTagName('head')[0]
-      .querySelectorAll('link');
-    [...links].forEach(link => {
-      if (link.href.includes('/tmp')) {
-        link.parentNode.removeChild(link);
-      }
-    });
-  };
-
   handleThemeChange = theme => {
     // Hide notifications on Watson theme (for now)
     const notifications = document.querySelector(
       '.component__container--notification'
     );
 
-    if (theme.value === 'watson') {
-      notifications.classList.add('component__container--hidden');
-    }
-
-    this.removeOldStyles();
-
     if (theme.value === 'default') {
       this.setState(carbon);
     } else if (theme.value === 'darkui' || theme.value === 'dark') {
       this.setState(darkui);
     } else if (theme.value === 'watson') {
+      notifications.classList.add('component__container--hidden');
       this.setState(watson);
     } else if (theme.value === 'genesis') {
       this.setState(genesis);

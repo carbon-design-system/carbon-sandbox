@@ -14,9 +14,7 @@ export default class App extends Component {
     const isSafari =
       /Safari/.test(navigator.userAgent) &&
       /Apple Computer/.test(navigator.vendor);
-
     const isIE = /*@cc_on!@*/ false || !!document.documentMode;
-
     const isNotSupported = isSafari || isIE;
 
     this.setState({
@@ -35,6 +33,7 @@ export default class App extends Component {
     const { isFiltering, checkedItems, isNotSupported } = this.state;
     return (
       <div className="container">
+        {isNotSupported ? <div className="banner">NOT SUPPORTED</div> : null}
         <Components checkedItems={checkedItems} isFiltering={isFiltering} />
         <Sidebar
           isNotSupported={isNotSupported}
