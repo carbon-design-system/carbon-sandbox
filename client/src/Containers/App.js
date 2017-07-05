@@ -11,9 +11,13 @@ export default class App extends Component {
   };
 
   componentDidMount = () => {
-    const isNotSupported =
+    const isSafari =
       /Safari/.test(navigator.userAgent) &&
       /Apple Computer/.test(navigator.vendor);
+
+    const isIE = /*@cc_on!@*/ false || !!document.documentMode;
+
+    const isNotSupported = isSafari || isIE;
 
     this.setState({
       isNotSupported,

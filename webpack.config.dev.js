@@ -3,6 +3,8 @@ const { resolve } = require('path');
 
 module.exports = {
   entry: [
+    'babel-polyfill',
+    'whatwg-fetch',
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
     './index.js',

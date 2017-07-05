@@ -144,6 +144,12 @@ export default class Sidebar extends Component {
   render() {
     this.getNewStyles();
     const { isNotSupported } = this.props;
+    if (isNotSupported) {
+      const inputs = [...document.querySelectorAll('input[type="color"]')];
+      inputs.forEach(input => {
+        input.disabled = true;
+      });
+    }
 
     return (
       <div className="sidebar">
@@ -197,19 +203,16 @@ export default class Sidebar extends Component {
               updateColor={this.updateColor}
               name="brand-01"
               hex={this.state['brand-01']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="brand-02"
               hex={this.state['brand-02']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="brand-03"
               hex={this.state['brand-03']}
-              isNotSupported={isNotSupported}
             />
           </ul>
           <ul className="variables__list">
@@ -217,31 +220,26 @@ export default class Sidebar extends Component {
               updateColor={this.updateColor}
               name="ui-01"
               hex={this.state['ui-01']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="ui-02"
               hex={this.state['ui-02']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="ui-03"
               hex={this.state['ui-03']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="ui-04"
               hex={this.state['ui-04']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="ui-05"
               hex={this.state['ui-05']}
-              isNotSupported={isNotSupported}
             />
           </ul>
           <ul className="variables__list">
@@ -249,19 +247,16 @@ export default class Sidebar extends Component {
               updateColor={this.updateColor}
               name="text-01"
               hex={this.state['text-01']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="text-02"
               hex={this.state['text-02']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="text-03"
               hex={this.state['text-03']}
-              isNotSupported={isNotSupported}
             />
           </ul>
           <ul className="variables__list">
@@ -269,13 +264,11 @@ export default class Sidebar extends Component {
               updateColor={this.updateColor}
               name="inverse-01"
               hex={this.state['inverse-01']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="field-01"
               hex={this.state['field-01']}
-              isNotSupported={isNotSupported}
             />
           </ul>
           <ul className="variables__list">
@@ -283,25 +276,21 @@ export default class Sidebar extends Component {
               updateColor={this.updateColor}
               name="support-01"
               hex={this.state['support-01']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="support-02"
               hex={this.state['support-02']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="support-03"
               hex={this.state['support-03']}
-              isNotSupported={isNotSupported}
             />
             <Variable
               updateColor={this.updateColor}
               name="support-04"
               hex={this.state['support-04']}
-              isNotSupported={isNotSupported}
             />
           </ul>
         </div>
