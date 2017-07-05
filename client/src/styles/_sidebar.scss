@@ -12,15 +12,55 @@
   .bx--dropdown {
     color: #152934;
     background-color: #ebf0f7;
+
+    &:focus {
+      outline: 1px solid #047cc0;
+    }
+
+    .bx--dropdown__arrow {
+      fill: #3d70b2;
+    }
+  }
+
+  .bx--dropdown.bx--dropdown--open:focus {
+    box-shadow: 0 -1px 0 0 #3d70b2, 1px 0 0 0 #3d70b2, -1px 0 0 0 #3d70b2;
+  }
+
+  .bx--dropdown--open:focus .bx--dropdown-list {
+    box-shadow: 0 1px 0 0 #3d70b2, 1px 0 0 0 #3d70b2, -1px 0 0 0 #3d70b2;
+  }
+
+  .bx--dropdown-link:hover, .bx--dropdown-link:focus {
+    background-color: #3d70b2;
   }
 
   .bx--dropdown--open .bx--dropdown-list {
     background-color: #fff;
   }
 
+  .bx--link:visited,
+  .bx--link  {
+    color: #3d70b2;
+  }
+
+  .bx--btn--primary {
+    background-color: #3d70b2;
+
+    &:hover {
+      background-color: #5596e6;
+    }
+  }
+
+  .bx--checkbox:checked + .bx--checkbox-appearance, .bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance {
+    background-color: #3d70b2;
+    border-color: #3d70b2;
+  }
+
   header {
     padding: 1.5rem;
   }
+
+  // Make sure Carbon styles don't change
 }
 
 .sidebar__title {

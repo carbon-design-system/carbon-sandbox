@@ -3,7 +3,6 @@ import { Checkbox } from 'carbon-components-react';
 
 export default class Filter extends Component {
   state = {
-    active: false,
     expanded: false,
     checkedItems: [],
   };
@@ -48,16 +47,22 @@ export default class Filter extends Component {
   };
 
   render() {
-    const { active, expanded, checkedItems } = this.state;
+    const { expanded, checkedItems } = this.state;
     return (
       <div
-        className={expanded ? 'filter-container filter-container--active' : 'filter-container'}
+        className={
+          expanded
+            ? 'filter-container filter-container--active'
+            : 'filter-container'
+        }
       >
         <section className="filter-heading">
           <button className="filter-text" onClick={this.handleToggle}>
-            FILTER
+            <span>FILTER</span>
             <svg
-              className={expanded ? 'filter-icon filter-icon--active' : 'filter-icon'}
+              className={
+                expanded ? 'filter-icon filter-icon--active' : 'filter-icon'
+              }
               width="10px"
               height="5px"
               viewBox="0 0 10 5"
@@ -68,30 +73,62 @@ export default class Filter extends Component {
           </button>
           <button
             onClick={this.handleClear}
-            className={checkedItems.length > 0 ? 'bx--link bx--link--active' : 'bx--link'}
+            className={
+              checkedItems.length > 0 ? 'bx--link bx--link--active' : 'bx--link'
+            }
           >
             Clear Filters
           </button>
         </section>
         <section
           className={
-            expanded ? 'filter-checkboxes filter-checkboxes--active' : 'filter-checkboxes'
+            expanded
+              ? 'filter-checkboxes filter-checkboxes--active'
+              : 'filter-checkboxes'
           }
         >
-          <Checkbox onChange={this.onChange} id="accordion" labelText="Accordion" />
-          <Checkbox onChange={this.onChange} id="breadcrumb" labelText="Breadcrumb" />
+          <Checkbox
+            onChange={this.onChange}
+            id="accordion"
+            labelText="Accordion"
+          />
+          <Checkbox
+            onChange={this.onChange}
+            id="breadcrumb"
+            labelText="Breadcrumb"
+          />
           <Checkbox onChange={this.onChange} id="button" labelText="Button" />
           <Checkbox onChange={this.onChange} id="card" labelText="Card" />
-          <Checkbox onChange={this.onChange} id="checkbox" labelText="Checkbox" />
-          <Checkbox onChange={this.onChange} id="code-snippet" labelText="Code Snippet" />
+          <Checkbox
+            onChange={this.onChange}
+            id="checkbox"
+            labelText="Checkbox"
+          />
+          <Checkbox
+            onChange={this.onChange}
+            id="code-snippet"
+            labelText="Code Snippet"
+          />
           <Checkbox
             onChange={this.onChange}
             id="content-switcher"
             labelText="Content Switcher"
           />
-          <Checkbox onChange={this.onChange} id="data-table" labelText="Data Table" />
-          <Checkbox onChange={this.onChange} id="dropdown" labelText="Dropdown" />
-          <Checkbox onChange={this.onChange} id="file-uploader" labelText="File Uploader" />
+          <Checkbox
+            onChange={this.onChange}
+            id="data-table"
+            labelText="Data Table"
+          />
+          <Checkbox
+            onChange={this.onChange}
+            id="dropdown"
+            labelText="Dropdown"
+          />
+          <Checkbox
+            onChange={this.onChange}
+            id="file-uploader"
+            labelText="File Uploader"
+          />
           <Checkbox onChange={this.onChange} id="footer" labelText="Footer" />
           <Checkbox
             onChange={this.onChange}
@@ -103,22 +140,50 @@ export default class Filter extends Component {
           <Checkbox onChange={this.onChange} id="loading" labelText="Loading" />
           <Checkbox onChange={this.onChange} id="modal" labelText="Modal" />
           <Checkbox onChange={this.onChange} id="module" labelText="Module" />
-          <Checkbox onChange={this.onChange} id="notification" labelText="Notification" />
-          <Checkbox onChange={this.onChange} id="number-input" labelText="Number Input" />
-          <Checkbox onChange={this.onChange} id="overflow-menu" labelText="Overflow Menu" />
-          <Checkbox onChange={this.onChange} id="pagination" labelText="Pagination" />
+          <Checkbox
+            onChange={this.onChange}
+            id="notification"
+            labelText="Notification"
+          />
+          <Checkbox
+            onChange={this.onChange}
+            id="number-input"
+            labelText="Number Input"
+          />
+          <Checkbox
+            onChange={this.onChange}
+            id="overflow-menu"
+            labelText="Overflow Menu"
+          />
+          <Checkbox
+            onChange={this.onChange}
+            id="pagination"
+            labelText="Pagination"
+          />
           <Checkbox
             onChange={this.onChange}
             id="progress-indicator"
             labelText="Progress Indicator"
           />
-          <Checkbox onChange={this.onChange} id="radio-button" labelText="Radio Button" />
+          <Checkbox
+            onChange={this.onChange}
+            id="radio-button"
+            labelText="Radio Button"
+          />
           <Checkbox onChange={this.onChange} id="search" labelText="Search" />
           <Checkbox onChange={this.onChange} id="select" labelText="Select" />
           <Checkbox onChange={this.onChange} id="tabs" labelText="Tabs" />
           <Checkbox onChange={this.onChange} id="tag" labelText="Tag" />
-          <Checkbox onChange={this.onChange} id="textarea" labelText="Text Area" />
-          <Checkbox onChange={this.onChange} id="text-input" labelText="Text Input" />
+          <Checkbox
+            onChange={this.onChange}
+            id="textarea"
+            labelText="Text Area"
+          />
+          <Checkbox
+            onChange={this.onChange}
+            id="text-input"
+            labelText="Text Input"
+          />
           <Checkbox onChange={this.onChange} id="toggle" labelText="Toggle" />
           <Checkbox onChange={this.onChange} id="tooltip" labelText="Tooltip" />
         </section>

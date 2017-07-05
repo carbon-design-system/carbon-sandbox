@@ -7,7 +7,21 @@ export default class App extends Component {
   state = {
     isFiltering: false,
     checkedItems: [],
+    isNotSupported: false,
   };
+
+  componentDidMount = () => {
+    const isSafari =
+      /Safari/.test(navigator.userAgent) &&
+      /Apple Computer/.test(navigator.vendor);
+    const isIE = /*@cc_on!@*/ false || !!document.documentMode;
+    const isNotSupported = isSafari || isIE;
+
+    this.setState({
+      isNotSupported,
+    });
+  };
+
   onChildChanged = newState => {
     this.setState({
       checkedItems: newState,
@@ -16,15 +30,15 @@ export default class App extends Component {
   };
 
   render() {
+    const { isFiltering, checkedItems, isNotSupported } = this.state;
     return (
       <div className="container">
-        <Components
-          checkedItems={this.state.checkedItems}
-          isFiltering={this.state.isFiltering}
-        />
+        {isNotSupported ? <div className="banner">NOT SUPPORTED</div> : null}
+        <Components checkedItems={checkedItems} isFiltering={isFiltering} />
         <Sidebar
+          isNotSupported={isNotSupported}
           callbackParent={newState => this.onChildChanged(newState)}
-          isFiltering={this.state.isFiltering}
+          isFiltering={isFiltering}
         />
       </div>
     );

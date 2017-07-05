@@ -1,6 +1,4 @@
 .filter-container {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   border-top: 1px solid #dfe3e6;
 
@@ -42,9 +40,8 @@
 .filter-text {
   @include font-size('12');
   font-weight: 700;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
   background-color: #fff;
   border: none;
   padding: 0;
@@ -58,6 +55,7 @@
 }
 
 .filter-icon {
+  margin-left: auto;
   transition: transform $transition--base;
   fill: #3d70b2;
 
