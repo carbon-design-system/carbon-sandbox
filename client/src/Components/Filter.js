@@ -58,7 +58,7 @@ export default class Filter extends Component {
       >
         <section className="filter-heading">
           <button className="filter-text" onClick={this.handleToggle}>
-            FILTER
+            <span>FILTER</span>
             <svg
               className={
                 expanded ? 'filter-icon filter-icon--active' : 'filter-icon'

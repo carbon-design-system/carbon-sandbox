@@ -6286,10 +6286,6 @@ span.bx--date-picker__weekday {
   width: 100%; }
 
 .filter-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -ms-flex-pack: center;
   justify-content: center;
   border-top: 1px solid #dfe3e6; }
@@ -6319,12 +6315,10 @@ span.bx--date-picker__weekday {
 .filter-text {
   font-size: 0.75rem;
   font-weight: 700;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -ms-flex-align: center;
   align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   background-color: #fff;
   border: none;
   padding: 0;
@@ -6335,6 +6329,7 @@ span.bx--date-picker__weekday {
     outline: none; }
 
 .filter-icon {
+  margin-left: auto;
   transition: transform 250ms;
   fill: #3d70b2; }
   .filter-icon--active {
@@ -6391,6 +6386,7 @@ span.bx--date-picker__weekday {
 
 html, body, #app, .container {
   min-height: 100%;
+  height: 100%;
   width: 100%; }
 
 .container {

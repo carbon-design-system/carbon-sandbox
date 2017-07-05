@@ -38,6 +38,7 @@ export default class Sidebar extends Component {
 
   componentDidMount = () => {
     this.getNewStyles = debounce(this.getNewStyles, 25);
+    this.count = 0;
 
     let id = '';
     if (window.localStorage && window.localStorage.getItem('id')) {
@@ -65,10 +66,12 @@ export default class Sidebar extends Component {
     })
       .then(data => data.json())
       .then(data => {
+        this.count++;
         const link = document.createElement('link');
-        link.href = data.route;
+        link.href = `${data.route}?${this.count}`;
         link.type = 'text/css';
         link.rel = 'stylesheet';
+        link.id = this.count;
         document.getElementsByTagName('head')[0].appendChild(link);
         this.isLoading(false);
       });
