@@ -6392,3 +6392,21 @@ html, body, #app, .container {
 .container {
   display: -ms-flexbox;
   display: flex; }
+
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  width: 100%;
+  padding: 0 1rem;
+  height: 2.5rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EFC100; }
+  .banner p {
+    font-size: 0.875rem; }
+  .banner span {
+    font-weight: 700; }

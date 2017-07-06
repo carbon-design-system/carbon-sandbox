@@ -33,7 +33,14 @@ export default class App extends Component {
     const { isFiltering, checkedItems, isNotSupported } = this.state;
     return (
       <div className="container">
-        {isNotSupported ? <div className="banner">NOT SUPPORTED</div> : null}
+        {isNotSupported
+          ? <div className="banner">
+            <p>
+              <span>Attention: </span>
+                For the best experience, please view this site using Google Chrome or Mozilla Firefox
+              </p>
+          </div>
+          : null}
         <Components checkedItems={checkedItems} isFiltering={isFiltering} />
         <Sidebar
           isNotSupported={isNotSupported}
