@@ -144,6 +144,7 @@ export default class Sidebar extends Component {
         <header>
           <h1 className="sidebar__title">Carbon <span>Themes</span></h1>
           <Dropdown
+            id="theme-switcher"
             defaultText="Default"
             value="default"
             onChange={this.handleThemeChange}

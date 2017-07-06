@@ -55,6 +55,7 @@ export default class Filter extends Component {
             ? 'filter-container filter-container--active'
             : 'filter-container'
         }
+        aria-expanded={expanded}
       >
         <section className="filter-heading">
           <button className="filter-text" onClick={this.handleToggle}>
@@ -88,104 +89,209 @@ export default class Filter extends Component {
           }
         >
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="accordion"
             labelText="Accordion"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="breadcrumb"
             labelText="Breadcrumb"
           />
-          <Checkbox onChange={this.onChange} id="button" labelText="Button" />
-          <Checkbox onChange={this.onChange} id="card" labelText="Card" />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="button"
+            labelText="Button"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="card"
+            labelText="Card"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="checkbox"
             labelText="Checkbox"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="code-snippet"
             labelText="Code Snippet"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="content-switcher"
             labelText="Content Switcher"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="data-table"
             labelText="Data Table"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="date-picker"
+            labelText="Date Picker"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="dropdown"
             labelText="Dropdown"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="file-uploader"
             labelText="File Uploader"
           />
-          <Checkbox onChange={this.onChange} id="footer" labelText="Footer" />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="footer"
+            labelText="Footer"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="interior-left-nav"
             labelText="Interior Left Nav"
           />
-          <Checkbox onChange={this.onChange} id="link" labelText="Link" />
-          <Checkbox onChange={this.onChange} id="list" labelText="List" />
-          <Checkbox onChange={this.onChange} id="loading" labelText="Loading" />
-          <Checkbox onChange={this.onChange} id="modal" labelText="Modal" />
-          <Checkbox onChange={this.onChange} id="module" labelText="Module" />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="link"
+            labelText="Link"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="list"
+            labelText="List"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="loading"
+            labelText="Loading"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="modal"
+            labelText="Modal"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="module"
+            labelText="Module"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="notification"
             labelText="Notification"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="number-input"
             labelText="Number Input"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="overflow-menu"
             labelText="Overflow Menu"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="pagination"
             labelText="Pagination"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="progress-indicator"
             labelText="Progress Indicator"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="radio-button"
             labelText="Radio Button"
           />
-          <Checkbox onChange={this.onChange} id="search" labelText="Search" />
-          <Checkbox onChange={this.onChange} id="select" labelText="Select" />
-          <Checkbox onChange={this.onChange} id="tabs" labelText="Tabs" />
-          <Checkbox onChange={this.onChange} id="tag" labelText="Tag" />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="search"
+            labelText="Search"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="select"
+            labelText="Select"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="tabs"
+            labelText="Tabs"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="tag"
+            labelText="Tag"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="textarea"
             labelText="Text Area"
           />
           <Checkbox
+            tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="text-input"
             labelText="Text Input"
           />
-          <Checkbox onChange={this.onChange} id="toggle" labelText="Toggle" />
-          <Checkbox onChange={this.onChange} id="tooltip" labelText="Tooltip" />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="time-picker"
+            labelText="Time Picker"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="toggle"
+            labelText="Toggle"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="toolbar"
+            labelText="Toolbar"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="tooltip"
+            labelText="Tooltip"
+          />
         </section>
       </div>
     );
