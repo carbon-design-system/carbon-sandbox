@@ -16,8 +16,9 @@ export default class Variable extends PureComponent {
           pattern="^#([A-Fa-f0-9]{6})$"
           required
           value={hex}
+          id={name}
         />
-        <p className="variable__name">{name}</p>
+        <label htmlFor={name} className="variable__name">{name}</label>
         <p className="variable__hex">{hex}</p>
       </li>
     );

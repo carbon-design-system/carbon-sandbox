@@ -3,6 +3,7 @@ $css--reset: true;
 $css--font-face: true;
 
 @import '../../../node_modules/carbon-components/scss/globals/scss/styles';
+@import './overrides';
 @import './sidebar';
 @import './components';
 @import './filter';
@@ -16,4 +17,45 @@ html, body, #app, .container {
 
 .container {
   display: flex;
+}
+
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  width: 100%;
+  padding: 0 1rem;
+  height: rem(40px);
+  display: flex;
+  align-items: center;
+  background-color: #EFC100;
+
+  p {
+    @include font-size('14');
+  }
+
+  span {
+    font-weight: 700;
+  }
+}
+
+.skip-to-content {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0, 0, 0, 0);
+  border:0;
+  visibility: visible;
+  white-space: nowrap;
+
+  &:focus {
+    overflow: visible;
+    width: auto;
+    height: auto;
+    clip: initial;
+  }
 }

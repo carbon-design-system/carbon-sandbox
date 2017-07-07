@@ -6107,6 +6107,28 @@ span.bx--date-picker__weekday {
       transition: transform 250ms;
       transform-origin: center; }
 
+.components .component__container .bx--radio-button__appearance {
+  min-width: 1.125rem; }
+
+.components .component__container .bx--modal {
+  z-index: 10001; }
+
+.components .component__container .bx--interior-left-nav {
+  top: 0;
+  position: relative;
+  min-height: 400px; }
+  .components .component__container .bx--interior-left-nav .bx--interior-left-nav-collapse {
+    margin-bottom: 0; }
+
+.components .component__container .bx--footer {
+  position: relative; }
+
+.components .component__container .bx--module--double {
+  width: 100%; }
+
+.components .component__container .bx--toolbar div:nth-of-type(2) .bx--overflow-menu__icon {
+  padding: 0; }
+
 .sidebar {
   position: fixed;
   right: 0;
@@ -6218,6 +6240,7 @@ span.bx--date-picker__weekday {
       cursor: pointer; }
   .variable .variable__name {
     font-size: 0.75rem;
+    line-height: 1.5;
     font-weight: 700;
     padding-left: 0.125rem; }
   .variable .variable__hex {
@@ -6267,20 +6290,6 @@ span.bx--date-picker__weekday {
     margin: 1rem; }
   #app .component__container--hidden {
     display: none; }
-  #app .component__container .bx--radio-button__appearance {
-    min-width: 1.125rem; }
-  #app .component__container .bx--modal {
-    z-index: 10001; }
-  #app .component__container .bx--interior-left-nav {
-    top: 0;
-    position: relative;
-    min-height: 400px; }
-    #app .component__container .bx--interior-left-nav .bx--interior-left-nav-collapse {
-      margin-bottom: 0; }
-  #app .component__container .bx--footer {
-    position: relative; }
-  #app .component__container .bx--module--double {
-    width: 100%; }
 
 #app .dropdown > div {
   width: 100%; }
@@ -6325,8 +6334,6 @@ span.bx--date-picker__weekday {
   width: 100%;
   height: 20px;
   cursor: pointer; }
-  .filter-text:focus {
-    outline: none; }
 
 .filter-icon {
   margin-left: auto;
@@ -6392,3 +6399,38 @@ html, body, #app, .container {
 .container {
   display: -ms-flexbox;
   display: flex; }
+
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  width: 100%;
+  padding: 0 1rem;
+  height: 2.5rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #EFC100; }
+  .banner p {
+    font-size: 0.875rem; }
+  .banner span {
+    font-weight: 700; }
+
+.skip-to-content {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  visibility: visible;
+  white-space: nowrap; }
+  .skip-to-content:focus {
+    overflow: visible;
+    width: auto;
+    height: auto;
+    clip: initial; }

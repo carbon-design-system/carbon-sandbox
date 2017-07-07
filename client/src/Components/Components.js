@@ -11,6 +11,8 @@ import {
   Checkbox,
   CodeSnippet,
   ContentSwitcher,
+  DatePicker,
+  DatePickerInput,
   Dropdown,
   DropdownItem,
   Footer,
@@ -51,6 +53,8 @@ import {
   Tag,
   TextArea,
   TextInput,
+  TimePicker,
+  TimePickerSelect,
   Toolbar,
   ToolbarItem,
   ToolbarTitle,
@@ -299,6 +303,29 @@ export default class Components extends Component {
               </TableRow>
             </TableBody>
           </Table>
+        </div>
+
+        <div
+          className={
+            checkedItems.includes('date-picker') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }
+        >
+          <DatePicker id="date-picker-demo" datePickerType="range">
+            <DatePickerInput
+              className="some-class"
+              labelText="Select a date"
+              placeholder="mm/dd/yyyy"
+              id="date-picker-input-id"
+            />
+            <DatePickerInput
+              className="some-class"
+              labelText="Select a date"
+              placeholder="mm/dd/yyyy"
+              id="date-picker-id-2"
+            />
+          </DatePicker>
         </div>
 
         <div
@@ -778,7 +805,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          <TextArea labelText="Text Area" />
+          <TextArea id="text-area-demo-1" labelText="Text Area" />
         </div>
 
         <div
@@ -797,12 +824,92 @@ export default class Components extends Component {
 
         <div
           className={
+            checkedItems.includes('time-picker') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }
+        >
+          <TimePicker>
+            <TimePickerSelect>
+              <SelectItem value="AM" text="AM" />
+              <SelectItem value="PM" text="PM" />
+            </TimePickerSelect>
+            <TimePickerSelect>
+              <SelectItem value="Timezone 1" text="Timezone 1" />
+              <SelectItem value="Timezone 2" text="Timezone 2" />
+            </TimePickerSelect>
+          </TimePicker>
+        </div>
+
+        <div
+          className={
             checkedItems.includes('toggle') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
           }
         >
           <Toggle id="toggle-demo" />
+        </div>
+
+        <div
+          className={
+            checkedItems.includes('toolbar') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }
+        >
+          <Toolbar className="some-class">
+            <ToolbarItem type="search" placeHolderText="Search" />
+            <ToolbarItem>
+              <OverflowMenu iconName="filter">
+                <ToolbarTitle title="FILTER BY" />
+                <ToolbarOption>
+                  <Checkbox
+                    className="some-class"
+                    id="opt-1"
+                    labelText="Filter option 1"
+                  />
+                </ToolbarOption>
+                <ToolbarOption>
+                  <Checkbox
+                    className="some-class"
+                    id="opt-2"
+                    labelText="Filter option 2"
+                  />
+                </ToolbarOption>
+                <ToolbarOption>
+                  <Checkbox
+                    className="some-class"
+                    id="opt-3"
+                    labelText="Filter option 3"
+                  />
+                </ToolbarOption>
+              </OverflowMenu>
+            </ToolbarItem>
+            <ToolbarItem>
+              <OverflowMenu>
+                <OverflowMenuItem itemText="Refresh table" />
+                <ToolbarDivider />
+                <ToolbarTitle title="ROW HEIGHT" />
+                <ToolbarOption>
+                  <RadioButton
+                    value="short"
+                    id="radio-demo-1"
+                    name="toolbar-radio"
+                    labelText="Short"
+                  />
+                </ToolbarOption>
+                <ToolbarOption>
+                  <RadioButton
+                    value="tall"
+                    id="radio-demo-2"
+                    name="toolbar-radio"
+                    labelText="Tall"
+                  />
+                </ToolbarOption>
+              </OverflowMenu>
+            </ToolbarItem>
+          </Toolbar>
         </div>
 
         <div

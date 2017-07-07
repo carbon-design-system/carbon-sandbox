@@ -29,11 +29,33 @@ export default class App extends Component {
     });
   };
 
+  handleSkip = evt => {
+    if (evt.which === 13) {
+      document.activeElement.blur();
+      document.querySelector('#theme-switcher').focus();
+    }
+  };
+
   render() {
     const { isFiltering, checkedItems, isNotSupported } = this.state;
     return (
       <div className="container">
-        {isNotSupported ? <div className="banner">NOT SUPPORTED</div> : null}
+        <a
+          className="skip-to-content"
+          onKeyPress={this.handleSkip}
+          tabIndex={0}
+          role="button"
+        >
+          Skip to main content
+        </a>
+        {isNotSupported
+          ? <div className="banner">
+            <p>
+              <span>Attention: </span>
+                For the best experience, please view this site using Google Chrome or Mozilla Firefox
+              </p>
+          </div>
+          : null}
         <Components checkedItems={checkedItems} isFiltering={isFiltering} />
         <Sidebar
           isNotSupported={isNotSupported}
