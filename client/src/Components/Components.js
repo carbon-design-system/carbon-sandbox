@@ -125,27 +125,27 @@ export default class Components extends Component {
           }
         >
           <Button>
-            Primary Button
+            Primary button
           </Button>
           <Button kind="secondary">
-            Secondary Button
+            Secondary button
           </Button>
           <Button small>
-            Small Button
+            Small button
           </Button>
           <Button disabled>Disabled</Button>
           <Button icon="search--glyph" iconDescription="Search">
-            With an Icon
+            With an icon
           </Button>
           <Button
             kind="secondary"
             icon="search--glyph"
             iconDescription="Search"
           >
-            With an Icon
+            With an icon
           </Button>
           <Button kind="danger" className="some-class">
-            Danger Button
+            Danger button
           </Button>
         </div>
 
