@@ -1257,9 +1257,9 @@ caniuse-lite@^1.0.30000684:
   version "1.0.30000696"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000696.tgz#30f2695d2a01a0dfd779a26ab83f4d134b3da5cc"
 
-carbon-components-react@^3.4.4:
-  version "3.4.4"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-3.4.4.tgz#8bdb7fc9fd4aecacaa2848689f0a1a5f612fe926"
+carbon-components-react@^3.4.6:
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-3.4.6.tgz#4bb5287ade626362332ed8312abbb4854568c7b6"
   dependencies:
     classnames "2.2.5"
     flatpickr "^3.0.5-1"
