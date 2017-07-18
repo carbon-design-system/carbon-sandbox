@@ -28,4 +28,10 @@
     .bx--toolbar div:nth-of-type(2) .bx--overflow-menu__icon {
       padding: 0;
     }
+
+    &.date-picker {
+      .bx--form-item {
+        flex: 0;
+      }
+    }
 }
