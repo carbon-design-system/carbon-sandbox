@@ -247,6 +247,12 @@ export default class Filter extends Component {
           <Checkbox
             tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
+            id="structured-list"
+            labelText="Structured List"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
             id="tabs"
             labelText="Tabs"
           />
