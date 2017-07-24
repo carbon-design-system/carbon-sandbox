@@ -158,8 +158,8 @@ export default class Components extends Component {
         <div
           className={
             checkedItems.includes('card') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
+              ? 'component__container component__container--card'
+              : 'component__container component__container--card component__container--hidden'
           }
         >
           <Card>
@@ -367,8 +367,8 @@ export default class Components extends Component {
         <div
           className={
             checkedItems.includes('footer') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
+              ? 'component__container component__container--footer'
+              : 'component__container component__container--footer component__container--hidden'
           }
         >
           <Footer />
@@ -570,6 +570,15 @@ export default class Components extends Component {
               </p>
             </ModuleBody>
           </Module>
+
+          <Module className="module-example" size="single">
+            <ModuleBody>
+              <h2>Plain Card</h2>
+              <p>
+                This is a plain card which is used as a container to house other elements, such as a button, overflow menu, and links
+              </p>
+            </ModuleBody>
+          </Module>
         </div>
 
         <div
@@ -733,8 +742,8 @@ export default class Components extends Component {
         <div
           className={
             checkedItems.includes('search') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
+              ? 'component__container component__container--search'
+              : 'component__container component__container--search component__container--hidden'
           }
         >
           <Search
@@ -776,18 +785,57 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
+          <StructuredListWrapper>
+            <StructuredListHead>
+              <StructuredListRow head>
+                <StructuredListCell head>
+                  Service
+                </StructuredListCell>
+                <StructuredListCell head>
+                  Type
+                </StructuredListCell>
+                <StructuredListCell head>
+                  Description
+                </StructuredListCell>
+              </StructuredListRow>
+            </StructuredListHead>
+            <StructuredListBody>
+              <StructuredListRow>
+                <StructuredListCell noWrap>
+                  Apache Spark
+                </StructuredListCell>
+                <StructuredListCell>
+                  IBM
+                </StructuredListCell>
+                <StructuredListCell>
+                  Apache Spark is an open source cluster computing framework optimized for extremely fast and large scale data processing, which you can access via the newly integrated notebook interface IBM Analytics for Apache Spark.
+                </StructuredListCell>
+              </StructuredListRow>
+              <StructuredListRow>
+                <StructuredListCell noWrap>
+                  Cloudant
+                </StructuredListCell>
+                <StructuredListCell>
+                  IBM
+                </StructuredListCell>
+                <StructuredListCell>
+                  Cloudant NoSQL DB is a fully managed data layer designed for modern web and mobile applications that leverages a flexible JSON schema.
+                </StructuredListCell>
+              </StructuredListRow>
+            </StructuredListBody>
+          </StructuredListWrapper>
           <StructuredListWrapper selection border>
             <StructuredListHead>
               <StructuredListRow head>
                 <StructuredListCell head />
                 <StructuredListCell head>
-                  service
+                  Service
                 </StructuredListCell>
                 <StructuredListCell head>
-                  type
+                  Type
                 </StructuredListCell>
                 <StructuredListCell head>
-                  description
+                  Description
                 </StructuredListCell>
               </StructuredListRow>
             </StructuredListHead>
@@ -875,9 +923,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }
         >
-          {types.map(type => (
-            <Tag key={type} className="some-class" type={type} />
-          ))}
+          <Tag key="ibm" className="some-class" type="ibm" />
         </div>
 
         <div
@@ -926,8 +972,8 @@ export default class Components extends Component {
         <div
           className={
             checkedItems.includes('toggle') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
+              ? 'component__container component__container--toggle'
+              : 'component__container component__container--toggle component__container--hidden'
           }
         >
           <Toggle id="toggle-demo" />

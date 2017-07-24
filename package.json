@@ -13,15 +13,15 @@
     "start": "NODE_ENV=production node app.js"
   },
   "engines": {
-    "node": "6.10.3"
+    "node": "6.11.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "babel-preset-react": "^6.23.0",
     "body-parser": "^1.17.1",
     "browser-sync": "^2.18.8",
-    "carbon-components": "^7.15.2",
-    "carbon-components-react": "^3.5.4",
+    "carbon-components": "^7.17.0",
+    "carbon-components-react": "^3.5.8",
     "carbon-themes": "^1.4.1",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
