@@ -110,10 +110,14 @@ export default class Sidebar extends Component {
   };
 
   handleThemeChange = theme => {
-    // Hide notifications on Watson theme (for now)
+    // Hide some components on Watson theme (for now)
     const notifications = document.querySelector(
       '.component__container--notification'
     );
+    const footer = document.querySelector('.component__container--footer');
+    const search = document.querySelector('.component__container--search');
+    const card = document.querySelector('.component__container--card');
+    const toggle = document.querySelector('.component__container--toggle');
 
     if (theme.value === 'default') {
       this.setState(carbon);
@@ -121,6 +125,10 @@ export default class Sidebar extends Component {
       this.setState(darkui);
     } else if (theme.value === 'watson') {
       notifications.classList.add('component__container--hidden');
+      footer.classList.add('component__container--hidden');
+      search.classList.add('component__container--hidden');
+      card.classList.add('component__container--hidden');
+      toggle.classList.add('component__container--hidden');
       this.setState(watson);
     } else if (theme.value === 'genesis') {
       this.setState(genesis);

@@ -6234,6 +6234,10 @@ span.bx--date-picker__weekday {
   -ms-flex: 0;
   flex: 0; }
 
+.module-example h2 {
+  font-weight: 300;
+  margin-bottom: 1rem; }
+
 .sidebar {
   position: fixed;
   right: 0;
