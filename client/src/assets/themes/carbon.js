@@ -41,5 +41,6 @@ module.exports = {
  'modal-border-top': '$brand-01 4px solid',
  'modal-footer-background-color': '$ui-03',
  'radio-border-width': '2px',
+ 'structured-list-padding': '2rem',
  'structured-list-text-transform': 'uppercase', 
  };

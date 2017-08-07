@@ -104,48 +104,73 @@ body {
   background-color: #f5f7fa;
   line-height: 1; }
 
-h1 {
-  font-size: 2rem;
+.bx--type-giga {
+  font-size: 4.625rem;
   line-height: 1.25;
-  letter-spacing: .5px; }
+  font-weight: 300; }
 
-h2 {
-  font-size: 1.625rem;
+.bx--type-mega {
+  font-size: 3.25rem;
   line-height: 1.25;
-  letter-spacing: .5px; }
+  font-weight: 300; }
 
-h3 {
-  font-size: 1.25rem;
+.bx--type-omega {
+  font-size: 0.75rem;
   line-height: 1.25;
-  letter-spacing: .5px; }
+  letter-spacing: .5px;
+  font-weight: 700;
+  text-transform: uppercase; }
 
-h4 {
-  font-size: 1.125rem;
-  line-height: 1.25; }
+.bx--type-caption {
+  font-size: 0.75rem;
+  line-height: 1.5; }
 
-h5 {
-  font-size: 1rem;
-  line-height: 1.25; }
+.bx--type-legal {
+  font-size: 0.6875rem;
+  line-height: 1.5; }
 
-h6 {
-  font-size: 0.875rem;
-  line-height: 1.25; }
+.bx--type-caps {
+  text-transform: uppercase; }
+
+strong, .bx--type-strong {
+  font-weight: 700; }
 
 p {
   font-size: 1rem;
   line-height: 1.5; }
-
-strong {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  letter-spacing: .5px;
-  font-weight: 700; }
 
 em {
   font-style: italic; }
 
 a {
   color: #3d70b2; }
+
+h1, .bx--type-alpha {
+  font-size: 2rem;
+  line-height: 1.25;
+  letter-spacing: .5px; }
+
+h2, .bx--type-beta {
+  font-size: 1.625rem;
+  line-height: 1.25;
+  letter-spacing: .5px; }
+
+h3, .bx--type-gamma {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: .5px; }
+
+h4, .bx--type-delta {
+  font-size: 1.125rem;
+  line-height: 1.25; }
+
+h5, .bx--type-epsilon {
+  font-size: 1rem;
+  line-height: 1.25; }
+
+h6, .bx--type-zeta {
+  font-size: 0.875rem;
+  line-height: 1.25; }
 
 .bx--grid {
   margin-left: 3%;
@@ -537,6 +562,8 @@ button.bx--btn .bx--btn__icon {
     fill: #3d70b2; }
   .bx--btn--secondary:hover, .bx--btn--secondary:focus {
     color: #fff; }
+  .bx--btn--secondary:active {
+    color: #3d70b2; }
   .bx--btn--secondary:hover > .bx--btn__icon,
   .bx--btn--secondary:focus > .bx--btn__icon {
     fill: #fff; }
@@ -5658,7 +5685,9 @@ span.bx--date-picker__weekday {
   .bx--accordion__item:focus {
     outline: none; }
     .bx--accordion__item:focus .bx--accordion__arrow {
-      outline: 1px solid #3d70b2; }
+      outline: 1px solid #3d70b2;
+      overflow: visible;
+      outline-offset: -.5px; }
   .bx--accordion__item:last-child {
     border-bottom: 1px solid #dfe3e6; }
 
@@ -6229,6 +6258,15 @@ span.bx--date-picker__weekday {
 
 .components .component__container .bx--toolbar div:nth-of-type(2) .bx--overflow-menu__icon {
   padding: 0; }
+
+.components .component__container .bx--structured-list {
+  border-collapse: separate; }
+  .components .component__container .bx--structured-list-row {
+    border-bottom: none;
+    box-shadow: 0 1px 0 0 #dfe3e6; }
+  .components .component__container .bx--structured-list-row--header-row {
+    border-bottom: none;
+    box-shadow: 0 2px 0 0 #3d70b2; }
 
 .components .component__container.date-picker .bx--form-item {
   -ms-flex: 0;

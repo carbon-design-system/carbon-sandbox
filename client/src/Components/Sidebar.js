@@ -119,17 +119,25 @@ export default class Sidebar extends Component {
     const card = document.querySelector('.component__container--card');
     const toggle = document.querySelector('.component__container--toggle');
 
+    if (!this.props.isFiltering) {
+      notifications.classList.remove('component__container--hidden');
+      footer.classList.remove('component__container--hidden');
+      search.classList.remove('component__container--hidden');
+      card.classList.remove('component__container--hidden');
+      toggle.classList.remove('component__container--hidden');
+    }
+
     if (theme.value === 'default') {
       this.setState(carbon);
     } else if (theme.value === 'darkui' || theme.value === 'dark') {
       this.setState(darkui);
     } else if (theme.value === 'watson') {
+      this.setState(watson);
       notifications.classList.add('component__container--hidden');
       footer.classList.add('component__container--hidden');
       search.classList.add('component__container--hidden');
       card.classList.add('component__container--hidden');
       toggle.classList.add('component__container--hidden');
-      this.setState(watson);
     } else if (theme.value === 'genesis') {
       this.setState(genesis);
     }
