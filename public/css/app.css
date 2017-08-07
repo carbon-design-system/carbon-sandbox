@@ -1546,7 +1546,7 @@ select[data-invalid] {
   min-width: 500px;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 2px solid #dfe3e6; }
+  border: 1px double #dfe3e6; }
   .bx--responsive-table td {
     font-size: 0.875rem;
     padding: 0 0.375rem;
@@ -1568,7 +1568,7 @@ select[data-invalid] {
   .bx--responsive-table--static-size {
     border-collapse: collapse;
     width: auto;
-    border: 2px solid #dfe3e6; }
+    border: 1px double #dfe3e6; }
     .bx--responsive-table--static-size tr td:first-child, .bx--responsive-table--static-size tr th:first-child {
       padding-left: 1.5rem; }
 
@@ -1581,7 +1581,8 @@ select[data-invalid] {
   padding-left: 1rem; }
 
 .bx--table-head .bx--table-row {
-  border-bottom: 1px solid #3d70b2; }
+  border-bottom: 1px solid #3d70b2;
+  height: 2rem; }
 
 .bx--table-header {
   font-weight: 700;
@@ -1603,11 +1604,9 @@ select[data-invalid] {
 .bx--table-body .bx--table-row {
   border: 1px solid transparent; }
   .bx--table-body .bx--table-row:first-child:hover, .bx--table-body .bx--table-row:first-child:focus {
-    border-left: 2px solid #5596e6;
-    outline: 1px solid #5596e6; }
+    border: 1px double #5596e6; }
   .bx--table-body .bx--table-row:not(:first-child):hover, .bx--table-body .bx--table-row:not(:first-child):focus {
-    border-left: 2px solid #5596e6;
-    outline: 1px solid #5596e6; }
+    border: 1px double #5596e6; }
 
 .bx--expandable-row > td {
   border-left: 4px solid #3d70b2;
@@ -1843,9 +1842,9 @@ select[data-invalid] {
     fill: #5596e6; }
 
 .bx--snippet--terminal .bx--snippet__icon {
-  fill: #5596e6; }
+  fill: #fff; }
   .bx--snippet--terminal .bx--snippet__icon:hover {
-    fill: #3d70b2; }
+    fill: #5596e6; }
 
 .bx--snippet-button {
   position: absolute;
@@ -5755,7 +5754,7 @@ span.bx--date-picker__weekday {
 
 .bx--progress-line {
   position: absolute;
-  top: .625rem;
+  top: 0.625rem;
   right: 100%;
   height: 1px;
   width: calc(100% - 24px);
@@ -5880,7 +5879,8 @@ span.bx--date-picker__weekday {
     outline: 1px solid #3d70b2; }
 
 .bx--toolbar-filter-icon {
-  width: 1.2rem; }
+  padding-left: 0;
+  padding-right: 0; }
 
 .bx--toolbar-menu__title {
   font-size: 0.75rem;

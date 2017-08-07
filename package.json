@@ -13,7 +13,7 @@
     "start": "NODE_ENV=production node app.js"
   },
   "engines": {
-    "node": "6.11.0"
+    "node": "7.10.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
@@ -22,7 +22,7 @@
     "browser-sync": "^2.18.8",
     "carbon-components": "^7.17.0",
     "carbon-components-react": "^3.8.10",
-    "carbon-themes": "^1.5.0",
+    "carbon-themes": "^1.5.1",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "express": "^4.15.2",

@@ -1268,9 +1268,9 @@ carbon-components-react@^3.8.10:
     warning "3.0.0"
     window-or-global "^1.0.1"
 
-carbon-components@^7.17.0:
-  version "7.17.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-7.17.0.tgz#d91546fe096a07a0f53477814d17256508c76315"
+carbon-components@^7.18.0:
+  version "7.18.0"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-7.18.0.tgz#558e87a261b13d451b67e42e8fe054bd20458ecf"
   dependencies:
     carbon-icons "^6.0.4"
     flatpickr "2.6.3"
@@ -1280,9 +1280,9 @@ carbon-icons@^6.0.4:
   version "6.0.6"
   resolved "https://registry.yarnpkg.com/carbon-icons/-/carbon-icons-6.0.6.tgz#63e72520e7f1c0fe2c3da716dd36cd84ef90cb9c"
 
-carbon-themes@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/carbon-themes/-/carbon-themes-1.5.0.tgz#8d2ed7b261360bbb735ec54b6c4c6be211a53b3a"
+carbon-themes@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/carbon-themes/-/carbon-themes-1.5.1.tgz#3aae4246cdf01b0cf9c73973c4c06419dbbdf8f4"
 
 caseless@~0.11.0:
   version "0.11.0"
