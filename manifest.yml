@@ -1,5 +1,8 @@
 ---
 applications:
-- name: carbon-sandbox-tj
+- name: carbon-sandbox
   memory: 1G
   buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
+  routes:
+   - route: carbon-sandbox.mybluemix.net
+   - route: themes.carbondesignsystem.com
