@@ -733,6 +733,12 @@ babel-plugin-transform-flow-strip-types@^6.22.0:
     babel-plugin-syntax-flow "^6.18.0"
     babel-runtime "^6.22.0"
 
+babel-plugin-transform-object-assign@^6.22.0:
+  version "6.22.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-assign/-/babel-plugin-transform-object-assign-6.22.0.tgz#f99d2f66f1a0b0d498e346c5359684740caa20ba"
+  dependencies:
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-object-rest-spread@^6.22.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-object-rest-spread/-/babel-plugin-transform-object-rest-spread-6.23.0.tgz#875d6bc9be761c58a2ae3feee5dc4895d8c7f921"
@@ -1257,32 +1263,43 @@ caniuse-lite@^1.0.30000684:
   version "1.0.30000696"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000696.tgz#30f2695d2a01a0dfd779a26ab83f4d134b3da5cc"
 
-carbon-components-react@^3.8.10:
-  version "3.8.10"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-3.8.10.tgz#a92f1f6b4d559711478d2ef167fa619951c2e291"
+carbon-components-react@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-5.4.0.tgz#abc2947e678bd74405c8ef63abb84946cbad40ed"
   dependencies:
     classnames "2.2.5"
-    flatpickr "^3.0.6"
+    flatpickr "4.2.0"
     lodash.debounce "^4.0.8"
-    react-addons-css-transition-group "^15.4.2"
+    lodash.isequal "^4.5.0"
     warning "3.0.0"
     window-or-global "^1.0.1"
 
-carbon-components@^7.18.1:
-  version "7.18.1"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-7.18.1.tgz#d79af8d729d6939a790ed7d90af04fe7c290dd3e"
+carbon-components@^7.26.2:
+  version "7.26.10"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-7.26.10.tgz#b65c226a08760a8d7db003a174f9bb69fba349a0"
   dependencies:
     carbon-icons "^6.0.4"
     flatpickr "2.6.3"
     lodash.debounce "^4.0.8"
 
+carbon-components@^8.0.0:
+  version "8.1.19"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-8.1.19.tgz#0e0a2b0a78719eaa08a3d45e30e056f03f11a55b"
+  dependencies:
+    carbon-icons "^6.0.4"
+    flatpickr "2.6.3"
+    lodash.debounce "^4.0.8"
+    warning "^3.0.0"
+
 carbon-icons@^6.0.4:
   version "6.0.6"
   resolved "https://registry.yarnpkg.com/carbon-icons/-/carbon-icons-6.0.6.tgz#63e72520e7f1c0fe2c3da716dd36cd84ef90cb9c"
 
-carbon-themes@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/carbon-themes/-/carbon-themes-1.5.1.tgz#3aae4246cdf01b0cf9c73973c4c06419dbbdf8f4"
+carbon-themes@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/carbon-themes/-/carbon-themes-1.6.0.tgz#39fc7cb7629aa4a789daf47e87f6fc7209031b81"
+  dependencies:
+    carbon-components "^7.26.2"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -1298,10 +1315,6 @@ center-align@^0.1.1:
   dependencies:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
-
-chain-function@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/chain-function/-/chain-function-1.0.0.tgz#0d4ab37e7e18ead0bdc47b920764118ce58733dc"
 
 chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
@@ -1763,10 +1776,6 @@ doctrine@^2.0.0:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
-dom-helpers@^3.2.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.2.1.tgz#3203e07fed217bd1f424b019735582fc37b2825a"
-
 dom-walk@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.1.tgz#672226dc74c8f799ad35307df936aba11acd6018"
@@ -1978,7 +1987,7 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint@^3.19.0:
+eslint@^3.15.0:
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-3.19.0.tgz#c8fc6201c7f40dd08941b87c085767386a679acc"
   dependencies:
@@ -2323,9 +2332,9 @@ flatpickr@2.6.3:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-2.6.3.tgz#457357532deb135f3da64b425bf4435737961564"
 
-flatpickr@^3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-3.0.6.tgz#81540f1a0f010fa3b96d929943b6396bbb25b1b6"
+flatpickr@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.2.0.tgz#9466c64873b92008e5a2c66ffaae33a609fd230d"
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -3402,6 +3411,10 @@ lodash.isarray@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
 
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+
 lodash.isfinite@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/lodash.isfinite/-/lodash.isfinite-3.3.2.tgz#fb89b65a9a80281833f0b7478b3a5104f898ebb3"
@@ -4213,7 +4226,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6:
+prop-types@^15.5.10, prop-types@^15.5.4:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -4323,12 +4336,6 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-addons-css-transition-group@^15.4.2:
-  version "15.6.0"
-  resolved "https://registry.yarnpkg.com/react-addons-css-transition-group/-/react-addons-css-transition-group-15.6.0.tgz#69887cf6e4874d25cd66e22a699e29f0d648aba0"
-  dependencies:
-    react-transition-group "^1.2.0"
-
 react-deep-force-update@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-2.0.1.tgz#4f7f6c12c3e7de42f345992a3c518236fa1ecad3"
@@ -4378,16 +4385,6 @@ react-router@^4.1.1:
     loose-envify "^1.3.1"
     path-to-regexp "^1.5.3"
     prop-types "^15.5.4"
-    warning "^3.0.0"
-
-react-transition-group@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-1.2.0.tgz#b51fc921b0c3835a7ef7c571c79fc82c73e9204f"
-  dependencies:
-    chain-function "^1.0.0"
-    dom-helpers "^3.2.0"
-    loose-envify "^1.3.1"
-    prop-types "^15.5.6"
     warning "^3.0.0"
 
 react@^15.4.2:

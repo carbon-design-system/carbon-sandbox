@@ -15,6 +15,7 @@ import {
   DatePickerInput,
   Dropdown,
   DropdownItem,
+  FileUploader,
   Footer,
   FormGroup,
   Icon,
@@ -41,6 +42,8 @@ import {
   Search,
   Select,
   SelectItem,
+  SelectItemGroup,
+  Slider,
   StructuredListWrapper,
   StructuredListHead,
   StructuredListBody,
@@ -70,10 +73,6 @@ import {
   TooltipSimple,
   UnorderedList,
 } from 'carbon-components-react';
-import { types } from 'carbon-components-react/es/components/Tag'; // bug with export
-import FileUploader from 'carbon-components-react/es/components/FileUploader'; // bug with export
-import SelectItemGroup
-  from 'carbon-components-react/es/components/SelectItemGroup'; // bug with export
 
 export default class Components extends Component {
   render() {
@@ -85,25 +84,22 @@ export default class Components extends Component {
             checkedItems.includes('accordion') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Accordion>
             <AccordionItem title="Label">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
               </p>
             </AccordionItem>
             <AccordionItem title="Label with multiple words">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat.
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
               </p>
             </AccordionItem>
           </Accordion>
@@ -114,8 +110,7 @@ export default class Components extends Component {
             checkedItems.includes('breadcrumb') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Breadcrumb>
             <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
@@ -128,17 +123,10 @@ export default class Components extends Component {
             checkedItems.includes('button') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
-          <Button>
-            Primary button
-          </Button>
-          <Button kind="secondary">
-            Secondary button
-          </Button>
-          <Button small>
-            Small button
-          </Button>
+          }>
+          <Button>Primary button</Button>
+          <Button kind="secondary">Secondary button</Button>
+          <Button small>Small button</Button>
           <Button disabled>Disabled</Button>
           <Button icon="search--glyph" iconDescription="Search">
             With an icon
@@ -146,8 +134,7 @@ export default class Components extends Component {
           <Button
             kind="secondary"
             icon="search--glyph"
-            iconDescription="Search"
-          >
+            iconDescription="Search">
             With an icon
           </Button>
           <Button kind="danger" className="some-class">
@@ -160,8 +147,7 @@ export default class Components extends Component {
             checkedItems.includes('card') || !isFiltering
               ? 'component__container component__container--card'
               : 'component__container component__container--card component__container--hidden'
-          }
-        >
+          }>
           <Card>
             <CardContent
               cardTitle="Card Name"
@@ -169,8 +155,12 @@ export default class Components extends Component {
               cardInfo={['Secondary Information']}
             />
             <CardFooter>
-              <Button small kind="primary">View credentials</Button>
-              <Link href="#" className="bx--card-footer__link">Link</Link>
+              <Button small kind="primary">
+                View credentials
+              </Button>
+              <Link href="#" className="bx--card-footer__link">
+                Link
+              </Link>
             </CardFooter>
           </Card>
         </div>
@@ -180,8 +170,7 @@ export default class Components extends Component {
             checkedItems.includes('checkbox') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <fieldset className="bx--fieldset">
             <legend className="bx--label">Favorite Colors</legend>
             <Checkbox defaultChecked id="red" labelText="Red" />
@@ -194,8 +183,7 @@ export default class Components extends Component {
             checkedItems.includes('code-snippet') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <CodeSnippet type="terminal">
             {
               'node -v Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, veritatis voluptate id incidunt molestiae officia possimus, quasi itaque alias, architecto hic, dicta fugit? Debitis delectus quidem explicabo vitae fuga laboriosam!'
@@ -229,12 +217,10 @@ export default class Components extends Component {
             checkedItems.includes('content-switcher') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <ContentSwitcher
             selectedIndex={1}
-            onChange={() => console.log('change')}
-          >
+            onChange={() => console.log('change')}>
             <Switch kind="anchor" name="one" text="First section" />
             <Switch kind="anchor" name="two" text="Second section" />
             <Switch kind="anchor" name="three" text="Third section" />
@@ -246,66 +232,35 @@ export default class Components extends Component {
             checkedItems.includes('data-table') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Table>
             <TableHead>
               <TableRow header>
-                <TableHeader>
-                  First Name
-                </TableHeader>
-                <TableHeader>
-                  Last Name
-                </TableHeader>
-                <TableHeader>
-                  House
-                </TableHeader>
+                <TableHeader>First Name</TableHeader>
+                <TableHeader>Last Name</TableHeader>
+                <TableHeader>House</TableHeader>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableData>
-                  Harry
-                </TableData>
-                <TableData>
-                  Potter
-                </TableData>
-                <TableData>
-                  Gryffindor
-                </TableData>
+                <TableData>Harry</TableData>
+                <TableData>Potter</TableData>
+                <TableData>Gryffindor</TableData>
               </TableRow>
               <TableRow>
-                <TableData>
-                  Hermoine
-                </TableData>
-                <TableData>
-                  Granger
-                </TableData>
-                <TableData>
-                  Gryffindor
-                </TableData>
+                <TableData>Hermoine</TableData>
+                <TableData>Granger</TableData>
+                <TableData>Gryffindor</TableData>
               </TableRow>
               <TableRow>
-                <TableData>
-                  Blaise
-                </TableData>
-                <TableData>
-                  Zambini
-                </TableData>
-                <TableData>
-                  Slytherin
-                </TableData>
+                <TableData>Blaise</TableData>
+                <TableData>Zambini</TableData>
+                <TableData>Slytherin</TableData>
               </TableRow>
               <TableRow>
-                <TableData>
-                  Jon
-                </TableData>
-                <TableData>
-                  Snow
-                </TableData>
-                <TableData>
-                  Stark
-                </TableData>
+                <TableData>Jon</TableData>
+                <TableData>Snow</TableData>
+                <TableData>Stark</TableData>
               </TableRow>
             </TableBody>
           </Table>
@@ -316,8 +271,7 @@ export default class Components extends Component {
             checkedItems.includes('date-picker') || !isFiltering
               ? 'component__container date-picker'
               : 'component__container component__container--hidden date-picker'
-          }
-        >
+          }>
           <DatePicker id="date-picker-demo" datePickerType="range">
             <DatePickerInput
               className="some-class"
@@ -339,8 +293,7 @@ export default class Components extends Component {
             checkedItems.includes('dropdown') || !isFiltering
               ? 'component__container dropdown'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Dropdown defaultText="Choose something..">
             <DropdownItem itemText="All" value="all" />
             <DropdownItem itemText="Cloud Foundry API" value="cloudFoundry" />
@@ -355,12 +308,14 @@ export default class Components extends Component {
             checkedItems.includes('file-uploader') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <FileUploader
-            className="some-class"
             id="file-1"
-            labelDescription="Choose Files..."
+            labelTitle="Upload"
+            labelDescription="only .jpg files at 500mb or less"
+            buttonLabel="Add files"
+            filenameStatus="edit"
+            multiple
           />
         </div>
 
@@ -369,8 +324,7 @@ export default class Components extends Component {
             checkedItems.includes('footer') || !isFiltering
               ? 'component__container component__container--footer'
               : 'component__container component__container--footer component__container--hidden'
-          }
-        >
+          }>
           <Footer />
         </div>
 
@@ -379,8 +333,7 @@ export default class Components extends Component {
             checkedItems.includes('interior-left-nav') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <InteriorLeftNav>
             <InteriorLeftNavList title="Example Item 1">
               <InteriorLeftNavItem
@@ -434,8 +387,7 @@ export default class Components extends Component {
             checkedItems.includes('link') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Link href="#">Link</Link>
         </div>
 
@@ -444,8 +396,7 @@ export default class Components extends Component {
             checkedItems.includes('list') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <OrderedList>
             <ListItem>
               Ordered List level 1
@@ -476,8 +427,7 @@ export default class Components extends Component {
             checkedItems.includes('loading') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Loading withOverlay={false} />
         </div>
 
@@ -486,42 +436,44 @@ export default class Components extends Component {
             checkedItems.includes('modal') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <ModalWrapper
             id="transactional-modal"
             buttonTriggerText="Transactional Modal"
             modalLabel="Label (optional)"
-            modalHeading="Transactional Modal"
-          >
+            modalHeading="Transactional Modal">
             <p className="bx--modal-content__text">
-              Transactional modals are used to validate user decisions os to gain secondary
-              confirmation from the user. Typically, the modal requests either a 'yes' or 'no'
-              response.
+              Transactional modals are used to validate user decisions os to
+              gain secondary confirmation from the user. Typically, the modal
+              requests either a 'yes' or 'no' response.
             </p>
             <p className="bx--modal-content__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus
-              fermentum risus, sit amet fringilla nunc pellentesque quis. Duis quis odio
-              ultrices, cursus lacus ac, posuere felis. Donec dignissim libero in augue mattis,
-              a molestie metus vestibulum. Aliquam placerat felis ultrices lorem condimentum,
-              nec ullamcorper felis porttitor. Nunc at maximus purus. Curabitur sodales eros
-              sit amet dolor bibendum gravida. Sed efficitur, arcu imperdiet vestibulum
-              ultrices, risus diam ullamcorper arcu, sit amet gravida metus ligula quis metus.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse cursus fermentum risus, sit amet fringilla nunc
+              pellentesque quis. Duis quis odio ultrices, cursus lacus ac,
+              posuere felis. Donec dignissim libero in augue mattis, a molestie
+              metus vestibulum. Aliquam placerat felis ultrices lorem
+              condimentum, nec ullamcorper felis porttitor. Nunc at maximus
+              purus. Curabitur sodales eros sit amet dolor bibendum gravida. Sed
+              efficitur, arcu imperdiet vestibulum ultrices, risus diam
+              ullamcorper arcu, sit amet gravida metus ligula quis metus.
             </p>
             <p className="bx--modal-content__text">
-              Donec id sapien ex. Duis aliquam tortor nec mollis pulvinar. Fusce sit amet
-              libero blandit, sollicitudin est in, tempor lectus. Donec convallis condimentum
-              mi eu ultrices. Sed risus ipsum, fermentum ut fringilla sed, rutrum eget purus.
-              Morbi molestie dui nisi, consectetur posuere ante viverra non. Integer cursus
-              quis risus ut cursus. Aenean ut dictum nibh. Cras at leo interdum, ornare elit
-              non, posuere enim. Mauris hendrerit nunc eget malesuada congue. Nam velit leo,
-              convallis et lobortis ac, semper ut urna. Etiam nec neque urna. Donec sagittis
-              eros urna, at aliquet erat consectetur ac. Proin faucibus sed erat tempus
-              accumsan. Nam pretium malesuada commodo. Mauris mollis elementum neque, sed
-              ornare urna vestibulum non. Curabitur elementum in ex in commodo. Donec laoreet
-              consequat sapien. Sed eget tortor aliquam, facilisis est vitae, commodo magna.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a lobortis ex.
-              Nulla mollis tincidunt sodales.
+              Donec id sapien ex. Duis aliquam tortor nec mollis pulvinar. Fusce
+              sit amet libero blandit, sollicitudin est in, tempor lectus. Donec
+              convallis condimentum mi eu ultrices. Sed risus ipsum, fermentum
+              ut fringilla sed, rutrum eget purus. Morbi molestie dui nisi,
+              consectetur posuere ante viverra non. Integer cursus quis risus ut
+              cursus. Aenean ut dictum nibh. Cras at leo interdum, ornare elit
+              non, posuere enim. Mauris hendrerit nunc eget malesuada congue.
+              Nam velit leo, convallis et lobortis ac, semper ut urna. Etiam nec
+              neque urna. Donec sagittis eros urna, at aliquet erat consectetur
+              ac. Proin faucibus sed erat tempus accumsan. Nam pretium malesuada
+              commodo. Mauris mollis elementum neque, sed ornare urna vestibulum
+              non. Curabitur elementum in ex in commodo. Donec laoreet consequat
+              sapien. Sed eget tortor aliquam, facilisis est vitae, commodo
+              magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Mauris a lobortis ex. Nulla mollis tincidunt sodales.
             </p>
           </ModalWrapper>
         </div>
@@ -531,19 +483,15 @@ export default class Components extends Component {
             checkedItems.includes('module') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Module className="some-class" size="single">
             <ModuleHeader>Module Example</ModuleHeader>
             <ModuleBody>
               <p>
                 Lorem Ipsum is dummy text of the printing and typesetting
-                industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the
-                1500s, when an unknown printer took a galley of type and
-                scrambled it
-                to make a type specimen book.
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
               </p>
               <p>
                 It has survived not only five centuries, but also the leap into
@@ -557,12 +505,9 @@ export default class Components extends Component {
             <ModuleBody>
               <p>
                 Lorem Ipsum is dummy text of the printing and typesetting
-                industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the
-                1500s, when an unknown printer took a galley of type and
-                scrambled it
-                to make a type specimen book.
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
               </p>
               <p>
                 It has survived not only five centuries, but also the leap into
@@ -575,7 +520,8 @@ export default class Components extends Component {
             <ModuleBody>
               <h2>Plain Card</h2>
               <p>
-                This is a plain card which is used as a container to house other elements, such as a button, overflow menu, and links
+                This is a plain card which is used as a container to house other
+                elements, such as a button, overflow menu, and links
               </p>
             </ModuleBody>
           </Module>
@@ -586,8 +532,7 @@ export default class Components extends Component {
             checkedItems.includes('notification') || !isFiltering
               ? 'component__container component__container--notification'
               : 'component__container component__container--notification component__container--hidden'
-          }
-        >
+          }>
           <div>
             <Notification
               title="Warning notification:"
@@ -609,7 +554,6 @@ export default class Components extends Component {
               subtitle="Here is the information or directions"
               kind="success"
             />
-
           </div>
           <div>
             <Notification
@@ -644,8 +588,7 @@ export default class Components extends Component {
             checkedItems.includes('number-input') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <NumberInput label="Number Input" id="number-input-demo" />
         </div>
 
@@ -654,8 +597,7 @@ export default class Components extends Component {
             checkedItems.includes('overflow-menu') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <OverflowMenu>
             <OverflowMenuItem itemText="Stop App" />
             <OverflowMenuItem itemText="Restart App" />
@@ -670,8 +612,7 @@ export default class Components extends Component {
             checkedItems.includes('pagination') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Pagination pageSizes={[10, 20, 30, 40, 50]} totalItems={103} />
         </div>
 
@@ -680,8 +621,7 @@ export default class Components extends Component {
             checkedItems.includes('progress-indicator') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <ProgressIndicator currentIndex={3}>
             <ProgressStep
               label="Step 1"
@@ -711,14 +651,12 @@ export default class Components extends Component {
             checkedItems.includes('radio-button') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <FormGroup legendText="Radio Group">
             <RadioButtonGroup
               name="radio-button-group"
               defaultSelected="default-selected"
-              legend="Group Legend"
-            >
+              legend="Group Legend">
               <RadioButton
                 value="standard"
                 id="radio-1"
@@ -744,8 +682,7 @@ export default class Components extends Component {
             checkedItems.includes('search') || !isFiltering
               ? 'component__container component__container--search'
               : 'component__container component__container--search component__container--hidden'
-          }
-        >
+          }>
           <Search
             id="search-1"
             labelText="Search"
@@ -765,8 +702,7 @@ export default class Components extends Component {
             checkedItems.includes('select') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Select id="select-1" defaultValue="placeholder-item">
             <SelectItemGroup label="Starter">
               <SelectItem value="option-1" text="Option 1" />
@@ -780,46 +716,53 @@ export default class Components extends Component {
 
         <div
           className={
+            checkedItems.includes('slider') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
+          <Slider
+            id="slider-1"
+            value={50}
+            min={0}
+            max={100}
+            step={1}
+            labelText="Slider Label"
+            onChange={() => console.log('change')}
+          />
+        </div>
+
+        <div
+          className={
             checkedItems.includes('structured-list') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <StructuredListWrapper>
             <StructuredListHead>
               <StructuredListRow head>
-                <StructuredListCell head>
-                  Service
-                </StructuredListCell>
-                <StructuredListCell head>
-                  Type
-                </StructuredListCell>
-                <StructuredListCell head>
-                  Description
-                </StructuredListCell>
+                <StructuredListCell head>Service</StructuredListCell>
+                <StructuredListCell head>Type</StructuredListCell>
+                <StructuredListCell head>Description</StructuredListCell>
               </StructuredListRow>
             </StructuredListHead>
             <StructuredListBody>
               <StructuredListRow>
-                <StructuredListCell noWrap>
-                  Apache Spark
-                </StructuredListCell>
+                <StructuredListCell noWrap>Apache Spark</StructuredListCell>
+                <StructuredListCell>IBM</StructuredListCell>
                 <StructuredListCell>
-                  IBM
-                </StructuredListCell>
-                <StructuredListCell>
-                  Apache Spark is an open source cluster computing framework optimized for extremely fast and large scale data processing, which you can access via the newly integrated notebook interface IBM Analytics for Apache Spark.
+                  Apache Spark is an open source cluster computing framework
+                  optimized for extremely fast and large scale data processing,
+                  which you can access via the newly integrated notebook
+                  interface IBM Analytics for Apache Spark.
                 </StructuredListCell>
               </StructuredListRow>
               <StructuredListRow>
-                <StructuredListCell noWrap>
-                  Cloudant
-                </StructuredListCell>
+                <StructuredListCell noWrap>Cloudant</StructuredListCell>
+                <StructuredListCell>IBM</StructuredListCell>
                 <StructuredListCell>
-                  IBM
-                </StructuredListCell>
-                <StructuredListCell>
-                  Cloudant NoSQL DB is a fully managed data layer designed for modern web and mobile applications that leverages a flexible JSON schema.
+                  Cloudant NoSQL DB is a fully managed data layer designed for
+                  modern web and mobile applications that leverages a flexible
+                  JSON schema.
                 </StructuredListCell>
               </StructuredListRow>
             </StructuredListBody>
@@ -828,15 +771,9 @@ export default class Components extends Component {
             <StructuredListHead>
               <StructuredListRow head>
                 <StructuredListCell head />
-                <StructuredListCell head>
-                  Service
-                </StructuredListCell>
-                <StructuredListCell head>
-                  Type
-                </StructuredListCell>
-                <StructuredListCell head>
-                  Description
-                </StructuredListCell>
+                <StructuredListCell head>Service</StructuredListCell>
+                <StructuredListCell head>Type</StructuredListCell>
+                <StructuredListCell head>Description</StructuredListCell>
               </StructuredListRow>
             </StructuredListHead>
             <StructuredListBody>
@@ -855,14 +792,13 @@ export default class Components extends Component {
                     description="select a service"
                   />
                 </StructuredListCell>
+                <StructuredListCell>Apache Spark</StructuredListCell>
+                <StructuredListCell>IBM</StructuredListCell>
                 <StructuredListCell>
-                  Apache Spark
-                </StructuredListCell>
-                <StructuredListCell>
-                  IBM
-                </StructuredListCell>
-                <StructuredListCell>
-                  Apache Spark is an open source cluster computing framework optimized for extremely fast and large scale data processing, which you can access via the newly integrated notebook interface IBM Analytics for Apache Spark.
+                  Apache Spark is an open source cluster computing framework
+                  optimized for extremely fast and large scale data processing,
+                  which you can access via the newly integrated notebook
+                  interface IBM Analytics for Apache Spark.
                 </StructuredListCell>
               </StructuredListRow>
               <StructuredListRow label htmlFor="cloudant">
@@ -879,14 +815,12 @@ export default class Components extends Component {
                     description="select a service"
                   />
                 </StructuredListCell>
+                <StructuredListCell>Cloudant</StructuredListCell>
+                <StructuredListCell>IBM</StructuredListCell>
                 <StructuredListCell>
-                  Cloudant
-                </StructuredListCell>
-                <StructuredListCell>
-                  IBM
-                </StructuredListCell>
-                <StructuredListCell>
-                  Cloudant NoSQL DB is a fully managed data layer designed for modern web and mobile applications that leverages a flexible JSON schema.
+                  Cloudant NoSQL DB is a fully managed data layer designed for
+                  modern web and mobile applications that leverages a flexible
+                  JSON schema.
                 </StructuredListCell>
               </StructuredListRow>
             </StructuredListBody>
@@ -898,8 +832,7 @@ export default class Components extends Component {
             checkedItems.includes('tabs') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Tabs>
             <Tab label="Overview">
               <div>Overview Content</div>
@@ -921,8 +854,7 @@ export default class Components extends Component {
             checkedItems.includes('tag') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Tag key="ibm" className="some-class" type="ibm" />
         </div>
 
@@ -931,8 +863,7 @@ export default class Components extends Component {
             checkedItems.includes('textarea') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <TextArea id="text-area-demo-1" labelText="Text Area" />
         </div>
 
@@ -941,8 +872,7 @@ export default class Components extends Component {
             checkedItems.includes('text-input') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <TextInput
             labelText="Text Input"
             id="text-input-demo"
@@ -955,14 +885,13 @@ export default class Components extends Component {
             checkedItems.includes('time-picker') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
-          <TimePicker>
-            <TimePickerSelect>
+          }>
+          <TimePicker id="time-picker-1">
+            <TimePickerSelect id="time-picker-select-1">
               <SelectItem value="AM" text="AM" />
               <SelectItem value="PM" text="PM" />
             </TimePickerSelect>
-            <TimePickerSelect>
+            <TimePickerSelect id="time-picker-select-2">
               <SelectItem value="Timezone 1" text="Timezone 1" />
               <SelectItem value="Timezone 2" text="Timezone 2" />
             </TimePickerSelect>
@@ -974,8 +903,7 @@ export default class Components extends Component {
             checkedItems.includes('toggle') || !isFiltering
               ? 'component__container component__container--toggle'
               : 'component__container component__container--toggle component__container--hidden'
-          }
-        >
+          }>
           <Toggle id="toggle-demo" />
         </div>
 
@@ -984,8 +912,7 @@ export default class Components extends Component {
             checkedItems.includes('toolbar') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <Toolbar className="some-class">
             <ToolbarItem type="search" placeHolderText="Search" />
             <ToolbarItem>
@@ -1045,13 +972,11 @@ export default class Components extends Component {
             checkedItems.includes('tooltip') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
-          }
-        >
+          }>
           <TooltipSimple text="hello">
             <Link href="#">Tooltip - hover</Link>
           </TooltipSimple>
         </div>
-
       </div>
     );
   }

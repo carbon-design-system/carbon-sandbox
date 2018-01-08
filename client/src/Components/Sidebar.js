@@ -44,7 +44,9 @@ export default class Sidebar extends Component {
     if (window.localStorage && window.localStorage.getItem('id')) {
       return;
     } else {
-      id = Math.random().toString(36).substring(7);
+      id = Math.random()
+        .toString(36)
+        .substring(7);
       window.localStorage.setItem('id', id);
     }
   };
@@ -158,13 +160,14 @@ export default class Sidebar extends Component {
         <Loading withOverlay />
         <div className={this.state.isSafari ? 'banner' : 'banner--hidden'} />
         <header>
-          <h1 className="sidebar__title">Carbon <span>Themes</span></h1>
+          <h1 className="sidebar__title">
+            Carbon <span>Themes</span>
+          </h1>
           <Dropdown
             id="theme-switcher"
             defaultText="Default"
             value="default"
-            onChange={this.handleThemeChange}
-          >
+            onChange={this.handleThemeChange}>
             <DropdownItem itemText="Default" value="default" />
             <DropdownItem itemText="Dark" value="darkui" />
             <DropdownItem itemText="Watson" value="watson" />
@@ -181,25 +184,20 @@ export default class Sidebar extends Component {
                   ? 'bx--link variables-reset'
                   : 'bx--link variables-reset variables-reset--hidden'
               }
-              onClick={this.resetColors}
-            >
+              onClick={this.resetColors}>
               Reset
             </button>
           </h5>
           <p className="variables__subtitle">
-            Click on a swatch to change a
-            {' '}
+            Click on a swatch to change a{' '}
             <a
               href="http://carbondesignsystem.com/style/colors/usage"
               className="bx--link"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               color variable’s
-            </a>
-            {' '}
-            value across the
-            theme.
+            </a>{' '}
+            value across the theme.
           </p>
           <ul className="variables__list">
             <Variable
@@ -313,8 +311,7 @@ export default class Sidebar extends Component {
             href="http://www.carbondesignsystem.com/"
             className="bx--link"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             Carbon Design System
           </a>
           <span className="footer-copy">Copyright © 2017 IBM</span>

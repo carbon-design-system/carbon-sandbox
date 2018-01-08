@@ -1,22 +1,8 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "modules": false,
-        "chrome": "latest",
-        "edge": "latest",
-        "firefox": "latest",
-        "safari": "latest",
-        "ie": "11",
-        "ios": "latest"
-      }
-    ],
-    "react",
-    "stage-1"
-  ],
+  "presets": ["./scripts/env", "react", "stage-1"],
   "plugins": [
     "react-hot-loader/babel",
-    "transform-class-properties"
+    "transform-class-properties",
+    "transform-object-assign"
   ]
 }
