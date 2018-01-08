@@ -55,8 +55,7 @@ export default class Filter extends Component {
             ? 'filter-container filter-container--active'
             : 'filter-container'
         }
-        aria-expanded={expanded}
-      >
+        aria-expanded={expanded}>
         <section className="filter-heading">
           <button className="filter-text" onClick={this.handleToggle}>
             <span>FILTER</span>
@@ -67,8 +66,7 @@ export default class Filter extends Component {
               width="10px"
               height="5px"
               viewBox="0 0 10 5"
-              fillRule="evenodd"
-            >
+              fillRule="evenodd">
               <polygon points="10 0 5 5 0 0" />
             </svg>
           </button>
@@ -76,8 +74,7 @@ export default class Filter extends Component {
             onClick={this.handleClear}
             className={
               checkedItems.length > 0 ? 'bx--link bx--link--active' : 'bx--link'
-            }
-          >
+            }>
             Clear Filters
           </button>
         </section>
@@ -86,8 +83,7 @@ export default class Filter extends Component {
             expanded
               ? 'filter-checkboxes filter-checkboxes--active'
               : 'filter-checkboxes'
-          }
-        >
+          }>
           <Checkbox
             tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
@@ -243,6 +239,12 @@ export default class Filter extends Component {
             onChange={this.onChange}
             id="select"
             labelText="Select"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="slider"
+            labelText="Slider"
           />
           <Checkbox
             tabIndex={expanded ? 0 : -1}
