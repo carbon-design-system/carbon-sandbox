@@ -42,12 +42,6 @@ import {
   StructuredListInput,
   StructuredListCell,
   Switch,
-  Table,
-  TableBody,
-  TableData,
-  TableHead,
-  TableHeader,
-  TableRow,
   Tab,
   Tabs,
   Tag,
@@ -64,10 +58,12 @@ import {
   TooltipSimple,
   UnorderedList,
 } from 'carbon-components-react';
+import DataTableExample from './DataTableExample';
 
 export default class Components extends Component {
   render() {
     const { checkedItems, isFiltering } = this.props;
+
     return (
       <div className="components">
         <div
@@ -187,23 +183,23 @@ export default class Components extends Component {
 
           <CodeSnippet type="code">
             {`@mixin bx--snippet($type) {
-  @if $type == 'terminal' {
-    background-color: red;
-  } @else if $type == 'code' {
-    background-color: blue;
-  } @else if $type == 'text' {
-    background-color: white;
-  }
+            @if $type == 'terminal' {
+              background-color: red;
+            } @else if $type == 'code' {
+              background-color: blue;
+            } @else if $type == 'text' {
+              background-color: white;
+            }
 
-  @if $type == 'terminal' {
-    background-color: red;
-  } @else if $type == 'code' {
-    background-color: blue;
-  } @else if $type == 'text' {
-    background-color: white;
-  }
-}
-              `}
+            @if $type == 'terminal' {
+              background-color: red;
+            } @else if $type == 'code' {
+              background-color: blue;
+            } @else if $type == 'text' {
+              background-color: white;
+            }
+          }
+                    `}
           </CodeSnippet>
         </div>
 
@@ -228,37 +224,7 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-          <Table>
-            <TableHead>
-              <TableRow header>
-                <TableHeader>First Name</TableHeader>
-                <TableHeader>Last Name</TableHeader>
-                <TableHeader>House</TableHeader>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              <TableRow>
-                <TableData>Harry</TableData>
-                <TableData>Potter</TableData>
-                <TableData>Gryffindor</TableData>
-              </TableRow>
-              <TableRow>
-                <TableData>Hermoine</TableData>
-                <TableData>Granger</TableData>
-                <TableData>Gryffindor</TableData>
-              </TableRow>
-              <TableRow>
-                <TableData>Blaise</TableData>
-                <TableData>Zambini</TableData>
-                <TableData>Slytherin</TableData>
-              </TableRow>
-              <TableRow>
-                <TableData>Jon</TableData>
-                <TableData>Snow</TableData>
-                <TableData>Stark</TableData>
-              </TableRow>
-            </TableBody>
-          </Table>
+          <DataTableExample />
         </div>
 
         <div
@@ -289,7 +255,7 @@ export default class Components extends Component {
               ? 'component__container dropdown'
               : 'component__container component__container--hidden'
           }>
-          <Dropdown defaultText="Choose something..">
+          <Dropdown ariaLabel="dropdown menu label" defaultText="Choose something..">
             <DropdownItem itemText="All" value="all" />
             <DropdownItem itemText="Cloud Foundry API" value="cloudFoundry" />
             <DropdownItem itemText="Staging" value="staging" />
@@ -779,11 +745,11 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }>
           <TimePicker id="time-picker-1">
-            <TimePickerSelect id="time-picker-select-1">
+            <TimePickerSelect labelText="label for time picker" id="time-picker-select-1">
               <SelectItem value="AM" text="AM" />
               <SelectItem value="PM" text="PM" />
             </TimePickerSelect>
-            <TimePickerSelect id="time-picker-select-2">
+            <TimePickerSelect labelText="label for time picker" id="time-picker-select-2">
               <SelectItem value="Timezone 1" text="Timezone 1" />
               <SelectItem value="Timezone 2" text="Timezone 2" />
             </TimePickerSelect>

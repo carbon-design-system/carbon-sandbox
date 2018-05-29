@@ -164,6 +164,7 @@ export default class Sidebar extends Component {
             Carbon <span>Themes</span>
           </h1>
           <Dropdown
+            ariaLabel="dropdown for theme switcher"
             id="theme-switcher"
             defaultText="Default"
             value="default"
