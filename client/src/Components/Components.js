@@ -5,9 +5,6 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Button,
-  Card,
-  CardFooter,
-  CardContent,
   Checkbox,
   CodeSnippet,
   ContentSwitcher,
@@ -19,16 +16,10 @@ import {
   Footer,
   FormGroup,
   Icon,
-  InteriorLeftNav,
-  InteriorLeftNavItem,
-  InteriorLeftNavList,
   Link,
   ListItem,
   Loading,
   ModalWrapper,
-  Module,
-  ModuleHeader,
-  ModuleBody,
   Notification,
   NumberInput,
   OrderedList,
@@ -86,21 +77,36 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }>
           <Accordion>
-            <AccordionItem title="Label">
+            <AccordionItem title="Section 1 title">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat.
+            </p>
             </AccordionItem>
-            <AccordionItem title="Label with multiple words">
+            <AccordionItem title="Section 2 title">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat.
+            </p>
+            </AccordionItem>
+            <AccordionItem title="Section 3 title">
+              <Select
+                id="select-1"
+                defaultValue="placeholder-item">
+                <SelectItem
+                  disabled
+                  hidden
+                  value="placeholder-item"
+                  text="Choose an option"
+                />
+                <SelectItem value="option-1" text="Option 1" />
+                <SelectItem value="option-2" text="Option 2" />
+                <SelectItem value="option-3" text="Option 3" />
+              </Select>
             </AccordionItem>
           </Accordion>
         </div>
@@ -144,37 +150,26 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes('card') || !isFiltering
-              ? 'component__container component__container--card'
-              : 'component__container component__container--card component__container--hidden'
-          }>
-          <Card>
-            <CardContent
-              cardTitle="Card Name"
-              cardIcon="app-services"
-              cardInfo={['Secondary Information']}
-            />
-            <CardFooter>
-              <Button small kind="primary">
-                View credentials
-              </Button>
-              <Link href="#" className="bx--card-footer__link">
-                Link
-              </Link>
-            </CardFooter>
-          </Card>
-        </div>
-
-        <div
-          className={
             checkedItems.includes('checkbox') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
           <fieldset className="bx--fieldset">
-            <legend className="bx--label">Favorite Colors</legend>
-            <Checkbox defaultChecked id="red" labelText="Red" />
-            <Checkbox defaultChecked id="blue" labelText="Blue" />
+            <legend className="bx--label">Checkbox heading</legend>
+            <Checkbox
+              id="checkbox-label-1"
+              labelText="Checkbox label 1"
+            />
+            <Checkbox
+              id="checkbox-label-3"
+              labelText="Checkbox label 3"
+              indeterminate
+            />
+            <Checkbox
+              defaultChecked
+              id="checkbox-label-2"
+              labelText="Checkbox label 2"
+            />
           </fieldset>
         </div>
 
@@ -330,60 +325,6 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes('interior-left-nav') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <InteriorLeftNav>
-            <InteriorLeftNavList title="Example Item 1">
-              <InteriorLeftNavItem
-                href="#example-item-1A"
-                label="Example Item 1A"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-1B"
-                label="Example Item 1B"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-1C"
-                label="Example Item 1C"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-1D"
-                label="Example Item 1D"
-              />
-            </InteriorLeftNavList>
-            <InteriorLeftNavList title="Example Item 2">
-              <InteriorLeftNavItem
-                href="#example-item-2A"
-                label="Example Item 2A"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-2B"
-                label="Example Item 2B"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-2C"
-                label="Example Item 2C"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-2D"
-                label="Example Item 2D"
-              />
-            </InteriorLeftNavList>
-            <InteriorLeftNavItem
-              href="#example-item-3"
-              label="Example Item 3"
-            />
-            <InteriorLeftNavItem
-              href="#example-item-4"
-              label="Example Item 4"
-            />
-          </InteriorLeftNav>
-        </div>
-
-        <div
-          className={
             checkedItems.includes('link') || !isFiltering
               ? 'component__container'
               : 'component__container component__container--hidden'
@@ -476,55 +417,6 @@ export default class Components extends Component {
               Mauris a lobortis ex. Nulla mollis tincidunt sodales.
             </p>
           </ModalWrapper>
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('module') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <Module className="some-class" size="single">
-            <ModuleHeader>Module Example</ModuleHeader>
-            <ModuleBody>
-              <p>
-                Lorem Ipsum is dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-              <p>
-                It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-            </ModuleBody>
-          </Module>
-
-          <Module className="some-class">
-            <ModuleHeader>Module Example</ModuleHeader>
-            <ModuleBody>
-              <p>
-                Lorem Ipsum is dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-              <p>
-                It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-            </ModuleBody>
-          </Module>
-
-          <Module className="module-example" size="single">
-            <ModuleBody>
-              <h2>Plain Card</h2>
-              <p>
-                This is a plain card which is used as a container to house other
-                elements, such as a button, overflow menu, and links
-              </p>
-            </ModuleBody>
-          </Module>
         </div>
 
         <div

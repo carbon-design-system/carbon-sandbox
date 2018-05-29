@@ -4,5 +4,7 @@ content
 decks
 sketch
 .npmrc
+public/tmp/export.scss
 public/tmp/*
 public/app.js
+
