@@ -13,6 +13,7 @@ import watson from '../assets/themes/watson';
 import darkui from '../assets/themes/dark-ui';
 import carbon from '../assets/themes/carbon';
 import genesis from '../assets/themes/genesis';
+import experimental from '../assets/themes/experimental--light';
 
 export default class Sidebar extends Component {
   state = {
@@ -112,36 +113,16 @@ export default class Sidebar extends Component {
   };
 
   handleThemeChange = theme => {
-    // Hide some components on Watson theme (for now)
-    const notifications = document.querySelector(
-      '.component__container--notification'
-    );
-    const footer = document.querySelector('.component__container--footer');
-    const search = document.querySelector('.component__container--search');
-    const card = document.querySelector('.component__container--card');
-    const toggle = document.querySelector('.component__container--toggle');
-
-    if (!this.props.isFiltering) {
-      notifications.classList.remove('component__container--hidden');
-      footer.classList.remove('component__container--hidden');
-      search.classList.remove('component__container--hidden');
-      card.classList.remove('component__container--hidden');
-      toggle.classList.remove('component__container--hidden');
-    }
-
     if (theme.value === 'default') {
       this.setState(carbon);
     } else if (theme.value === 'darkui' || theme.value === 'dark') {
       this.setState(darkui);
     } else if (theme.value === 'watson') {
       this.setState(watson);
-      notifications.classList.add('component__container--hidden');
-      footer.classList.add('component__container--hidden');
-      search.classList.add('component__container--hidden');
-      card.classList.add('component__container--hidden');
-      toggle.classList.add('component__container--hidden');
     } else if (theme.value === 'genesis') {
       this.setState(genesis);
+    } else if (theme.value === 'experimental') {
+      this.setState(experimental);
     }
   };
 
@@ -173,6 +154,7 @@ export default class Sidebar extends Component {
             <DropdownItem itemText="Dark" value="darkui" />
             <DropdownItem itemText="Watson" value="watson" />
             <DropdownItem itemText="White" value="genesis" />
+            <DropdownItem itemText="Experimental" value="experimental" />
           </Dropdown>
         </header>
 
