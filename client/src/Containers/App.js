@@ -1,7 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Sidebar from './../Components/Sidebar';
 import Components from './../Components/Components';
-// import { Icon } from '@console/bluemix-components-react';
 
 export default class App extends Component {
   state = {
@@ -52,7 +51,7 @@ export default class App extends Component {
           ? <div className="banner">
             <p>
               <span>Attention: </span>
-                For the best experience, please view this site using Google Chrome or Mozilla Firefox
+              For the best experience, please view this site using Google Chrome or Mozilla Firefox
               </p>
           </div>
           : null}

@@ -21,16 +21,18 @@ export default class Sidebar extends Component {
     'brand-01': '#3d70b2',
     'brand-02': '#5596e6',
     'brand-03': '#41d6c3',
+    'inverse-01': '#ffffff',
+    'inverse-02': '#272d33',
     'ui-01': '#ffffff',
-    'ui-02': '#f5f7fa',
-    'ui-03': '#f0f3f6',
-    'ui-04': '#dfe3e6',
-    'ui-05': '#8c9ba5',
+    'ui-02': '#f4f7fb',
+    'ui-03': '#dfe3e6',
+    'ui-04': '#8897a2',
+    'ui-05': '#5a6872',
     'text-01': '#152934',
     'text-02': '#5a6872',
-    'text-03': '#5a6872',
-    'inverse-01': '#ffffff',
-    'field-01': '#ebf0f7',
+    'text-03': '#cdd1d4',
+    'field-01': '#f4f7fb',
+    'field-02': '#ffffff',
     'support-01': '#e71d32',
     'support-02': '#5aa700',
     'support-03': '#efc100',
@@ -251,8 +253,18 @@ export default class Sidebar extends Component {
             />
             <Variable
               updateColor={this.updateColor}
+              name="field-02"
+              hex={this.state['inverse-02']}
+            />
+            <Variable
+              updateColor={this.updateColor}
               name="field-01"
               hex={this.state['field-01']}
+            />
+            <Variable
+              updateColor={this.updateColor}
+              name="field-02"
+              hex={this.state['field-02']}
             />
           </ul>
           <ul className="variables__list">
@@ -297,7 +309,7 @@ export default class Sidebar extends Component {
             rel="noopener noreferrer">
             Carbon Design System
           </a>
-          <span className="footer-copy">Copyright © 2017 IBM</span>
+          <span className="footer-copy">Copyright © 2018 IBM</span>
         </footer>
       </div>
     );

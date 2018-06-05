@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
-import { DataTable } from 'carbon-components-react';
+import { Button, DataTable } from 'carbon-components-react';
 const {
-  TableContainer,
   Table,
-  TableHeader,
-  TableHead,
-  TableRow,
+  TableBatchAction,
+  TableBatchActions,
   TableBody,
-  TableCell } = DataTable;
+  TableCell,
+  TableContainer,
+  TableExpandHeader,
+  TableExpandRow,
+  TableExpandedRow,
+  TableHead,
+  TableHeader,
+  TableRow,
+  TableSelectAll,
+  TableSelectRow,
+  TableToolbar,
+  TableToolbarAction,
+  TableToolbarContent,
+  TableToolbarSearch,
+} = DataTable;
 
 const initialRows = [
   {
@@ -73,30 +85,71 @@ export default class DataTableExample extends Component {
       <DataTable
         rows={initialRows}
         headers={headers}
-        render={({ rows, headers, getHeaderProps }) => (
-          <TableContainer title="DataTable with sorting">
-            <Table>
-              <TableHead>
-                <TableRow>
-                  {headers.map(header => (
-                    <TableHeader {...getHeaderProps({ header }) }>
-                      {header.header}
-                    </TableHeader>
-                  ))}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map(row => (
-                  <TableRow key={row.id}>
-                    {row.cells.map(cell => (
-                      <TableCell key={cell.id}>{cell.value}</TableCell>
+        render={({
+        rows,
+          headers,
+          getHeaderProps,
+          getSelectionProps,
+          getBatchActionProps,
+          onInputChange,
+          selectedRows,
+      }) => (
+            <TableContainer title="DataTable">
+              <TableToolbar>
+                <TableBatchActions {...getBatchActionProps() }>
+                  <TableBatchAction>
+                    Ghost
+              </TableBatchAction>
+                  <TableBatchAction>
+                    Ghost
+              </TableBatchAction>
+                  <TableBatchAction>
+                    Ghost
+              </TableBatchAction>
+                </TableBatchActions>
+                <TableToolbarSearch onChange={onInputChange} />
+                <TableToolbarContent>
+                  <TableToolbarAction
+                    iconName="download"
+                    iconDescription="Download"
+                  />
+                  <TableToolbarAction
+                    iconName="edit"
+                    iconDescription="Edit"
+                  />
+                  <TableToolbarAction
+                    iconName="settings"
+                    iconDescription="Settings"
+                  />
+                  <Button small kind="primary">
+                    Add new
+              </Button>
+                </TableToolbarContent>
+              </TableToolbar>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableSelectAll {...getSelectionProps() } />
+                    {headers.map(header => (
+                      <TableHeader {...getHeaderProps({ header }) }>
+                        {header.header}
+                      </TableHeader>
                     ))}
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        )}
+                </TableHead>
+                <TableBody>
+                  {rows.map(row => (
+                    <TableRow key={row.id}>
+                      <TableSelectRow {...getSelectionProps({ row }) } />
+                      {row.cells.map(cell => (
+                        <TableCell key={cell.id}>{cell.value}</TableCell>
+                      ))}
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          )}
       />
     )
   }

@@ -7,22 +7,8 @@
       z-index: 10001;
     }
 
-    .bx--interior-left-nav {
-      top: 0;
-      position: relative;
-      min-height: 400px;
-
-      .bx--interior-left-nav-collapse {
-        margin-bottom: 0;
-      }
-    }
-
     .bx--footer {
       position: relative;
-    }
-
-    .bx--module--double {
-      width: 100%;
     }
 
     .bx--toolbar div:nth-of-type(2) .bx--overflow-menu__icon {
@@ -34,12 +20,12 @@
 
       &-row {
         border-bottom: none;
-        box-shadow: 0 1px 0 0 $ui-04;
+        // box-shadow: 0 1px 0 0 $ui-04;
       }
 
       &-row--header-row {
         border-bottom: none;
-        box-shadow: 0 2px 0 0 $brand-01;
+        // box-shadow: 0 2px 0 0 $brand-01;
       }
     }
 
