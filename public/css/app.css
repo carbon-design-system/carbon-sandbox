@@ -1,14 +1,8 @@
 .components .component__container .bx--radio-button__appearance {
   min-width: 1.125rem; }
 
-.components .component__container .bx--modal {
-  z-index: 10001; }
-
 .components .component__container .bx--footer {
   position: relative; }
-
-.components .component__container .bx--toolbar div:nth-of-type(2) .bx--overflow-menu__icon {
-  padding: 0; }
 
 .components .component__container .bx--structured-list {
   border-collapse: separate; }
@@ -16,10 +10,6 @@
     border-bottom: none; }
   .components .component__container .bx--structured-list-row--header-row {
     border-bottom: none; }
-
-.components .component__container.date-picker .bx--form-item {
-  -ms-flex: 0;
-  flex: 0; }
 
 .module-example h2 {
   font-weight: 300;
@@ -10498,9 +10488,10 @@ span.flatpickr-weekday {
   padding: 5%; }
 
 #app .component__container {
-  -ms-flex-preferred-size: 75%;
-  flex-basis: 75%;
-  min-width: 100%;
+  -ms-flex-preferred-size: 80%;
+  flex-basis: 80%;
+  width: 100%;
+  height: auto;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -10516,9 +10507,6 @@ span.flatpickr-weekday {
     margin: 1rem; }
   #app .component__container--hidden {
     display: none; }
-
-#app .dropdown > div {
-  width: 100%; }
 
 .filter-container {
   -ms-flex-pack: center;

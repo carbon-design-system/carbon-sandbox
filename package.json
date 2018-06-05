@@ -18,6 +18,7 @@
     "body-parser": "^1.17.1",
     "browser-sync": "^2.18.8",
     "carbon-components": "^9.0.0",
+    "carbon-icons": "^7.0.5",
     "carbon-components-react": "6.0.0",
     "carbon-themes": "^1.7.0",
     "classnames": "^2.2.5",

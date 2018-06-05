@@ -7,20 +7,21 @@ import {
   Button,
   Checkbox,
   CodeSnippet,
+  ComboBox,
   ContentSwitcher,
   DatePicker,
   DatePickerInput,
-  Dropdown,
-  DropdownItem,
+  DropdownV2,
   FileUploader,
   Footer,
   FormGroup,
   Icon,
+  InlineNotification,
   Link,
   ListItem,
   Loading,
   ModalWrapper,
-  Notification,
+  MultiSelect,
   NumberInput,
   OrderedList,
   OverflowMenu,
@@ -49,6 +50,7 @@ import {
   TextInput,
   TimePicker,
   TimePickerSelect,
+  ToastNotification,
   Toolbar,
   ToolbarItem,
   ToolbarTitle,
@@ -71,7 +73,39 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <Accordion>
+            <AccordionItem title="Section 1 title">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat.
+            </p>
+            </AccordionItem>
+            <AccordionItem title="Section 2 title">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat.
+            </p>
+            </AccordionItem>
+            <AccordionItem title="Section 3 title">
+              <Select
+                id="select-1"
+                defaultValue="placeholder-item">
+                <SelectItem
+                  disabled
+                  hidden
+                  value="placeholder-item"
+                  text="Choose an option"
+                />
+                <SelectItem value="option-1" text="Option 1" />
+                <SelectItem value="option-2" text="Option 2" />
+                <SelectItem value="option-3" text="Option 3" />
+              </Select>
+            </AccordionItem>
+          </Accordion>
         </div>
 
         <div
@@ -80,7 +114,11 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <Breadcrumb>
+            <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
+            <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+          </Breadcrumb>
         </div>
 
         <div
@@ -89,7 +127,21 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <Button>Primary button</Button>
+          <Button kind="secondary">Secondary button</Button>
+          <Button small>Small primary button</Button>
+          <Button small kind="secondary">Small secondary Button</Button>
+          <Button disabled>Disabled button</Button>
+          <Button
+            kind="ghost"
+            className="some-class"
+            icon="add--solid"
+            iconDescription="Add">
+            Ghost button
+          </Button>
+          <Button kind="danger">Danger button</Button>
+          <Button kind="danger--primary">Danger Primary button</Button>
+          <Button kind="tertiary">Tertiary button</Button>
         </div>
 
         <div
@@ -98,7 +150,23 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <fieldset className="bx--fieldset">
+            <legend className="bx--label">Checkbox heading</legend>
+            <Checkbox
+              id="checkbox-label-1"
+              labelText="Checkbox label 1"
+            />
+            <Checkbox
+              id="checkbox-label-2"
+              labelText="Checkbox label 1"
+              indeterminate
+            />
+            <Checkbox
+              defaultChecked
+              id="checkbox-label-3"
+              labelText="Checkbox label 2"
+            />
+          </fieldset>
         </div>
 
         <div
@@ -107,7 +175,59 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
+          <CodeSnippet type="inline" feedback="Feedback Enabled 👍" copyLabel="Copy Code">
+            {'node -v'}
+          </CodeSnippet>
+          <CodeSnippet type="inline" light feedback="Feedback Enabled 👍" copyLabel="Copy Code">
+            {'node -v'}
+          </CodeSnippet>
+          <CodeSnippet type="single" feedback="Feedback Enabled 👍" copyLabel="Copy Code">
+            {
+              'node -v Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, veritatis voluptate id incidunt molestiae officia possimus, quasi itaque alias, architecto hic, dicta fugit? Debitis delectus quidem explicabo vitae fuga laboriosam!'
+            }
+          </CodeSnippet>
 
+          <CodeSnippet type="multi" feedback="Feedback Enabled 👍" copyLabel="Copy Code">
+            {`@mixin grid-container {
+  width: 100%;
+  padding-right: padding(mobile);
+  padding-left: padding(mobile);
+
+  @include breakpoint(bp--xs--major) {
+    padding-right: padding(xs);
+  }
+}  `}
+          </CodeSnippet>
+        </div>
+
+        <div
+          className={
+            checkedItems.includes('combo-box') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
+          <ComboBox
+            items={[
+              {
+                id: 'option-1',
+                text: 'Option 1',
+              },
+              {
+                id: 'option-2',
+                text: 'Option 2',
+              },
+              {
+                id: 'option-3',
+                text: 'Option 3',
+              },
+              {
+                id: 'option-4',
+                text: 'Option 4',
+              },
+            ]}
+            itemToString={item => (item ? item.text : '')}
+            placeholder="Filter..."
+          />
         </div>
 
         <div
@@ -116,7 +236,11 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <ContentSwitcher>
+            <Switch kind="anchor" name="one" text="First section" />
+            <Switch kind="anchor" name="two" text="Second section" />
+            <Switch kind="anchor" name="three" text="Third section" />
+          </ContentSwitcher>
         </div>
 
         <div
@@ -134,7 +258,18 @@ export default class Components extends Component {
               ? 'component__container date-picker'
               : 'component__container component__container--hidden date-picker'
           }>
-
+          <DatePicker
+            light
+            datePickerType="range"
+            dateFormat="m/d/Y">
+            <DatePickerInput
+              labelText="From Date" placeholder="mm/dd/yyyy" locale="en" id="date-picker-input-id" />
+            <DatePickerInput
+              labelText="To Date"
+              placeholder="mm/dd/yyyy"
+              id="date-picker-input-id-2"
+            />
+          </DatePicker>
         </div>
 
         <div
@@ -143,7 +278,29 @@ export default class Components extends Component {
               ? 'component__container dropdown'
               : 'component__container component__container--hidden'
           }>
-
+          <DropdownV2
+            light
+            label="Label"
+            items={[
+              {
+                id: 'option-1',
+                text: 'Option 1',
+              },
+              {
+                id: 'option-2',
+                text: 'Option 2',
+              },
+              {
+                id: 'option-3',
+                text: 'Option 3',
+              },
+              {
+                id: 'option-4',
+                text: 'Option 4',
+              },
+            ]}
+            itemToString={item => (item ? item.text : '')}
+          />
         </div>
 
         <div
@@ -152,7 +309,26 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <div className="bx--file__container">
+            <FileUploader
+              labelTitle="Upload"
+              labelDescription="only .jpg and .png files at 500mb or less"
+              buttonLabel="Add files"
+              filenameStatus="edit"
+              accept={['.jpg', '.png']}
+              multiple
+              ref={fileUploader => (this.fileUploader = fileUploader)}
+            />
+            <Button
+              kind="secondary"
+              small
+              style={{ marginTop: '1rem' }}
+              onClick={() => {
+                this.fileUploader.clearFiles();
+              }}>
+              Clear File
+          </Button>
+          </div>
         </div>
 
         <div
@@ -211,6 +387,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }>
           <Loading withOverlay={false} />
+          <Loading active="true" small={true} withOverlay={false} />
         </div>
 
         <div
@@ -262,11 +439,94 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes('notification') || !isFiltering
+            checkedItems.includes('multi-select') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
+          <MultiSelect
+            light
+            placeholder="Filter"
+            label="MultiSelect Label"
+            items={[
+              {
+                id: 'item-1',
+                text: 'Item 1',
+              },
+              {
+                id: 'item-2',
+                text: 'Item 2',
+              },
+              {
+                id: 'item-3',
+                text: 'Item 3',
+              },
+              {
+                id: 'item-4',
+                text: 'Item 4',
+              },
+            ]}
+            itemToString={item => (item ? item.text : '')}
+          />
+        </div>
+
+        <div
+          className={
+            checkedItems.includes('toast-notification') || !isFiltering
               ? 'component__container component__container--notification'
               : 'component__container component__container--notification component__container--hidden'
           }>
+          <ToastNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            caption="Time stamp [00:00:00]"
+            kind="error"
+          />
+          <ToastNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            caption="Time stamp [00:00:00]"
+            kind="info"
+          />
+          <ToastNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            caption="Time stamp [00:00:00]"
+            kind="success"
+          />
+          <ToastNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            caption="Time stamp [00:00:00]"
+            kind="warning"
+          />
+        </div>
 
+        <div
+          className={
+            checkedItems.includes('inline-notification') || !isFiltering
+              ? 'component__container component__container--notification'
+              : 'component__container component__container--notification component__container--hidden'
+          }>
+          <InlineNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            kind="error"
+          />
+          <InlineNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            kind="info"
+          />
+          <InlineNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            kind="success"
+          />
+          <InlineNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            kind="warning"
+          />
         </div>
 
         <div
@@ -275,7 +535,7 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <NumberInput label="Number Input label" min={0} max={100} value={50} step={10} />
         </div>
 
         <div

@@ -51,8 +51,9 @@
   }
 
   .component__container {
-    flex-basis: 75%;
-    min-width: 100%;
+    flex-basis: 80%;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -70,9 +71,5 @@
     &--hidden {
       display: none;
     }
-  }
-
-  .dropdown > div {
-      width: 100%;
   }
 }

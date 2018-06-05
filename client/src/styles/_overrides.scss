@@ -3,17 +3,13 @@
       min-width: 1.125rem;
     }
 
-    .bx--modal {
-      z-index: 10001;
-    }
-
     .bx--footer {
       position: relative;
     }
 
-    .bx--toolbar div:nth-of-type(2) .bx--overflow-menu__icon {
-      padding: 0;
-    }
+    // .bx--toolbar div:nth-of-type(2) .bx--overflow-menu__icon {
+    //   padding: 0;
+    // }
 
     .bx--structured-list {
       border-collapse: separate;
@@ -26,12 +22,6 @@
       &-row--header-row {
         border-bottom: none;
         // box-shadow: 0 2px 0 0 $brand-01;
-      }
-    }
-
-    &.date-picker {
-      .bx--form-item {
-        flex: 0;
       }
     }
 }
