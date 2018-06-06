@@ -6,6 +6,7 @@ import {
   BreadcrumbItem,
   Button,
   Checkbox,
+  ClickableTile,
   CodeSnippet,
   ComboBox,
   ContentSwitcher,
@@ -26,15 +27,17 @@ import {
   OrderedList,
   OverflowMenu,
   OverflowMenuItem,
-  Pagination,
+  PaginationV2,
   ProgressIndicator,
   ProgressStep,
   RadioButtonGroup,
   RadioButton,
+  RadioTile,
   Search,
   Select,
   SelectItem,
   SelectItemGroup,
+  SelectableTile,
   Slider,
   StructuredListWrapper,
   StructuredListHead,
@@ -45,9 +48,10 @@ import {
   Switch,
   Tab,
   Tabs,
-  Tag,
   TextArea,
   TextInput,
+  Tile,
+  TileGroup,
   TimePicker,
   TimePickerSelect,
   ToastNotification,
@@ -535,7 +539,14 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-          <NumberInput label="Number Input label" min={0} max={100} value={50} step={10} />
+          <NumberInput
+            light
+            label="Number Input label"
+            min={0}
+            max={100}
+            value={50}
+            step={10}
+          />
         </div>
 
         <div
@@ -544,7 +555,20 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <OverflowMenu>
+            <OverflowMenuItem
+              itemText="Option 1"
+              primaryFocus={true}
+            />
+            <OverflowMenuItem itemText="Option 2" />
+            <OverflowMenuItem itemText="Option 3" />
+            <OverflowMenuItem itemText="Option 4" />
+            <OverflowMenuItem
+              itemText="Danger option"
+              hasDivider
+              isDelete
+            />
+          </OverflowMenu>
         </div>
 
         <div
@@ -553,7 +577,7 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <PaginationV2 pageSizes={[10, 20, 30, 40, 50]} totalItems={103} />
         </div>
 
         <div
@@ -562,7 +586,28 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <ProgressIndicator currentIndex={3}>
+            <ProgressStep
+              label="First step"
+              description="Step 1: Getting Started with Node.js"
+            />
+            <ProgressStep
+              label="Second step"
+              description="Step 2: Getting Started with Node.js"
+            />
+            <ProgressStep
+              label="Third step"
+              description="Step 3: Getting Started with Node.js"
+            />
+            <ProgressStep
+              label="Fourth step"
+              description="Step 4: Getting Started with Node.js"
+            />
+            <ProgressStep
+              label="Fifth step"
+              description="Step 5: Getting Started with Node.js"
+            />
+          </ProgressIndicator>
         </div>
 
         <div
@@ -571,7 +616,29 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <FormGroup legendText="Radio Button heading">
+            <RadioButtonGroup
+              name="radio-button-group"
+              defaultSelected="default-selected"
+              legend="Group Legend">
+              <RadioButton
+                value="standard"
+                id="radio-1"
+                labelText="Standard Radio Button label"
+              />
+              <RadioButton
+                value="default-selected"
+                labelText="Default selected Radio Button"
+                id="radio-2"
+              />
+              <RadioButton
+                value="disabled"
+                labelText="Disabled Radio Button"
+                id="radio-3"
+                disabled
+              />
+            </RadioButtonGroup>
+          </FormGroup>
         </div>
 
         <div
@@ -580,7 +647,13 @@ export default class Components extends Component {
               ? 'component__container component__container--search'
               : 'component__container component__container--search component__container--hidden'
           }>
-
+          <Search
+            light
+            className="some-class"
+            id="search-1"
+            labelText="Search"
+            placeHolderText="Search"
+          />
         </div>
 
         <div
@@ -589,7 +662,22 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <Select light id="select-1" defaultValue="placeholder-item">
+            <SelectItem
+              disabled
+              hidden
+              value="placeholder-item"
+              text="Choose an option"
+            />
+            <SelectItemGroup label="Category 1">
+              <SelectItem value="option-1" text="Option 1" />
+              <SelectItem value="option-2" text="Option 2" />
+            </SelectItemGroup>
+            <SelectItemGroup label="Category 2">
+              <SelectItem value="option-3" text="Option 3" />
+              <SelectItem value="option-4" text="Option 4" />
+            </SelectItemGroup>
+          </Select>
         </div>
 
         <div
@@ -598,7 +686,15 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <Slider
+            light
+            id="slider"
+            value={50}
+            min={0}
+            max={100}
+            step={1}
+            labelText="Slider Label"
+          />
         </div>
 
         <div
@@ -607,7 +703,65 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <StructuredListWrapper selection border>
+            <StructuredListHead>
+              <StructuredListRow head>
+                <StructuredListCell head>{''}</StructuredListCell>
+                <StructuredListCell head>ColumnA</StructuredListCell>
+                <StructuredListCell head>ColumnB</StructuredListCell>
+                <StructuredListCell head>ColumnC</StructuredListCell>
+              </StructuredListRow>
+            </StructuredListHead>
+            <StructuredListBody>
+              <StructuredListRow label htmlFor="row-1">
+                <StructuredListInput
+                  id="row-1"
+                  value="row-1"
+                  title="row-1"
+                  name="row-1"
+                  defaultChecked
+                />
+                <StructuredListCell>
+                  <Icon
+                    className="bx--structured-list-svg"
+                    name="checkmark--solid"
+                    description="select an option"
+                  />
+                </StructuredListCell>
+                <StructuredListCell>Row 1</StructuredListCell>
+                <StructuredListCell>Row 1</StructuredListCell>
+                <StructuredListCell>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dui
+                magna, finibus id tortor sed, aliquet bibendum augue. Aenean
+                posuere sem vel euismod dignissim. Nulla ut cursus dolor.
+                Pellentesque vulputate nisl a porttitor interdum.
+              </StructuredListCell>
+              </StructuredListRow>
+              <StructuredListRow label htmlFor="row-2">
+                <StructuredListInput
+                  id="row-2"
+                  value="row-2"
+                  title="row-2"
+                  name="row-1"
+                />
+                <StructuredListCell>
+                  <Icon
+                    className="bx--structured-list-svg"
+                    name="checkmark--solid"
+                    description="select an option"
+                  />
+                </StructuredListCell>
+                <StructuredListCell>Row 2</StructuredListCell>
+                <StructuredListCell>Row 2</StructuredListCell>
+                <StructuredListCell>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dui
+                magna, finibus id tortor sed, aliquet bibendum augue. Aenean
+                posuere sem vel euismod dignissim. Nulla ut cursus dolor.
+                Pellentesque vulputate nisl a porttitor interdum.
+              </StructuredListCell>
+              </StructuredListRow>
+            </StructuredListBody>
+          </StructuredListWrapper>
         </div>
 
         <div
@@ -616,16 +770,20 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('tag') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-
+          <Tabs>
+            <Tab label="Tab label 1">
+              <div className="some-content">Content for first tab goes here.</div>
+            </Tab>
+            <Tab label="Tab label 2">
+              <div className="some-content">Content for second tab goes here.</div>
+            </Tab>
+            <Tab label="Tab label 3">
+              <div className="some-content">Content for third tab goes here.</div>
+            </Tab>
+            <Tab label="Tab label 4">
+              <div className="some-content">Content for fourth tab goes here.</div>
+            </Tab>
+          </Tabs>
         </div>
 
         <div
@@ -634,7 +792,13 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <TextArea
+            light
+            cols={50}
+            rows={4}
+            labelText="Text Area label"
+            placeholder="Placeholder text"
+          />
         </div>
 
         <div
@@ -643,7 +807,37 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
+          <TextInput
+            light
+            id="text-input-7"
+            labelText="Text Input label"
+            placeholder="Placeholder text"
+          />
+        </div>
 
+        <div
+          className={
+            checkedItems.includes('tile') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
+          <TileGroup
+            name="tile-group"
+            defaultSelected="default-selected"
+            legend="Selectable Tile Group">
+            <RadioTile value="standard" id="tile-1" labelText="Selectable Tile">
+              Selectable Tile
+            </RadioTile>
+            <RadioTile
+              value="default-selected"
+              labelText="Default selected tile"
+              id="tile-2">
+              Selectable Tile
+            </RadioTile>
+            <RadioTile value="selected" labelText="Selectable Tile" id="tile-3">
+              Selectable Tile
+            </RadioTile>
+          </TileGroup>
         </div>
 
         <div

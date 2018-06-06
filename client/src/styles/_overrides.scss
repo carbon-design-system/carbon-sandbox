@@ -7,28 +7,11 @@
       position: relative;
     }
 
-    // .bx--toolbar div:nth-of-type(2) .bx--overflow-menu__icon {
-    //   padding: 0;
-    // }
+  .bx--tile-group {
+    display: flex;
 
-    .bx--structured-list {
-      border-collapse: separate;
-
-      &-row {
-        border-bottom: none;
-        // box-shadow: 0 1px 0 0 $ui-04;
-      }
-
-      &-row--header-row {
-        border-bottom: none;
-        // box-shadow: 0 2px 0 0 $brand-01;
-      }
-    }
-}
-
-.module-example {
-    h2 {
-      font-weight: 300;
-      margin-bottom: 1rem;
+    & > * {
+      margin-right: 1rem;
     }
   }
+}

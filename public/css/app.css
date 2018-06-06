@@ -4,16 +4,11 @@
 .components .component__container .bx--footer {
   position: relative; }
 
-.components .component__container .bx--structured-list {
-  border-collapse: separate; }
-  .components .component__container .bx--structured-list-row {
-    border-bottom: none; }
-  .components .component__container .bx--structured-list-row--header-row {
-    border-bottom: none; }
-
-.module-example h2 {
-  font-weight: 300;
-  margin-bottom: 1rem; }
+.components .component__container .bx--tile-group {
+  display: -ms-flexbox;
+  display: flex; }
+  .components .component__container .bx--tile-group > * {
+    margin-right: 1rem; }
 
 .sidebar {
   position: fixed;
