@@ -61,6 +61,7 @@ import {
   ToolbarOption,
   ToolbarDivider,
   Toggle,
+  ToggleSmall,
   UnorderedList,
 } from 'carbon-components-react';
 import DataTableExample from './DataTableExample';
@@ -231,6 +232,7 @@ export default class Components extends Component {
             ]}
             itemToString={item => (item ? item.text : '')}
             placeholder="Filter..."
+            onChange={() => { }}
           />
         </div>
 
@@ -240,7 +242,7 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-          <ContentSwitcher>
+          <ContentSwitcher onChange={() => { }}>
             <Switch kind="anchor" name="one" text="First section" />
             <Switch kind="anchor" name="two" text="Second section" />
             <Switch kind="anchor" name="three" text="Third section" />
@@ -391,7 +393,7 @@ export default class Components extends Component {
               : 'component__container component__container--hidden'
           }>
           <Loading withOverlay={false} />
-          <Loading active="true" small={true} withOverlay={false} />
+          <Loading active small={true} withOverlay={false} />
         </div>
 
         <div
@@ -541,6 +543,7 @@ export default class Components extends Component {
           }>
           <NumberInput
             light
+            id="number-input-100"
             label="Number Input label"
             min={0}
             max={100}
@@ -825,16 +828,15 @@ export default class Components extends Component {
             name="tile-group"
             defaultSelected="default-selected"
             legend="Selectable Tile Group">
-            <RadioTile value="standard" id="tile-1" labelText="Selectable Tile">
+            <RadioTile value="standard" id="tile-1">
               Selectable Tile
             </RadioTile>
             <RadioTile
               value="default-selected"
-              labelText="Default selected tile"
               id="tile-2">
               Selectable Tile
             </RadioTile>
-            <RadioTile value="selected" labelText="Selectable Tile" id="tile-3">
+            <RadioTile value="selected" id="tile-3">
               Selectable Tile
             </RadioTile>
           </TileGroup>
@@ -846,7 +848,18 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-
+          <TimePicker light id="time-picker" labelText="Select a time">
+            <TimePickerSelect id="time-picker-select-1" labelText="Choose AM or PM">
+              <SelectItem value="AM" text="AM" />
+              <SelectItem value="PM" text="PM" />
+            </TimePickerSelect>
+            <TimePickerSelect
+              id="time-picker-select-2"
+              labelText="Choose a timezone">
+              <SelectItem value="Timezone 1" text="Timezone 1" />
+              <SelectItem value="Timezone 2" text="Timezone 2" />
+            </TimePickerSelect>
+          </TimePicker>
         </div>
 
         <div
@@ -855,16 +868,8 @@ export default class Components extends Component {
               ? 'component__container component__container--toggle'
               : 'component__container component__container--toggle component__container--hidden'
           }>
-
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('toolbar') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-
+          <Toggle id="toggle-1" />
+          <ToggleSmall id="toggle-2" ariaLabel="Small Toggle" />
         </div>
 
         <div
