@@ -10,6 +10,9 @@
   .components .component__container .bx--tile-group > * {
     margin-right: 1rem; }
 
+.components .component__container.component__container--tooltip svg {
+  margin-left: .25rem; }
+
 .sidebar {
   position: fixed;
   right: 0;

@@ -60,6 +60,9 @@ import {
   ToolbarTitle,
   ToolbarOption,
   ToolbarDivider,
+  Tooltip,
+  TooltipDefinition,
+  TooltipIcon,
   Toggle,
   ToggleSmall,
   UnorderedList,
@@ -875,10 +878,31 @@ export default class Components extends Component {
         <div
           className={
             checkedItems.includes('tooltip') || !isFiltering
-              ? 'component__container'
+              ? 'component__container component__container--tooltip'
               : 'component__container component__container--hidden'
           }>
-
+          <TooltipDefinition tooltipText="Brief description of the dotted, underlined word above.">
+            Definition Tooltip
+          </TooltipDefinition>
+          <Tooltip triggerText="Tooltip label">
+            <p className="bx--tooltip__label">Tooltip subtitle</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaeca cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </Tooltip>
+          <TooltipIcon tooltipText="Filter">
+            <svg width="16" height="12" viewBox="0 0 16 12">
+              <g fillRule="nonzero">
+                <path d="M8.05 2a2.5 2.5 0 0 1 4.9 0H16v1h-3.05a2.5 2.5 0 0 1-4.9 0H0V2h8.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM3.05 9a2.5 2.5 0 0 1 4.9 0H16v1H7.95a2.5 2.5 0 0 1-4.9 0H0V9h3.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+              </g>
+            </svg>
+          </TooltipIcon>
         </div>
       </div>
     );

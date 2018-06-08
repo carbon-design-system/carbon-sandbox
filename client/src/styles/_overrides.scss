@@ -14,4 +14,10 @@
       margin-right: 1rem;
     }
   }
+
+  &.component__container--tooltip {
+    svg {
+      margin-left: .25rem;
+    }
+  }
 }
