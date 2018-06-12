@@ -24,16 +24,9 @@
     }
   }
 
-  .bx--dropdown.bx--dropdown--open:focus {
-    box-shadow: 0 -1px 0 0 #3d70b2, 1px 0 0 0 #3d70b2, -1px 0 0 0 #3d70b2;
-  }
-
-  .bx--dropdown--open:focus .bx--dropdown-list {
-    box-shadow: 0 1px 0 0 #3d70b2, 1px 0 0 0 #3d70b2, -1px 0 0 0 #3d70b2;
-  }
-
   .bx--dropdown-link:hover, .bx--dropdown-link:focus {
-    background-color: #3d70b2;
+    background-color: rgba(124, 199, 255, 0.1);
+    color: #152934;
   }
 
   .bx--dropdown--open .bx--dropdown-list {

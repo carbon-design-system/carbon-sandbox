@@ -105,20 +105,19 @@ export default class Filter extends Component {
           <Checkbox
             tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
-            id="card"
-            labelText="Card"
-          />
-          <Checkbox
-            tabIndex={expanded ? 0 : -1}
-            onChange={this.onChange}
             id="checkbox"
-            labelText="Checkbox"
-          />
+            labelText="Checkbox" />
           <Checkbox
             tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
             id="code-snippet"
             labelText="Code Snippet"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
+            id="combo-box"
+            labelText="Combo Box"
           />
           <Checkbox
             tabIndex={expanded ? 0 : -1}
@@ -159,12 +158,6 @@ export default class Filter extends Component {
           <Checkbox
             tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
-            id="interior-left-nav"
-            labelText="Interior Left Nav"
-          />
-          <Checkbox
-            tabIndex={expanded ? 0 : -1}
-            onChange={this.onChange}
             id="link"
             labelText="Link"
           />
@@ -189,8 +182,8 @@ export default class Filter extends Component {
           <Checkbox
             tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
-            id="module"
-            labelText="Module"
+            id="multi-select"
+            labelText="Multi Select"
           />
           <Checkbox
             tabIndex={expanded ? 0 : -1}
@@ -261,12 +254,6 @@ export default class Filter extends Component {
           <Checkbox
             tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
-            id="tag"
-            labelText="Tag"
-          />
-          <Checkbox
-            tabIndex={expanded ? 0 : -1}
-            onChange={this.onChange}
             id="textarea"
             labelText="Text Area"
           />
@@ -279,6 +266,12 @@ export default class Filter extends Component {
           <Checkbox
             tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}
+            id="tile"
+            labelText="Tile"
+          />
+          <Checkbox
+            tabIndex={expanded ? 0 : -1}
+            onChange={this.onChange}
             id="time-picker"
             labelText="Time Picker"
           />
@@ -287,12 +280,6 @@ export default class Filter extends Component {
             onChange={this.onChange}
             id="toggle"
             labelText="Toggle"
-          />
-          <Checkbox
-            tabIndex={expanded ? 0 : -1}
-            onChange={this.onChange}
-            id="toolbar"
-            labelText="Toolbar"
           />
           <Checkbox
             tabIndex={expanded ? 0 : -1}

@@ -30,12 +30,9 @@
       outline: 1px solid #047cc0; }
     .sidebar .bx--dropdown .bx--dropdown__arrow {
       fill: #3d70b2; }
-  .sidebar .bx--dropdown.bx--dropdown--open:focus {
-    box-shadow: 0 -1px 0 0 #3d70b2, 1px 0 0 0 #3d70b2, -1px 0 0 0 #3d70b2; }
-  .sidebar .bx--dropdown--open:focus .bx--dropdown-list {
-    box-shadow: 0 1px 0 0 #3d70b2, 1px 0 0 0 #3d70b2, -1px 0 0 0 #3d70b2; }
   .sidebar .bx--dropdown-link:hover, .sidebar .bx--dropdown-link:focus {
-    background-color: #3d70b2; }
+    background-color: rgba(124, 199, 255, 0.1);
+    color: #152934; }
   .sidebar .bx--dropdown--open .bx--dropdown-list {
     background-color: #fff; }
   .sidebar .bx--link:visited,
@@ -10505,6 +10502,22 @@ span.flatpickr-weekday {
     margin: 1rem; }
   #app .component__container--hidden {
     display: none; }
+  #app .component__container.date-picker .white-bg,
+  #app .component__container.dropdown .white-bg,
+  #app .component__container.multi-select .white-bg,
+  #app .component__container.search .white-bg,
+  #app .component__container.slider .white-bg,
+  #app .component__container.textarea .white-bg,
+  #app .component__container.text-input .white-bg,
+  #app .component__container.time-picker .white-bg {
+    margin-left: 0;
+    width: 100%; }
+  #app .component__container .white-bg {
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    padding: 1rem;
+    margin-top: 0; }
 
 .filter-container {
   -ms-flex-pack: center;

@@ -71,5 +71,25 @@
     &--hidden {
       display: none;
     }
+
+    &.date-picker .white-bg,
+    &.dropdown .white-bg,
+    &.multi-select .white-bg,
+    &.search .white-bg,
+    &.slider .white-bg,
+    &.textarea .white-bg,
+    &.text-input .white-bg,
+    &.time-picker .white-bg {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .white-bg {
+      width: auto;
+      height: auto;
+      background-color: $ui-01;
+      padding: 1rem;
+      margin-top: 0;
+    }
   }
 }

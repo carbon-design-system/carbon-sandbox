@@ -183,9 +183,11 @@ export default class Components extends Component {
               ? 'component__container'
               : 'component__container component__container--hidden'
           }>
-          <CodeSnippet type="inline" feedback="Feedback Enabled 👍" copyLabel="Copy Code">
-            {'node -v'}
-          </CodeSnippet>
+          <div className="white-bg">
+            <CodeSnippet type="inline" feedback="Feedback Enabled 👍" copyLabel="Copy Code">
+              {'node -v'}
+            </CodeSnippet>
+          </div>
           <CodeSnippet type="inline" light feedback="Feedback Enabled 👍" copyLabel="Copy Code">
             {'node -v'}
           </CodeSnippet>
@@ -279,6 +281,19 @@ export default class Components extends Component {
               id="date-picker-input-id-2"
             />
           </DatePicker>
+          <div className="white-bg">
+            <DatePicker
+              datePickerType="range"
+              dateFormat="m/d/Y">
+              <DatePickerInput
+                labelText="From Date" placeholder="mm/dd/yyyy" locale="en" id="date-picker-input-id-3" />
+              <DatePickerInput
+                labelText="To Date"
+                placeholder="mm/dd/yyyy"
+                id="date-picker-input-id-4"
+              />
+            </DatePicker>
+          </div>
         </div>
 
         <div
@@ -310,6 +325,30 @@ export default class Components extends Component {
             ]}
             itemToString={item => (item ? item.text : '')}
           />
+          <div className="white-bg">
+            <DropdownV2
+              label="Label"
+              items={[
+                {
+                  id: 'option-1',
+                  text: 'Option 1',
+                },
+                {
+                  id: 'option-2',
+                  text: 'Option 2',
+                },
+                {
+                  id: 'option-3',
+                  text: 'Option 3',
+                },
+                {
+                  id: 'option-4',
+                  text: 'Option 4',
+                },
+              ]}
+              itemToString={item => (item ? item.text : '')}
+            />
+          </div>
         </div>
 
         <div
@@ -449,7 +488,7 @@ export default class Components extends Component {
         <div
           className={
             checkedItems.includes('multi-select') || !isFiltering
-              ? 'component__container'
+              ? 'component__container multi-select'
               : 'component__container component__container--hidden'
           }>
           <MultiSelect
@@ -476,6 +515,31 @@ export default class Components extends Component {
             ]}
             itemToString={item => (item ? item.text : '')}
           />
+          <div className="white-bg">
+            <MultiSelect
+              placeholder="Filter"
+              label="MultiSelect Label"
+              items={[
+                {
+                  id: 'item-1',
+                  text: 'Item 1',
+                },
+                {
+                  id: 'item-2',
+                  text: 'Item 2',
+                },
+                {
+                  id: 'item-3',
+                  text: 'Item 3',
+                },
+                {
+                  id: 'item-4',
+                  text: 'Item 4',
+                },
+              ]}
+              itemToString={item => (item ? item.text : '')}
+            />
+          </div>
         </div>
 
         <div
@@ -553,6 +617,16 @@ export default class Components extends Component {
             value={50}
             step={10}
           />
+          <div className="white-bg">
+            <NumberInput
+              id="number-input-101"
+              label="Number Input label"
+              min={0}
+              max={100}
+              value={50}
+              step={10}
+            />
+          </div>
         </div>
 
         <div
@@ -650,8 +724,8 @@ export default class Components extends Component {
         <div
           className={
             checkedItems.includes('search') || !isFiltering
-              ? 'component__container component__container--search'
-              : 'component__container component__container--search component__container--hidden'
+              ? 'component__container search'
+              : 'component__container component__container--hidden'
           }>
           <Search
             light
@@ -660,6 +734,14 @@ export default class Components extends Component {
             labelText="Search"
             placeHolderText="Search"
           />
+          <div className="white-bg">
+            <Search
+              className="some-class"
+              id="search-1"
+              labelText="Search"
+              placeHolderText="Search"
+            />
+          </div>
         </div>
 
         <div
@@ -684,12 +766,30 @@ export default class Components extends Component {
               <SelectItem value="option-4" text="Option 4" />
             </SelectItemGroup>
           </Select>
+          <div className="white-bg">
+            <Select id="select-10" defaultValue="placeholder-item">
+              <SelectItem
+                disabled
+                hidden
+                value="placeholder-item"
+                text="Choose an option"
+              />
+              <SelectItemGroup label="Category 1">
+                <SelectItem value="option-1" text="Option 1" />
+                <SelectItem value="option-2" text="Option 2" />
+              </SelectItemGroup>
+              <SelectItemGroup label="Category 2">
+                <SelectItem value="option-3" text="Option 3" />
+                <SelectItem value="option-4" text="Option 4" />
+              </SelectItemGroup>
+            </Select>
+          </div>
         </div>
 
         <div
           className={
             checkedItems.includes('slider') || !isFiltering
-              ? 'component__container'
+              ? 'component__container slider'
               : 'component__container component__container--hidden'
           }>
           <Slider
@@ -701,6 +801,17 @@ export default class Components extends Component {
             step={1}
             labelText="Slider Label"
           />
+
+          <div className="white-bg">
+            <Slider
+              id="slider-2"
+              value={50}
+              min={0}
+              max={100}
+              step={1}
+              labelText="Slider Label"
+            />
+          </div>
         </div>
 
         <div
@@ -795,7 +906,7 @@ export default class Components extends Component {
         <div
           className={
             checkedItems.includes('textarea') || !isFiltering
-              ? 'component__container'
+              ? 'component__container textarea'
               : 'component__container component__container--hidden'
           }>
           <TextArea
@@ -805,12 +916,20 @@ export default class Components extends Component {
             labelText="Text Area label"
             placeholder="Placeholder text"
           />
+          <div className="white-bg">
+            <TextArea
+              cols={50}
+              rows={4}
+              labelText="Text Area label"
+              placeholder="Placeholder text"
+            />
+          </div>
         </div>
 
         <div
           className={
             checkedItems.includes('text-input') || !isFiltering
-              ? 'component__container'
+              ? 'component__container text-input'
               : 'component__container component__container--hidden'
           }>
           <TextInput
@@ -819,6 +938,13 @@ export default class Components extends Component {
             labelText="Text Input label"
             placeholder="Placeholder text"
           />
+          <div className="white-bg">
+            <TextInput
+              id="text-input-78"
+              labelText="Text Input label"
+              placeholder="Placeholder text"
+            />
+          </div>
         </div>
 
         <div
@@ -848,7 +974,7 @@ export default class Components extends Component {
         <div
           className={
             checkedItems.includes('time-picker') || !isFiltering
-              ? 'component__container'
+              ? 'component__container time-picker'
               : 'component__container component__container--hidden'
           }>
           <TimePicker light id="time-picker" labelText="Select a time">
@@ -863,6 +989,20 @@ export default class Components extends Component {
               <SelectItem value="Timezone 2" text="Timezone 2" />
             </TimePickerSelect>
           </TimePicker>
+          <div className="white-bg">
+            <TimePicker id="time-picker-23" labelText="Select a time">
+              <TimePickerSelect id="time-picker-select-6" labelText="Choose AM or PM">
+                <SelectItem value="AM" text="AM" />
+                <SelectItem value="PM" text="PM" />
+              </TimePickerSelect>
+              <TimePickerSelect
+                id="time-picker-select-87"
+                labelText="Choose a timezone">
+                <SelectItem value="Timezone 1" text="Timezone 1" />
+                <SelectItem value="Timezone 2" text="Timezone 2" />
+              </TimePickerSelect>
+            </TimePicker>
+          </div>
         </div>
 
         <div
