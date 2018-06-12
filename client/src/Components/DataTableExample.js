@@ -119,8 +119,8 @@ export default class DataTableExample extends Component {
               <TableHead>
                 <TableRow>
                   <TableSelectAll {...getSelectionProps()} />
-                  {headers.map(header => (
-                    <TableHeader {...getHeaderProps({ header })}>
+                  {headers.map((header, i)  => (
+                    <TableHeader key={i} {...getHeaderProps({ header })}>
                       {header.header}
                     </TableHeader>
                   ))}

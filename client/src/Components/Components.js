@@ -488,7 +488,7 @@ export default class Components extends Component {
             <p className="bx--modal-content__text">
               Transactional modals are used to validate user decisions os to
               gain secondary confirmation from the user. Typically, the modal
-              requests either a 'yes' or 'no' response.
+              requests either a `yes` or `no` response.
             </p>
             <p className="bx--modal-content__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
