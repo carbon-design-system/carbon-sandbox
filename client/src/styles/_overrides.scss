@@ -1,11 +1,11 @@
 .components .component__container {
   .bx--radio-button__appearance {
-      min-width: 1.125rem;
-    }
+    min-width: 1.125rem;
+  }
 
-    .bx--footer {
-      position: relative;
-    }
+  .bx--footer {
+    position: relative;
+  }
 
   .bx--tile-group {
     display: flex;
@@ -17,7 +17,7 @@
 
   &.component__container--tooltip {
     svg {
-      margin-left: .25rem;
+      margin-left: 0.25rem;
     }
   }
 }

@@ -1,12 +1,12 @@
-$font-path: './../assets/fonts';
+$font-path: "./../assets/fonts";
 $css--reset: true;
 $css--font-face: true;
 
-@import './overrides';
-@import './sidebar';
-@import './components';
-@import './filter';
-@import './footer';
+@import "./overrides";
+@import "./sidebar";
+@import "./components";
+@import "./filter";
+@import "./footer";
 
 .container {
   display: flex;
@@ -22,10 +22,10 @@ $css--font-face: true;
   height: rem(40px);
   display: flex;
   align-items: center;
-  background-color: #EFC100;
+  background-color: #efc100;
 
   p {
-    @include font-size('14');
+    @include font-size("14");
   }
 
   span {
@@ -34,14 +34,14 @@ $css--font-face: true;
 }
 
 .skip-to-content {
-  position:absolute;
-  width:1px;
-  height:1px;
-  padding:0;
-  margin:-1px;
-  overflow:hidden;
-  clip:rect(0, 0, 0, 0);
-  border:0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
   visibility: visible;
   white-space: nowrap;
 
