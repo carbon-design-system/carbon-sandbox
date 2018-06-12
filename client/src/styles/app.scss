@@ -1,19 +1,12 @@
-$font-path: './../assets/fonts';
+$font-path: "./../assets/fonts";
 $css--reset: true;
 $css--font-face: true;
 
-@import '../../../node_modules/carbon-components/scss/globals/scss/styles';
-@import './overrides';
-@import './sidebar';
-@import './components';
-@import './filter';
-@import './footer';
-
-html, body, #app, .container {
-  min-height: 100%;
-  height: 100%;
-  width: 100%;
-}
+@import "./overrides";
+@import "./sidebar";
+@import "./components";
+@import "./filter";
+@import "./footer";
 
 .container {
   display: flex;
@@ -29,10 +22,10 @@ html, body, #app, .container {
   height: rem(40px);
   display: flex;
   align-items: center;
-  background-color: #EFC100;
+  background-color: #efc100;
 
   p {
-    @include font-size('14');
+    @include font-size("14");
   }
 
   span {
@@ -41,14 +34,14 @@ html, body, #app, .container {
 }
 
 .skip-to-content {
-  position:absolute;
-  width:1px;
-  height:1px;
-  padding:0;
-  margin:-1px;
-  overflow:hidden;
-  clip:rect(0, 0, 0, 0);
-  border:0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
   visibility: visible;
   white-space: nowrap;
 

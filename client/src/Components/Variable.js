@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 
 export default class Variable extends PureComponent {
   handleChange = (evt, name) => {
@@ -18,7 +18,9 @@ export default class Variable extends PureComponent {
           value={hex}
           id={name}
         />
-        <label htmlFor={name} className="variable__name">{name}</label>
+        <label htmlFor={name} className="variable__name">
+          {name}
+        </label>
         <p className="variable__hex">{hex}</p>
       </li>
     );

@@ -1,13 +1,12 @@
-import React, { Component, PropTypes } from 'react';
-import Sidebar from './../Components/Sidebar';
-import Components from './../Components/Components';
-// import { Icon } from '@console/bluemix-components-react';
+import React, { Component } from "react";
+import Sidebar from "./../Components/Sidebar";
+import Components from "./../Components/Components";
 
 export default class App extends Component {
   state = {
     isFiltering: false,
     checkedItems: [],
-    isNotSupported: false,
+    isNotSupported: false
   };
 
   componentDidMount = () => {
@@ -18,21 +17,21 @@ export default class App extends Component {
     const isNotSupported = isSafari || isIE;
 
     this.setState({
-      isNotSupported,
+      isNotSupported
     });
   };
 
   onChildChanged = newState => {
     this.setState({
       checkedItems: newState,
-      isFiltering: newState.length > 0,
+      isFiltering: newState.length > 0
     });
   };
 
   handleSkip = evt => {
     if (evt.which === 13) {
       document.activeElement.blur();
-      document.querySelector('#theme-switcher').focus();
+      document.querySelector("#theme-switcher").focus();
     }
   };
 
@@ -48,14 +47,15 @@ export default class App extends Component {
         >
           Skip to main content
         </a>
-        {isNotSupported
-          ? <div className="banner">
+        {isNotSupported ? (
+          <div className="banner">
             <p>
               <span>Attention: </span>
-                For the best experience, please view this site using Google Chrome or Mozilla Firefox
-              </p>
+              For the best experience, please view this site using Google Chrome
+              or Mozilla Firefox
+            </p>
           </div>
-          : null}
+        ) : null}
         <Components checkedItems={checkedItems} isFiltering={isFiltering} />
         <Sidebar
           isNotSupported={isNotSupported}

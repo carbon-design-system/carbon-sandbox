@@ -1,48 +1,43 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Accordion,
   AccordionItem,
   Breadcrumb,
   BreadcrumbItem,
   Button,
-  Card,
-  CardFooter,
-  CardContent,
   Checkbox,
+  ClickableTile,
   CodeSnippet,
+  ComboBox,
   ContentSwitcher,
   DatePicker,
   DatePickerInput,
-  Dropdown,
-  DropdownItem,
+  DropdownV2,
   FileUploader,
   Footer,
   FormGroup,
   Icon,
-  InteriorLeftNav,
-  InteriorLeftNavItem,
-  InteriorLeftNavList,
+  InlineNotification,
   Link,
   ListItem,
   Loading,
   ModalWrapper,
-  Module,
-  ModuleHeader,
-  ModuleBody,
-  Notification,
+  MultiSelect,
   NumberInput,
   OrderedList,
   OverflowMenu,
   OverflowMenuItem,
-  Pagination,
+  PaginationV2,
   ProgressIndicator,
   ProgressStep,
   RadioButtonGroup,
   RadioButton,
+  RadioTile,
   Search,
   Select,
   SelectItem,
   SelectItemGroup,
+  SelectableTile,
   Slider,
   StructuredListWrapper,
   StructuredListHead,
@@ -51,42 +46,44 @@ import {
   StructuredListInput,
   StructuredListCell,
   Switch,
-  Table,
-  TableBody,
-  TableData,
-  TableHead,
-  TableHeader,
-  TableRow,
   Tab,
   Tabs,
-  Tag,
   TextArea,
   TextInput,
+  Tile,
+  TileGroup,
   TimePicker,
   TimePickerSelect,
+  ToastNotification,
   Toolbar,
   ToolbarItem,
   ToolbarTitle,
   ToolbarOption,
   ToolbarDivider,
+  Tooltip,
+  TooltipDefinition,
+  TooltipIcon,
   Toggle,
-  TooltipSimple,
-  UnorderedList,
-} from 'carbon-components-react';
+  ToggleSmall,
+  UnorderedList
+} from "carbon-components-react";
+import DataTableExample from "./DataTableExample";
 
 export default class Components extends Component {
   render() {
     const { checkedItems, isFiltering } = this.props;
+
     return (
       <div className="components">
         <div
           className={
-            checkedItems.includes('accordion') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("accordion") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <Accordion>
-            <AccordionItem title="Label">
+            <AccordionItem title="Section 1 title">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -94,23 +91,37 @@ export default class Components extends Component {
                 nisi ut aliquip ex ea commodo consequat.
               </p>
             </AccordionItem>
-            <AccordionItem title="Label with multiple words">
+            <AccordionItem title="Section 2 title">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
+            </AccordionItem>
+            <AccordionItem title="Section 3 title">
+              <Select id="select-1" defaultValue="placeholder-item">
+                <SelectItem
+                  disabled
+                  hidden
+                  value="placeholder-item"
+                  text="Choose an option"
+                />
+                <SelectItem value="option-1" text="Option 1" />
+                <SelectItem value="option-2" text="Option 2" />
+                <SelectItem value="option-3" text="Option 3" />
+              </Select>
             </AccordionItem>
           </Accordion>
         </div>
 
         <div
           className={
-            checkedItems.includes('breadcrumb') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("breadcrumb") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <Breadcrumb>
             <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
@@ -120,107 +131,145 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes('button') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("button") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <Button>Primary button</Button>
           <Button kind="secondary">Secondary button</Button>
-          <Button small>Small button</Button>
-          <Button disabled>Disabled</Button>
-          <Button icon="search--glyph" iconDescription="Search">
-            With an icon
+          <Button small>Small primary button</Button>
+          <Button small kind="secondary">
+            Small secondary Button
           </Button>
+          <Button disabled>Disabled button</Button>
           <Button
-            kind="secondary"
-            icon="search--glyph"
-            iconDescription="Search">
-            With an icon
+            kind="ghost"
+            className="some-class"
+            icon="add--solid"
+            iconDescription="Add"
+          >
+            Ghost button
           </Button>
-          <Button kind="danger" className="some-class">
-            Danger button
-          </Button>
+          <Button kind="danger">Danger button</Button>
+          <Button kind="danger--primary">Danger Primary button</Button>
+          <Button kind="tertiary">Tertiary button</Button>
         </div>
 
         <div
           className={
-            checkedItems.includes('card') || !isFiltering
-              ? 'component__container component__container--card'
-              : 'component__container component__container--card component__container--hidden'
-          }>
-          <Card>
-            <CardContent
-              cardTitle="Card Name"
-              cardIcon="app-services"
-              cardInfo={['Secondary Information']}
-            />
-            <CardFooter>
-              <Button small kind="primary">
-                View credentials
-              </Button>
-              <Link href="#" className="bx--card-footer__link">
-                Link
-              </Link>
-            </CardFooter>
-          </Card>
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('checkbox') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("checkbox") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <fieldset className="bx--fieldset">
-            <legend className="bx--label">Favorite Colors</legend>
-            <Checkbox defaultChecked id="red" labelText="Red" />
-            <Checkbox defaultChecked id="blue" labelText="Blue" />
+            <legend className="bx--label">Checkbox heading</legend>
+            <Checkbox id="checkbox-label-1" labelText="Checkbox label 1" />
+            <Checkbox
+              id="checkbox-label-2"
+              labelText="Checkbox label 1"
+              indeterminate
+            />
+            <Checkbox
+              defaultChecked
+              id="checkbox-label-3"
+              labelText="Checkbox label 2"
+            />
           </fieldset>
         </div>
 
         <div
           className={
-            checkedItems.includes('code-snippet') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <CodeSnippet type="terminal">
+            checkedItems.includes("code-snippet") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
+          <div className="white-bg">
+            <CodeSnippet
+              type="inline"
+              feedback="Feedback Enabled 👍"
+              copyLabel="Copy Code"
+            >
+              {"node -v"}
+            </CodeSnippet>
+          </div>
+          <CodeSnippet
+            type="inline"
+            light
+            feedback="Feedback Enabled 👍"
+            copyLabel="Copy Code"
+          >
+            {"node -v"}
+          </CodeSnippet>
+          <CodeSnippet
+            type="single"
+            feedback="Feedback Enabled 👍"
+            copyLabel="Copy Code"
+          >
             {
-              'node -v Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, veritatis voluptate id incidunt molestiae officia possimus, quasi itaque alias, architecto hic, dicta fugit? Debitis delectus quidem explicabo vitae fuga laboriosam!'
+              "node -v Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, veritatis voluptate id incidunt molestiae officia possimus, quasi itaque alias, architecto hic, dicta fugit? Debitis delectus quidem explicabo vitae fuga laboriosam!"
             }
           </CodeSnippet>
 
-          <CodeSnippet type="code">
-            {`@mixin bx--snippet($type) {
-  @if $type == 'terminal' {
-    background-color: red;
-  } @else if $type == 'code' {
-    background-color: blue;
-  } @else if $type == 'text' {
-    background-color: white;
-  }
+          <CodeSnippet
+            type="multi"
+            feedback="Feedback Enabled 👍"
+            copyLabel="Copy Code"
+          >
+            {`@mixin grid-container {
+  width: 100%;
+  padding-right: padding(mobile);
+  padding-left: padding(mobile);
 
-  @if $type == 'terminal' {
-    background-color: red;
-  } @else if $type == 'code' {
-    background-color: blue;
-  } @else if $type == 'text' {
-    background-color: white;
+  @include breakpoint(bp--xs--major) {
+    padding-right: padding(xs);
   }
-}
-              `}
+}  `}
           </CodeSnippet>
         </div>
 
         <div
           className={
-            checkedItems.includes('content-switcher') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <ContentSwitcher
-            selectedIndex={1}
-            onChange={() => console.log('change')}>
+            checkedItems.includes("combo-box") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
+          <ComboBox
+            items={[
+              {
+                id: "option-1",
+                text: "Option 1"
+              },
+              {
+                id: "option-2",
+                text: "Option 2"
+              },
+              {
+                id: "option-3",
+                text: "Option 3"
+              },
+              {
+                id: "option-4",
+                text: "Option 4"
+              }
+            ]}
+            itemToString={item => (item ? item.text : "")}
+            placeholder="Filter..."
+            onChange={() => {}}
+          />
+        </div>
+
+        <div
+          className={
+            checkedItems.includes("content-switcher") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
+          <ContentSwitcher onChange={() => {}}>
             <Switch kind="anchor" name="one" text="First section" />
             <Switch kind="anchor" name="two" text="Second section" />
             <Switch kind="anchor" name="three" text="Third section" />
@@ -229,174 +278,164 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes('data-table') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <Table>
-            <TableHead>
-              <TableRow header>
-                <TableHeader>First Name</TableHeader>
-                <TableHeader>Last Name</TableHeader>
-                <TableHeader>House</TableHeader>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              <TableRow>
-                <TableData>Harry</TableData>
-                <TableData>Potter</TableData>
-                <TableData>Gryffindor</TableData>
-              </TableRow>
-              <TableRow>
-                <TableData>Hermoine</TableData>
-                <TableData>Granger</TableData>
-                <TableData>Gryffindor</TableData>
-              </TableRow>
-              <TableRow>
-                <TableData>Blaise</TableData>
-                <TableData>Zambini</TableData>
-                <TableData>Slytherin</TableData>
-              </TableRow>
-              <TableRow>
-                <TableData>Jon</TableData>
-                <TableData>Snow</TableData>
-                <TableData>Stark</TableData>
-              </TableRow>
-            </TableBody>
-          </Table>
+            checkedItems.includes("data-table") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
+          <DataTableExample />
         </div>
 
         <div
           className={
-            checkedItems.includes('date-picker') || !isFiltering
-              ? 'component__container date-picker'
-              : 'component__container component__container--hidden date-picker'
-          }>
-          <DatePicker id="date-picker-demo" datePickerType="range">
+            checkedItems.includes("date-picker") || !isFiltering
+              ? "component__container date-picker"
+              : "component__container component__container--hidden date-picker"
+          }
+        >
+          <DatePicker light datePickerType="range" dateFormat="m/d/Y">
             <DatePickerInput
-              className="some-class"
-              labelText="Select a date"
+              labelText="From Date"
               placeholder="mm/dd/yyyy"
+              locale="en"
               id="date-picker-input-id"
             />
             <DatePickerInput
-              className="some-class"
-              labelText="Select a date"
+              labelText="To Date"
               placeholder="mm/dd/yyyy"
-              id="date-picker-id-2"
+              id="date-picker-input-id-2"
             />
           </DatePicker>
+          <div className="white-bg">
+            <DatePicker datePickerType="range" dateFormat="m/d/Y">
+              <DatePickerInput
+                labelText="From Date"
+                placeholder="mm/dd/yyyy"
+                locale="en"
+                id="date-picker-input-id-3"
+              />
+              <DatePickerInput
+                labelText="To Date"
+                placeholder="mm/dd/yyyy"
+                id="date-picker-input-id-4"
+              />
+            </DatePicker>
+          </div>
         </div>
 
         <div
           className={
-            checkedItems.includes('dropdown') || !isFiltering
-              ? 'component__container dropdown'
-              : 'component__container component__container--hidden'
-          }>
-          <Dropdown defaultText="Choose something..">
-            <DropdownItem itemText="All" value="all" />
-            <DropdownItem itemText="Cloud Foundry API" value="cloudFoundry" />
-            <DropdownItem itemText="Staging" value="staging" />
-            <DropdownItem itemText="Droplet Execution Agent" value="dea" />
-            <DropdownItem itemText="Router" value="router" />
-          </Dropdown>
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('file-uploader') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <FileUploader
-            id="file-1"
-            labelTitle="Upload"
-            labelDescription="only .jpg files at 500mb or less"
-            buttonLabel="Add files"
-            filenameStatus="edit"
-            multiple
+            checkedItems.includes("dropdown") || !isFiltering
+              ? "component__container dropdown"
+              : "component__container component__container--hidden"
+          }
+        >
+          <DropdownV2
+            light
+            label="Label"
+            items={[
+              {
+                id: "option-1",
+                text: "Option 1"
+              },
+              {
+                id: "option-2",
+                text: "Option 2"
+              },
+              {
+                id: "option-3",
+                text: "Option 3"
+              },
+              {
+                id: "option-4",
+                text: "Option 4"
+              }
+            ]}
+            itemToString={item => (item ? item.text : "")}
           />
+          <div className="white-bg">
+            <DropdownV2
+              label="Label"
+              items={[
+                {
+                  id: "option-1",
+                  text: "Option 1"
+                },
+                {
+                  id: "option-2",
+                  text: "Option 2"
+                },
+                {
+                  id: "option-3",
+                  text: "Option 3"
+                },
+                {
+                  id: "option-4",
+                  text: "Option 4"
+                }
+              ]}
+              itemToString={item => (item ? item.text : "")}
+            />
+          </div>
         </div>
 
         <div
           className={
-            checkedItems.includes('footer') || !isFiltering
-              ? 'component__container component__container--footer'
-              : 'component__container component__container--footer component__container--hidden'
-          }>
+            checkedItems.includes("file-uploader") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
+          <div className="bx--file__container">
+            <FileUploader
+              labelTitle="Upload"
+              labelDescription="only .jpg and .png files at 500mb or less"
+              buttonLabel="Add files"
+              filenameStatus="edit"
+              accept={[".jpg", ".png"]}
+              multiple
+              ref={fileUploader => (this.fileUploader = fileUploader)}
+            />
+            <Button
+              kind="secondary"
+              small
+              style={{ marginTop: "1rem" }}
+              onClick={() => {
+                this.fileUploader.clearFiles();
+              }}
+            >
+              Clear File
+            </Button>
+          </div>
+        </div>
+
+        <div
+          className={
+            checkedItems.includes("footer") || !isFiltering
+              ? "component__container component__container--footer"
+              : "component__container component__container--footer component__container--hidden"
+          }
+        >
           <Footer />
         </div>
 
         <div
           className={
-            checkedItems.includes('interior-left-nav') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <InteriorLeftNav>
-            <InteriorLeftNavList title="Example Item 1">
-              <InteriorLeftNavItem
-                href="#example-item-1A"
-                label="Example Item 1A"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-1B"
-                label="Example Item 1B"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-1C"
-                label="Example Item 1C"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-1D"
-                label="Example Item 1D"
-              />
-            </InteriorLeftNavList>
-            <InteriorLeftNavList title="Example Item 2">
-              <InteriorLeftNavItem
-                href="#example-item-2A"
-                label="Example Item 2A"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-2B"
-                label="Example Item 2B"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-2C"
-                label="Example Item 2C"
-              />
-              <InteriorLeftNavItem
-                href="#example-item-2D"
-                label="Example Item 2D"
-              />
-            </InteriorLeftNavList>
-            <InteriorLeftNavItem
-              href="#example-item-3"
-              label="Example Item 3"
-            />
-            <InteriorLeftNavItem
-              href="#example-item-4"
-              label="Example Item 4"
-            />
-          </InteriorLeftNav>
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('link') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("link") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <Link href="#">Link</Link>
         </div>
 
         <div
           className={
-            checkedItems.includes('list') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("list") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <OrderedList>
             <ListItem>
               Ordered List level 1
@@ -424,28 +463,32 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes('loading') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("loading") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <Loading withOverlay={false} />
+          <Loading active small={true} withOverlay={false} />
         </div>
 
         <div
           className={
-            checkedItems.includes('modal') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("modal") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <ModalWrapper
             id="transactional-modal"
             buttonTriggerText="Transactional Modal"
             modalLabel="Label (optional)"
-            modalHeading="Transactional Modal">
+            modalHeading="Transactional Modal"
+          >
             <p className="bx--modal-content__text">
               Transactional modals are used to validate user decisions os to
               gain secondary confirmation from the user. Typically, the modal
-              requests either a 'yes' or 'no' response.
+              requests either a `yes` or `no` response.
             </p>
             <p className="bx--modal-content__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -480,167 +523,204 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes('module') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <Module className="some-class" size="single">
-            <ModuleHeader>Module Example</ModuleHeader>
-            <ModuleBody>
-              <p>
-                Lorem Ipsum is dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-              <p>
-                It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-            </ModuleBody>
-          </Module>
-
-          <Module className="some-class">
-            <ModuleHeader>Module Example</ModuleHeader>
-            <ModuleBody>
-              <p>
-                Lorem Ipsum is dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-              <p>
-                It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-            </ModuleBody>
-          </Module>
-
-          <Module className="module-example" size="single">
-            <ModuleBody>
-              <h2>Plain Card</h2>
-              <p>
-                This is a plain card which is used as a container to house other
-                elements, such as a button, overflow menu, and links
-              </p>
-            </ModuleBody>
-          </Module>
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('notification') || !isFiltering
-              ? 'component__container component__container--notification'
-              : 'component__container component__container--notification component__container--hidden'
-          }>
-          <div>
-            <Notification
-              title="Warning notification:"
-              subtitle="Here is a clear explanation of the warning"
-              kind="warning"
-            />
-            <Notification
-              title="Informational notification:"
-              subtitle="Here is the information or directions"
-              kind="info"
-            />
-            <Notification
-              title="Error notification:"
-              subtitle="Here is a clear explanation of the error"
-              kind="error"
-            />
-            <Notification
-              title="Success notification:"
-              subtitle="Here is the information or directions"
-              kind="success"
-            />
-          </div>
-          <div>
-            <Notification
-              title="'App Name' is stopped"
-              subtitle="Your application was stopped"
-              caption="05/09/2016 5:41:14 PM"
-              kind="warning"
-            />
-            <Notification
-              title="'App Name' is stopped"
-              subtitle="Your application was stopped"
-              caption="05/09/2016 5:41:14 PM"
-              kind="info"
-            />
-            <Notification
-              title="'App Name' is stopped"
-              subtitle="Your application was stopped"
-              caption="05/09/2016 5:41:14 PM"
-              kind="error"
-            />
-            <Notification
-              title="'App Name' is stopped"
-              subtitle="Your application was stopped"
-              caption="05/09/2016 5:41:14 PM"
-              kind="success"
+            checkedItems.includes("multi-select") || !isFiltering
+              ? "component__container multi-select"
+              : "component__container component__container--hidden"
+          }
+        >
+          <MultiSelect
+            light
+            placeholder="Filter"
+            label="MultiSelect Label"
+            items={[
+              {
+                id: "item-1",
+                text: "Item 1"
+              },
+              {
+                id: "item-2",
+                text: "Item 2"
+              },
+              {
+                id: "item-3",
+                text: "Item 3"
+              },
+              {
+                id: "item-4",
+                text: "Item 4"
+              }
+            ]}
+            itemToString={item => (item ? item.text : "")}
+          />
+          <div className="white-bg">
+            <MultiSelect
+              placeholder="Filter"
+              label="MultiSelect Label"
+              items={[
+                {
+                  id: "item-1",
+                  text: "Item 1"
+                },
+                {
+                  id: "item-2",
+                  text: "Item 2"
+                },
+                {
+                  id: "item-3",
+                  text: "Item 3"
+                },
+                {
+                  id: "item-4",
+                  text: "Item 4"
+                }
+              ]}
+              itemToString={item => (item ? item.text : "")}
             />
           </div>
         </div>
 
         <div
           className={
-            checkedItems.includes('number-input') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <NumberInput label="Number Input" id="number-input-demo" />
+            checkedItems.includes("toast-notification") || !isFiltering
+              ? "component__container component__container--notification"
+              : "component__container component__container--notification component__container--hidden"
+          }
+        >
+          <ToastNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            caption="Time stamp [00:00:00]"
+            kind="error"
+          />
+          <ToastNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            caption="Time stamp [00:00:00]"
+            kind="info"
+          />
+          <ToastNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            caption="Time stamp [00:00:00]"
+            kind="success"
+          />
+          <ToastNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            caption="Time stamp [00:00:00]"
+            kind="warning"
+          />
         </div>
 
         <div
           className={
-            checkedItems.includes('overflow-menu') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("inline-notification") || !isFiltering
+              ? "component__container component__container--notification"
+              : "component__container component__container--notification component__container--hidden"
+          }
+        >
+          <InlineNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            kind="error"
+          />
+          <InlineNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            kind="info"
+          />
+          <InlineNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            kind="success"
+          />
+          <InlineNotification
+            title="Notification title"
+            subtitle="Subtitle text goes here."
+            kind="warning"
+          />
+        </div>
+
+        <div
+          className={
+            checkedItems.includes("number-input") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
+          <NumberInput
+            light
+            id="number-input-100"
+            label="Number Input label"
+            min={0}
+            max={100}
+            value={50}
+            step={10}
+          />
+          <div className="white-bg">
+            <NumberInput
+              id="number-input-101"
+              label="Number Input label"
+              min={0}
+              max={100}
+              value={50}
+              step={10}
+            />
+          </div>
+        </div>
+
+        <div
+          className={
+            checkedItems.includes("overflow-menu") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <OverflowMenu>
-            <OverflowMenuItem itemText="Stop App" />
-            <OverflowMenuItem itemText="Restart App" />
-            <OverflowMenuItem itemText="Rename App" />
-            <OverflowMenuItem itemText="Edit Routes and Access" />
-            <OverflowMenuItem itemText="Delete App" hasDivider isDelete />
+            <OverflowMenuItem itemText="Option 1" primaryFocus={true} />
+            <OverflowMenuItem itemText="Option 2" />
+            <OverflowMenuItem itemText="Option 3" />
+            <OverflowMenuItem itemText="Option 4" />
+            <OverflowMenuItem itemText="Danger option" hasDivider isDelete />
           </OverflowMenu>
         </div>
 
         <div
           className={
-            checkedItems.includes('pagination') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <Pagination pageSizes={[10, 20, 30, 40, 50]} totalItems={103} />
+            checkedItems.includes("pagination") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
+          <PaginationV2 pageSizes={[10, 20, 30, 40, 50]} totalItems={103} />
         </div>
 
         <div
           className={
-            checkedItems.includes('progress-indicator') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("progress-indicator") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <ProgressIndicator currentIndex={3}>
             <ProgressStep
-              label="Step 1"
+              label="First step"
               description="Step 1: Getting Started with Node.js"
             />
             <ProgressStep
-              label="Step 2"
+              label="Second step"
               description="Step 2: Getting Started with Node.js"
             />
             <ProgressStep
-              label="Step 3"
+              label="Third step"
               description="Step 3: Getting Started with Node.js"
             />
             <ProgressStep
-              label="Step 4"
+              label="Fourth step"
               description="Step 4: Getting Started with Node.js"
             />
             <ProgressStep
-              label="Step 5"
+              label="Fifth step"
               description="Step 5: Getting Started with Node.js"
             />
           </ProgressIndicator>
@@ -648,23 +728,25 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes('radio-button') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <FormGroup legendText="Radio Group">
+            checkedItems.includes("radio-button") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
+          <FormGroup legendText="Radio Button heading">
             <RadioButtonGroup
               name="radio-button-group"
               defaultSelected="default-selected"
-              legend="Group Legend">
+              legend="Group Legend"
+            >
               <RadioButton
                 value="standard"
                 id="radio-1"
-                labelText="Standard Radio Button"
+                labelText="Standard Radio Button label"
               />
               <RadioButton
                 value="default-selected"
-                labelText="Default Selected Radio Button"
+                labelText="Default selected Radio Button"
                 id="radio-2"
               />
               <RadioButton
@@ -679,148 +761,162 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes('search') || !isFiltering
-              ? 'component__container component__container--search'
-              : 'component__container component__container--search component__container--hidden'
-          }>
+            checkedItems.includes("search") || !isFiltering
+              ? "component__container search"
+              : "component__container component__container--hidden"
+          }
+        >
           <Search
+            light
+            className="some-class"
             id="search-1"
             labelText="Search"
-            placeHolderText="Enter search text here..."
+            placeHolderText="Search"
           />
-
-          <Search
-            small
-            id="search-2"
-            labelText="Search"
-            placeHolderText="Enter search text here..."
-          />
+          <div className="white-bg">
+            <Search
+              className="some-class"
+              id="search-1"
+              labelText="Search"
+              placeHolderText="Search"
+            />
+          </div>
         </div>
 
         <div
           className={
-            checkedItems.includes('select') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <Select id="select-1" defaultValue="placeholder-item">
-            <SelectItemGroup label="Starter">
+            checkedItems.includes("select") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
+          <Select light id="select-1" defaultValue="placeholder-item">
+            <SelectItem
+              disabled
+              hidden
+              value="placeholder-item"
+              text="Choose an option"
+            />
+            <SelectItemGroup label="Category 1">
               <SelectItem value="option-1" text="Option 1" />
               <SelectItem value="option-2" text="Option 2" />
             </SelectItemGroup>
-            <SelectItemGroup label="Advanced">
+            <SelectItemGroup label="Category 2">
               <SelectItem value="option-3" text="Option 3" />
+              <SelectItem value="option-4" text="Option 4" />
             </SelectItemGroup>
           </Select>
+          <div className="white-bg">
+            <Select id="select-10" defaultValue="placeholder-item">
+              <SelectItem
+                disabled
+                hidden
+                value="placeholder-item"
+                text="Choose an option"
+              />
+              <SelectItemGroup label="Category 1">
+                <SelectItem value="option-1" text="Option 1" />
+                <SelectItem value="option-2" text="Option 2" />
+              </SelectItemGroup>
+              <SelectItemGroup label="Category 2">
+                <SelectItem value="option-3" text="Option 3" />
+                <SelectItem value="option-4" text="Option 4" />
+              </SelectItemGroup>
+            </Select>
+          </div>
         </div>
 
         <div
           className={
-            checkedItems.includes('slider') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("slider") || !isFiltering
+              ? "component__container slider"
+              : "component__container component__container--hidden"
+          }
+        >
           <Slider
-            id="slider-1"
+            light
+            id="slider"
             value={50}
             min={0}
             max={100}
             step={1}
             labelText="Slider Label"
-            onChange={() => console.log('change')}
           />
+
+          <div className="white-bg">
+            <Slider
+              id="slider-2"
+              value={50}
+              min={0}
+              max={100}
+              step={1}
+              labelText="Slider Label"
+            />
+          </div>
         </div>
 
         <div
           className={
-            checkedItems.includes('structured-list') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <StructuredListWrapper>
-            <StructuredListHead>
-              <StructuredListRow head>
-                <StructuredListCell head>Service</StructuredListCell>
-                <StructuredListCell head>Type</StructuredListCell>
-                <StructuredListCell head>Description</StructuredListCell>
-              </StructuredListRow>
-            </StructuredListHead>
-            <StructuredListBody>
-              <StructuredListRow>
-                <StructuredListCell noWrap>Apache Spark</StructuredListCell>
-                <StructuredListCell>IBM</StructuredListCell>
-                <StructuredListCell>
-                  Apache Spark is an open source cluster computing framework
-                  optimized for extremely fast and large scale data processing,
-                  which you can access via the newly integrated notebook
-                  interface IBM Analytics for Apache Spark.
-                </StructuredListCell>
-              </StructuredListRow>
-              <StructuredListRow>
-                <StructuredListCell noWrap>Cloudant</StructuredListCell>
-                <StructuredListCell>IBM</StructuredListCell>
-                <StructuredListCell>
-                  Cloudant NoSQL DB is a fully managed data layer designed for
-                  modern web and mobile applications that leverages a flexible
-                  JSON schema.
-                </StructuredListCell>
-              </StructuredListRow>
-            </StructuredListBody>
-          </StructuredListWrapper>
+            checkedItems.includes("structured-list") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <StructuredListWrapper selection border>
             <StructuredListHead>
               <StructuredListRow head>
-                <StructuredListCell head />
-                <StructuredListCell head>Service</StructuredListCell>
-                <StructuredListCell head>Type</StructuredListCell>
-                <StructuredListCell head>Description</StructuredListCell>
+                <StructuredListCell head>{""}</StructuredListCell>
+                <StructuredListCell head>ColumnA</StructuredListCell>
+                <StructuredListCell head>ColumnB</StructuredListCell>
+                <StructuredListCell head>ColumnC</StructuredListCell>
               </StructuredListRow>
             </StructuredListHead>
             <StructuredListBody>
-              <StructuredListRow label htmlFor="apache-spark">
+              <StructuredListRow label htmlFor="row-1">
                 <StructuredListInput
-                  id="apache-spark"
-                  value="apache-spark"
-                  title="apache-spark"
-                  name="services"
+                  id="row-1"
+                  value="row-1"
+                  title="row-1"
+                  name="row-1"
                   defaultChecked
                 />
                 <StructuredListCell>
                   <Icon
                     className="bx--structured-list-svg"
-                    name="checkmark--glyph"
-                    description="select a service"
+                    name="checkmark--solid"
+                    description="select an option"
                   />
                 </StructuredListCell>
-                <StructuredListCell>Apache Spark</StructuredListCell>
-                <StructuredListCell>IBM</StructuredListCell>
+                <StructuredListCell>Row 1</StructuredListCell>
+                <StructuredListCell>Row 1</StructuredListCell>
                 <StructuredListCell>
-                  Apache Spark is an open source cluster computing framework
-                  optimized for extremely fast and large scale data processing,
-                  which you can access via the newly integrated notebook
-                  interface IBM Analytics for Apache Spark.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  dui magna, finibus id tortor sed, aliquet bibendum augue.
+                  Aenean posuere sem vel euismod dignissim. Nulla ut cursus
+                  dolor. Pellentesque vulputate nisl a porttitor interdum.
                 </StructuredListCell>
               </StructuredListRow>
-              <StructuredListRow label htmlFor="cloudant">
+              <StructuredListRow label htmlFor="row-2">
                 <StructuredListInput
-                  id="cloudant"
-                  value="cloudant"
-                  title="cloudant"
-                  name="services"
+                  id="row-2"
+                  value="row-2"
+                  title="row-2"
+                  name="row-1"
                 />
                 <StructuredListCell>
                   <Icon
                     className="bx--structured-list-svg"
-                    name="checkmark--glyph"
-                    description="select a service"
+                    name="checkmark--solid"
+                    description="select an option"
                   />
                 </StructuredListCell>
-                <StructuredListCell>Cloudant</StructuredListCell>
-                <StructuredListCell>IBM</StructuredListCell>
+                <StructuredListCell>Row 2</StructuredListCell>
+                <StructuredListCell>Row 2</StructuredListCell>
                 <StructuredListCell>
-                  Cloudant NoSQL DB is a fully managed data layer designed for
-                  modern web and mobile applications that leverages a flexible
-                  JSON schema.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  dui magna, finibus id tortor sed, aliquet bibendum augue.
+                  Aenean posuere sem vel euismod dignissim. Nulla ut cursus
+                  dolor. Pellentesque vulputate nisl a porttitor interdum.
                 </StructuredListCell>
               </StructuredListRow>
             </StructuredListBody>
@@ -829,153 +925,188 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes('tabs') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
+            checkedItems.includes("tabs") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
           <Tabs>
-            <Tab label="Overview">
-              <div>Overview Content</div>
+            <Tab label="Tab label 1">
+              <div className="some-content">
+                Content for first tab goes here.
+              </div>
             </Tab>
-            <Tab label="Apple">
-              <div>Apple Content</div>
+            <Tab label="Tab label 2">
+              <div className="some-content">
+                Content for second tab goes here.
+              </div>
             </Tab>
-            <Tab label="Banana">
-              <div>Banana Content</div>
+            <Tab label="Tab label 3">
+              <div className="some-content">
+                Content for third tab goes here.
+              </div>
             </Tab>
-            <Tab label="Orange">
-              <div>Orange Content</div>
+            <Tab label="Tab label 4">
+              <div className="some-content">
+                Content for fourth tab goes here.
+              </div>
             </Tab>
           </Tabs>
         </div>
 
         <div
           className={
-            checkedItems.includes('tag') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <Tag key="ibm" className="some-class" type="ibm" />
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('textarea') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <TextArea id="text-area-demo-1" labelText="Text Area" />
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('text-input') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <TextInput
-            labelText="Text Input"
-            id="text-input-demo"
-            placeholder="Hint text here"
+            checkedItems.includes("textarea") || !isFiltering
+              ? "component__container textarea"
+              : "component__container component__container--hidden"
+          }
+        >
+          <TextArea
+            light
+            cols={50}
+            rows={4}
+            labelText="Text Area label"
+            placeholder="Placeholder text"
           />
+          <div className="white-bg">
+            <TextArea
+              cols={50}
+              rows={4}
+              labelText="Text Area label"
+              placeholder="Placeholder text"
+            />
+          </div>
         </div>
 
         <div
           className={
-            checkedItems.includes('time-picker') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <TimePicker id="time-picker-1">
-            <TimePickerSelect id="time-picker-select-1">
+            checkedItems.includes("text-input") || !isFiltering
+              ? "component__container text-input"
+              : "component__container component__container--hidden"
+          }
+        >
+          <TextInput
+            light
+            id="text-input-7"
+            labelText="Text Input label"
+            placeholder="Placeholder text"
+          />
+          <div className="white-bg">
+            <TextInput
+              id="text-input-78"
+              labelText="Text Input label"
+              placeholder="Placeholder text"
+            />
+          </div>
+        </div>
+
+        <div
+          className={
+            checkedItems.includes("tile") || !isFiltering
+              ? "component__container"
+              : "component__container component__container--hidden"
+          }
+        >
+          <TileGroup
+            name="tile-group"
+            defaultSelected="default-selected"
+            legend="Selectable Tile Group"
+          >
+            <RadioTile value="standard" id="tile-1">
+              Selectable Tile
+            </RadioTile>
+            <RadioTile value="default-selected" id="tile-2">
+              Selectable Tile
+            </RadioTile>
+            <RadioTile value="selected" id="tile-3">
+              Selectable Tile
+            </RadioTile>
+          </TileGroup>
+        </div>
+
+        <div
+          className={
+            checkedItems.includes("time-picker") || !isFiltering
+              ? "component__container time-picker"
+              : "component__container component__container--hidden"
+          }
+        >
+          <TimePicker light id="time-picker" labelText="Select a time">
+            <TimePickerSelect
+              id="time-picker-select-1"
+              labelText="Choose AM or PM"
+            >
               <SelectItem value="AM" text="AM" />
               <SelectItem value="PM" text="PM" />
             </TimePickerSelect>
-            <TimePickerSelect id="time-picker-select-2">
+            <TimePickerSelect
+              id="time-picker-select-2"
+              labelText="Choose a timezone"
+            >
               <SelectItem value="Timezone 1" text="Timezone 1" />
               <SelectItem value="Timezone 2" text="Timezone 2" />
             </TimePickerSelect>
           </TimePicker>
+          <div className="white-bg">
+            <TimePicker id="time-picker-23" labelText="Select a time">
+              <TimePickerSelect
+                id="time-picker-select-6"
+                labelText="Choose AM or PM"
+              >
+                <SelectItem value="AM" text="AM" />
+                <SelectItem value="PM" text="PM" />
+              </TimePickerSelect>
+              <TimePickerSelect
+                id="time-picker-select-87"
+                labelText="Choose a timezone"
+              >
+                <SelectItem value="Timezone 1" text="Timezone 1" />
+                <SelectItem value="Timezone 2" text="Timezone 2" />
+              </TimePickerSelect>
+            </TimePicker>
+          </div>
         </div>
 
         <div
           className={
-            checkedItems.includes('toggle') || !isFiltering
-              ? 'component__container component__container--toggle'
-              : 'component__container component__container--toggle component__container--hidden'
-          }>
-          <Toggle id="toggle-demo" />
+            checkedItems.includes("toggle") || !isFiltering
+              ? "component__container component__container--toggle"
+              : "component__container component__container--toggle component__container--hidden"
+          }
+        >
+          <Toggle id="toggle-1" />
+          <ToggleSmall id="toggle-2" ariaLabel="Small Toggle" />
         </div>
 
         <div
           className={
-            checkedItems.includes('toolbar') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <Toolbar className="some-class">
-            <ToolbarItem type="search" placeHolderText="Search" />
-            <ToolbarItem>
-              <OverflowMenu iconName="filter">
-                <ToolbarTitle title="FILTER BY" />
-                <ToolbarOption>
-                  <Checkbox
-                    className="some-class"
-                    id="opt-1"
-                    labelText="Filter option 1"
-                  />
-                </ToolbarOption>
-                <ToolbarOption>
-                  <Checkbox
-                    className="some-class"
-                    id="opt-2"
-                    labelText="Filter option 2"
-                  />
-                </ToolbarOption>
-                <ToolbarOption>
-                  <Checkbox
-                    className="some-class"
-                    id="opt-3"
-                    labelText="Filter option 3"
-                  />
-                </ToolbarOption>
-              </OverflowMenu>
-            </ToolbarItem>
-            <ToolbarItem>
-              <OverflowMenu>
-                <OverflowMenuItem itemText="Refresh table" />
-                <ToolbarDivider />
-                <ToolbarTitle title="ROW HEIGHT" />
-                <ToolbarOption>
-                  <RadioButton
-                    value="short"
-                    id="radio-demo-1"
-                    name="toolbar-radio"
-                    labelText="Short"
-                  />
-                </ToolbarOption>
-                <ToolbarOption>
-                  <RadioButton
-                    value="tall"
-                    id="radio-demo-2"
-                    name="toolbar-radio"
-                    labelText="Tall"
-                  />
-                </ToolbarOption>
-              </OverflowMenu>
-            </ToolbarItem>
-          </Toolbar>
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('tooltip') || !isFiltering
-              ? 'component__container'
-              : 'component__container component__container--hidden'
-          }>
-          <TooltipSimple text="hello">
-            <Link href="#">Tooltip - hover</Link>
-          </TooltipSimple>
+            checkedItems.includes("tooltip") || !isFiltering
+              ? "component__container component__container--tooltip"
+              : "component__container component__container--hidden"
+          }
+        >
+          <TooltipDefinition tooltipText="Brief description of the dotted, underlined word above.">
+            Definition Tooltip
+          </TooltipDefinition>
+          <Tooltip triggerText="Tooltip label">
+            <p className="bx--tooltip__label">Tooltip subtitle</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaeca cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </Tooltip>
+          <TooltipIcon tooltipText="Filter">
+            <svg width="16" height="12" viewBox="0 0 16 12">
+              <g fillRule="nonzero">
+                <path d="M8.05 2a2.5 2.5 0 0 1 4.9 0H16v1h-3.05a2.5 2.5 0 0 1-4.9 0H0V2h8.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM3.05 9a2.5 2.5 0 0 1 4.9 0H16v1H7.95a2.5 2.5 0 0 1-4.9 0H0V9h3.05zm2.45 2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+              </g>
+            </svg>
+          </TooltipIcon>
         </div>
       </div>
     );
