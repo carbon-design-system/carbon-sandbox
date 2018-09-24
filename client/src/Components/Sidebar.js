@@ -256,7 +256,7 @@ export default class Sidebar extends Component {
             />
             <Variable
               updateColor={this.updateColor}
-              name="field-02"
+              name="inverse-02"
               hex={this.state["inverse-02"]}
             />
             <Variable
