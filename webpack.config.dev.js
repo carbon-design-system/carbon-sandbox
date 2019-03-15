@@ -34,12 +34,12 @@ module.exports = {
         use: ['ignore-loader'],
       },
       {
-        test: /(\/|\\)feature-flags\.js$/,
+        test: /(\/|\\)FeatureFlags\.js$/,
         loader: 'string-replace-loader',
         options: {
           multiple: Object.keys(replaceTable).map(key => ({
-            search: `exports\.${key}\\s*=\\s*false`,
-            replace: `exports.${key} = ${replaceTable[key]}`,
+            search: `export\\s*var\\s*${key}\\s*=\\s*false`,
+            replace: `export var ${key} = ${replaceTable[key]}`,
             flags: 'i',
           })),
         },

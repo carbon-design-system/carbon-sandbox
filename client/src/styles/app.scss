@@ -9,36 +9,36 @@ $feature-flags: (
   ui-shell: true,
 );
 
-@import './overrides';
-@import './sidebar';
+// @import './overrides';
+// @import './sidebar';
 @import './components';
-@import './filter';
-@import './footer';
+// @import './filter';
+// @import './footer';
 
 .container {
   display: flex;
 }
 
-.banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10001;
-  width: 100%;
-  padding: 0 1rem;
-  height: rem(40px);
-  display: flex;
-  align-items: center;
-  background-color: #efc100;
-
-  p {
-    @include font-size('14');
-  }
-
-  span {
-    font-weight: 700;
-  }
-}
+// .banner {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 10001;
+//   width: 100%;
+//   padding: 0 1rem;
+//   height: rem(40px);
+//   display: flex;
+//   align-items: center;
+//   background-color: #efc100;
+//
+//   p {
+//     @include font-size('14');
+//   }
+//
+//   span {
+//     font-weight: 700;
+//   }
+// }
 
 .skip-to-content {
   position: absolute;

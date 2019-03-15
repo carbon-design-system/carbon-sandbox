@@ -22,7 +22,6 @@
     "browser-sync": "^2.18.8",
     "carbon-components": "9.84.12",
     "carbon-components-react": "6.107.0",
-    "carbon-icons": "^7.0.5",
     "carbon-themes": "^1.7.0",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
