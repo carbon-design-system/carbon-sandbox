@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Button, DataTable } from 'carbon-components-react';
+import Download16 from '@carbon/icons-react/lib/download/16';
+import Edit16 from '@carbon/icons-react/lib/edit/16';
+import Settings16 from '@carbon/icons-react/lib/settings/16';
+
 const {
   Table,
   TableBatchAction,
@@ -102,12 +106,15 @@ export default class DataTableExample extends Component {
               <TableToolbarSearch onChange={onInputChange} />
               <TableToolbarContent>
                 <TableToolbarAction
-                  iconName="download"
+                  renderIcon={Download16}
                   iconDescription="Download"
                 />
-                <TableToolbarAction iconName="edit" iconDescription="Edit" />
                 <TableToolbarAction
-                  iconName="settings"
+                  renderIcon={Edit16}
+                  iconDescription="Edit"
+                />
+                <TableToolbarAction
+                  renderIcon={Settings16}
                   iconDescription="Settings"
                 />
                 <Button small kind="primary">

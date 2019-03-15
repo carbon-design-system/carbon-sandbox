@@ -14,9 +14,7 @@ import {
   DatePickerInput,
   DropdownV2,
   FileUploader,
-  Footer,
   FormGroup,
-  Icon,
   InlineNotification,
   Link,
   ListItem,
@@ -67,6 +65,8 @@ import {
   ToggleSmall,
   UnorderedList,
 } from 'carbon-components-react';
+import AddFilled16 from '@carbon/icons-react/lib/add--filled/16';
+import CheckmarkFilled16 from '@carbon/icons-react/lib/checkmark--filled/16';
 import DataTableExample from './DataTableExample';
 
 export default class Components extends Component {
@@ -143,12 +143,11 @@ export default class Components extends Component {
           <Button
             kind="ghost"
             className="some-class"
-            icon="add--solid"
+            renderIcon={AddFilled16}
             iconDescription="Add">
             Ghost button
           </Button>
           <Button kind="danger">Danger button</Button>
-          <Button kind="danger--primary">Danger Primary button</Button>
           <Button kind="tertiary">Tertiary button</Button>
         </div>
 
@@ -390,15 +389,6 @@ export default class Components extends Component {
               Clear File
             </Button>
           </div>
-        </div>
-
-        <div
-          className={
-            checkedItems.includes('footer') || !isFiltering
-              ? 'component__container component__container--footer'
-              : 'component__container component__container--footer component__container--hidden'
-          }>
-          <Footer />
         </div>
 
         <div
@@ -845,10 +835,9 @@ export default class Components extends Component {
                   defaultChecked
                 />
                 <StructuredListCell>
-                  <Icon
+                  <CheckmarkFilled16
                     className="bx--structured-list-svg"
-                    name="checkmark--solid"
-                    description="select an option"
+                    aria-label="select an option"
                   />
                 </StructuredListCell>
                 <StructuredListCell>Row 1</StructuredListCell>
@@ -868,10 +857,9 @@ export default class Components extends Component {
                   name="row-1"
                 />
                 <StructuredListCell>
-                  <Icon
+                  <CheckmarkFilled16
                     className="bx--structured-list-svg"
-                    name="checkmark--solid"
-                    description="select an option"
+                    aria-label="select an option"
                   />
                 </StructuredListCell>
                 <StructuredListCell>Row 2</StructuredListCell>
