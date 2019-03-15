@@ -1,12 +1,19 @@
-$font-path: "./../assets/fonts";
+$font-path: './../assets/fonts';
 $css--reset: true;
 $css--font-face: true;
 
-@import "./overrides";
-@import "./sidebar";
-@import "./components";
-@import "./filter";
-@import "./footer";
+$feature-flags: (
+  components-x: true,
+  breaking-changes-x: true,
+  grid: true,
+  ui-shell: true,
+);
+
+@import './overrides';
+@import './sidebar';
+@import './components';
+@import './filter';
+@import './footer';
 
 .container {
   display: flex;
@@ -25,7 +32,7 @@ $css--font-face: true;
   background-color: #efc100;
 
   p {
-    @include font-size("14");
+    @include font-size('14');
   }
 
   span {
