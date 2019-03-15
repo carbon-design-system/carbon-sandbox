@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Checkbox } from "carbon-components-react";
+import React, { Component } from 'react';
+import { Checkbox } from 'carbon-components-react';
 
 export default class Filter extends Component {
   state = {
     expanded: false,
-    checkedItems: []
+    checkedItems: [],
   };
 
   onChange = (isChecked, name) => {
@@ -20,21 +20,21 @@ export default class Filter extends Component {
     }
 
     this.setState({
-      checkedItems: items
+      checkedItems: items,
     });
 
     this.props.callbackParent(this.state.checkedItems);
   };
 
   handleClear = () => {
-    const sidebar = document.querySelector(".sidebar");
-    const checkboxes = sidebar.querySelectorAll(".bx--checkbox");
+    const sidebar = document.querySelector('.sidebar');
+    const checkboxes = sidebar.querySelectorAll('.bx--checkbox');
     checkboxes.forEach(box => {
       if (box.checked) box.checked = false;
     });
 
     this.setState({
-      checkedItems: []
+      checkedItems: [],
     });
 
     this.props.callbackParent([]);
@@ -42,7 +42,7 @@ export default class Filter extends Component {
 
   handleToggle = () => {
     this.setState({
-      expanded: !this.state.expanded
+      expanded: !this.state.expanded,
     });
   };
 
@@ -52,42 +52,38 @@ export default class Filter extends Component {
       <div
         className={
           expanded
-            ? "filter-container filter-container--active"
-            : "filter-container"
+            ? 'filter-container filter-container--active'
+            : 'filter-container'
         }
-        aria-expanded={expanded}
-      >
+        aria-expanded={expanded}>
         <section className="filter-heading">
           <button className="filter-text" onClick={this.handleToggle}>
             <span>FILTER</span>
             <svg
               className={
-                expanded ? "filter-icon filter-icon--active" : "filter-icon"
+                expanded ? 'filter-icon filter-icon--active' : 'filter-icon'
               }
               width="10px"
               height="5px"
               viewBox="0 0 10 5"
-              fillRule="evenodd"
-            >
+              fillRule="evenodd">
               <polygon points="10 0 5 5 0 0" />
             </svg>
           </button>
           <button
             onClick={this.handleClear}
             className={
-              checkedItems.length > 0 ? "bx--link bx--link--active" : "bx--link"
-            }
-          >
+              checkedItems.length > 0 ? 'bx--link bx--link--active' : 'bx--link'
+            }>
             Clear Filters
           </button>
         </section>
         <section
           className={
             expanded
-              ? "filter-checkboxes filter-checkboxes--active"
-              : "filter-checkboxes"
-          }
-        >
+              ? 'filter-checkboxes filter-checkboxes--active'
+              : 'filter-checkboxes'
+          }>
           <Checkbox
             tabIndex={expanded ? 0 : -1}
             onChange={this.onChange}

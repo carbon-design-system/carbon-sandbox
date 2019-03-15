@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Accordion,
   AccordionItem,
@@ -65,9 +65,9 @@ import {
   TooltipIcon,
   Toggle,
   ToggleSmall,
-  UnorderedList
-} from "carbon-components-react";
-import DataTableExample from "./DataTableExample";
+  UnorderedList,
+} from 'carbon-components-react';
+import DataTableExample from './DataTableExample';
 
 export default class Components extends Component {
   render() {
@@ -77,11 +77,10 @@ export default class Components extends Component {
       <div className="components">
         <div
           className={
-            checkedItems.includes("accordion") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('accordion') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <Accordion>
             <AccordionItem title="Section 1 title">
               <p>
@@ -117,11 +116,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("breadcrumb") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('breadcrumb') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <Breadcrumb>
             <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
             <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
@@ -131,11 +129,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("button") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('button') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <Button>Primary button</Button>
           <Button kind="secondary">Secondary button</Button>
           <Button small>Small primary button</Button>
@@ -147,8 +144,7 @@ export default class Components extends Component {
             kind="ghost"
             className="some-class"
             icon="add--solid"
-            iconDescription="Add"
-          >
+            iconDescription="Add">
             Ghost button
           </Button>
           <Button kind="danger">Danger button</Button>
@@ -158,11 +154,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("checkbox") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('checkbox') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <fieldset className="bx--fieldset">
             <legend className="bx--label">Checkbox heading</legend>
             <Checkbox id="checkbox-label-1" labelText="Checkbox label 1" />
@@ -181,43 +176,38 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("code-snippet") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('code-snippet') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <div className="white-bg">
             <CodeSnippet
               type="inline"
               feedback="Feedback Enabled 👍"
-              copyLabel="Copy Code"
-            >
-              {"node -v"}
+              copyLabel="Copy Code">
+              {'node -v'}
             </CodeSnippet>
           </div>
           <CodeSnippet
             type="inline"
             light
             feedback="Feedback Enabled 👍"
-            copyLabel="Copy Code"
-          >
-            {"node -v"}
+            copyLabel="Copy Code">
+            {'node -v'}
           </CodeSnippet>
           <CodeSnippet
             type="single"
             feedback="Feedback Enabled 👍"
-            copyLabel="Copy Code"
-          >
+            copyLabel="Copy Code">
             {
-              "node -v Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, veritatis voluptate id incidunt molestiae officia possimus, quasi itaque alias, architecto hic, dicta fugit? Debitis delectus quidem explicabo vitae fuga laboriosam!"
+              'node -v Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, veritatis voluptate id incidunt molestiae officia possimus, quasi itaque alias, architecto hic, dicta fugit? Debitis delectus quidem explicabo vitae fuga laboriosam!'
             }
           </CodeSnippet>
 
           <CodeSnippet
             type="multi"
             feedback="Feedback Enabled 👍"
-            copyLabel="Copy Code"
-          >
+            copyLabel="Copy Code">
             {`@mixin grid-container {
   width: 100%;
   padding-right: padding(mobile);
@@ -232,31 +222,30 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("combo-box") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('combo-box') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <ComboBox
             items={[
               {
-                id: "option-1",
-                text: "Option 1"
+                id: 'option-1',
+                text: 'Option 1',
               },
               {
-                id: "option-2",
-                text: "Option 2"
+                id: 'option-2',
+                text: 'Option 2',
               },
               {
-                id: "option-3",
-                text: "Option 3"
+                id: 'option-3',
+                text: 'Option 3',
               },
               {
-                id: "option-4",
-                text: "Option 4"
-              }
+                id: 'option-4',
+                text: 'Option 4',
+              },
             ]}
-            itemToString={item => (item ? item.text : "")}
+            itemToString={item => (item ? item.text : '')}
             placeholder="Filter..."
             onChange={() => {}}
           />
@@ -264,11 +253,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("content-switcher") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('content-switcher') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <ContentSwitcher onChange={() => {}}>
             <Switch kind="anchor" name="one" text="First section" />
             <Switch kind="anchor" name="two" text="Second section" />
@@ -278,21 +266,19 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("data-table") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('data-table') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <DataTableExample />
         </div>
 
         <div
           className={
-            checkedItems.includes("date-picker") || !isFiltering
-              ? "component__container date-picker"
-              : "component__container component__container--hidden date-picker"
-          }
-        >
+            checkedItems.includes('date-picker') || !isFiltering
+              ? 'component__container date-picker'
+              : 'component__container component__container--hidden date-picker'
+          }>
           <DatePicker light datePickerType="range" dateFormat="m/d/Y">
             <DatePickerInput
               labelText="From Date"
@@ -325,85 +311,82 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("dropdown") || !isFiltering
-              ? "component__container dropdown"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('dropdown') || !isFiltering
+              ? 'component__container dropdown'
+              : 'component__container component__container--hidden'
+          }>
           <DropdownV2
             light
             label="Label"
             items={[
               {
-                id: "option-1",
-                text: "Option 1"
+                id: 'option-1',
+                text: 'Option 1',
               },
               {
-                id: "option-2",
-                text: "Option 2"
+                id: 'option-2',
+                text: 'Option 2',
               },
               {
-                id: "option-3",
-                text: "Option 3"
+                id: 'option-3',
+                text: 'Option 3',
               },
               {
-                id: "option-4",
-                text: "Option 4"
-              }
+                id: 'option-4',
+                text: 'Option 4',
+              },
             ]}
-            itemToString={item => (item ? item.text : "")}
+            itemToString={item => (item ? item.text : '')}
           />
           <div className="white-bg">
             <DropdownV2
               label="Label"
               items={[
                 {
-                  id: "option-1",
-                  text: "Option 1"
+                  id: 'option-1',
+                  text: 'Option 1',
                 },
                 {
-                  id: "option-2",
-                  text: "Option 2"
+                  id: 'option-2',
+                  text: 'Option 2',
                 },
                 {
-                  id: "option-3",
-                  text: "Option 3"
+                  id: 'option-3',
+                  text: 'Option 3',
                 },
                 {
-                  id: "option-4",
-                  text: "Option 4"
-                }
+                  id: 'option-4',
+                  text: 'Option 4',
+                },
               ]}
-              itemToString={item => (item ? item.text : "")}
+              itemToString={item => (item ? item.text : '')}
             />
           </div>
         </div>
 
         <div
           className={
-            checkedItems.includes("file-uploader") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('file-uploader') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <div className="bx--file__container">
             <FileUploader
               labelTitle="Upload"
               labelDescription="only .jpg and .png files at 500mb or less"
               buttonLabel="Add files"
               filenameStatus="edit"
-              accept={[".jpg", ".png"]}
+              accept={['.jpg', '.png']}
               multiple
               ref={fileUploader => (this.fileUploader = fileUploader)}
             />
             <Button
               kind="secondary"
               small
-              style={{ marginTop: "1rem" }}
+              style={{ marginTop: '1rem' }}
               onClick={() => {
                 this.fileUploader.clearFiles();
-              }}
-            >
+              }}>
               Clear File
             </Button>
           </div>
@@ -411,31 +394,28 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("footer") || !isFiltering
-              ? "component__container component__container--footer"
-              : "component__container component__container--footer component__container--hidden"
-          }
-        >
+            checkedItems.includes('footer') || !isFiltering
+              ? 'component__container component__container--footer'
+              : 'component__container component__container--footer component__container--hidden'
+          }>
           <Footer />
         </div>
 
         <div
           className={
-            checkedItems.includes("link") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('link') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <Link href="#">Link</Link>
         </div>
 
         <div
           className={
-            checkedItems.includes("list") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('list') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <OrderedList>
             <ListItem>
               Ordered List level 1
@@ -463,28 +443,25 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("loading") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('loading') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <Loading withOverlay={false} />
           <Loading active small={true} withOverlay={false} />
         </div>
 
         <div
           className={
-            checkedItems.includes("modal") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('modal') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <ModalWrapper
             id="transactional-modal"
             buttonTriggerText="Transactional Modal"
             modalLabel="Label (optional)"
-            modalHeading="Transactional Modal"
-          >
+            modalHeading="Transactional Modal">
             <p className="bx--modal-content__text">
               Transactional modals are used to validate user decisions os to
               gain secondary confirmation from the user. Typically, the modal
@@ -523,34 +500,33 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("multi-select") || !isFiltering
-              ? "component__container multi-select"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('multi-select') || !isFiltering
+              ? 'component__container multi-select'
+              : 'component__container component__container--hidden'
+          }>
           <MultiSelect
             light
             placeholder="Filter"
             label="MultiSelect Label"
             items={[
               {
-                id: "item-1",
-                text: "Item 1"
+                id: 'item-1',
+                text: 'Item 1',
               },
               {
-                id: "item-2",
-                text: "Item 2"
+                id: 'item-2',
+                text: 'Item 2',
               },
               {
-                id: "item-3",
-                text: "Item 3"
+                id: 'item-3',
+                text: 'Item 3',
               },
               {
-                id: "item-4",
-                text: "Item 4"
-              }
+                id: 'item-4',
+                text: 'Item 4',
+              },
             ]}
-            itemToString={item => (item ? item.text : "")}
+            itemToString={item => (item ? item.text : '')}
           />
           <div className="white-bg">
             <MultiSelect
@@ -558,34 +534,33 @@ export default class Components extends Component {
               label="MultiSelect Label"
               items={[
                 {
-                  id: "item-1",
-                  text: "Item 1"
+                  id: 'item-1',
+                  text: 'Item 1',
                 },
                 {
-                  id: "item-2",
-                  text: "Item 2"
+                  id: 'item-2',
+                  text: 'Item 2',
                 },
                 {
-                  id: "item-3",
-                  text: "Item 3"
+                  id: 'item-3',
+                  text: 'Item 3',
                 },
                 {
-                  id: "item-4",
-                  text: "Item 4"
-                }
+                  id: 'item-4',
+                  text: 'Item 4',
+                },
               ]}
-              itemToString={item => (item ? item.text : "")}
+              itemToString={item => (item ? item.text : '')}
             />
           </div>
         </div>
 
         <div
           className={
-            checkedItems.includes("toast-notification") || !isFiltering
-              ? "component__container component__container--notification"
-              : "component__container component__container--notification component__container--hidden"
-          }
-        >
+            checkedItems.includes('toast-notification') || !isFiltering
+              ? 'component__container component__container--notification'
+              : 'component__container component__container--notification component__container--hidden'
+          }>
           <ToastNotification
             title="Notification title"
             subtitle="Subtitle text goes here."
@@ -614,11 +589,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("inline-notification") || !isFiltering
-              ? "component__container component__container--notification"
-              : "component__container component__container--notification component__container--hidden"
-          }
-        >
+            checkedItems.includes('inline-notification') || !isFiltering
+              ? 'component__container component__container--notification'
+              : 'component__container component__container--notification component__container--hidden'
+          }>
           <InlineNotification
             title="Notification title"
             subtitle="Subtitle text goes here."
@@ -643,11 +617,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("number-input") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('number-input') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <NumberInput
             light
             id="number-input-100"
@@ -671,11 +644,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("overflow-menu") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('overflow-menu') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <OverflowMenu>
             <OverflowMenuItem itemText="Option 1" primaryFocus={true} />
             <OverflowMenuItem itemText="Option 2" />
@@ -687,21 +659,19 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("pagination") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('pagination') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <PaginationV2 pageSizes={[10, 20, 30, 40, 50]} totalItems={103} />
         </div>
 
         <div
           className={
-            checkedItems.includes("progress-indicator") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('progress-indicator') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <ProgressIndicator currentIndex={3}>
             <ProgressStep
               label="First step"
@@ -728,17 +698,15 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("radio-button") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('radio-button') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <FormGroup legendText="Radio Button heading">
             <RadioButtonGroup
               name="radio-button-group"
               defaultSelected="default-selected"
-              legend="Group Legend"
-            >
+              legend="Group Legend">
               <RadioButton
                 value="standard"
                 id="radio-1"
@@ -761,11 +729,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("search") || !isFiltering
-              ? "component__container search"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('search') || !isFiltering
+              ? 'component__container search'
+              : 'component__container component__container--hidden'
+          }>
           <Search
             light
             className="some-class"
@@ -785,11 +752,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("select") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('select') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <Select light id="select-1" defaultValue="placeholder-item">
             <SelectItem
               disabled
@@ -828,11 +794,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("slider") || !isFiltering
-              ? "component__container slider"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('slider') || !isFiltering
+              ? 'component__container slider'
+              : 'component__container component__container--hidden'
+          }>
           <Slider
             light
             id="slider"
@@ -857,15 +822,14 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("structured-list") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('structured-list') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <StructuredListWrapper selection border>
             <StructuredListHead>
               <StructuredListRow head>
-                <StructuredListCell head>{""}</StructuredListCell>
+                <StructuredListCell head>{''}</StructuredListCell>
                 <StructuredListCell head>ColumnA</StructuredListCell>
                 <StructuredListCell head>ColumnB</StructuredListCell>
                 <StructuredListCell head>ColumnC</StructuredListCell>
@@ -925,11 +889,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("tabs") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('tabs') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <Tabs>
             <Tab label="Tab label 1">
               <div className="some-content">
@@ -956,11 +919,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("textarea") || !isFiltering
-              ? "component__container textarea"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('textarea') || !isFiltering
+              ? 'component__container textarea'
+              : 'component__container component__container--hidden'
+          }>
           <TextArea
             light
             cols={50}
@@ -980,11 +942,10 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("text-input") || !isFiltering
-              ? "component__container text-input"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('text-input') || !isFiltering
+              ? 'component__container text-input'
+              : 'component__container component__container--hidden'
+          }>
           <TextInput
             light
             id="text-input-7"
@@ -1002,16 +963,14 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("tile") || !isFiltering
-              ? "component__container"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('tile') || !isFiltering
+              ? 'component__container'
+              : 'component__container component__container--hidden'
+          }>
           <TileGroup
             name="tile-group"
             defaultSelected="default-selected"
-            legend="Selectable Tile Group"
-          >
+            legend="Selectable Tile Group">
             <RadioTile value="standard" id="tile-1">
               Selectable Tile
             </RadioTile>
@@ -1026,23 +985,20 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("time-picker") || !isFiltering
-              ? "component__container time-picker"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('time-picker') || !isFiltering
+              ? 'component__container time-picker'
+              : 'component__container component__container--hidden'
+          }>
           <TimePicker light id="time-picker" labelText="Select a time">
             <TimePickerSelect
               id="time-picker-select-1"
-              labelText="Choose AM or PM"
-            >
+              labelText="Choose AM or PM">
               <SelectItem value="AM" text="AM" />
               <SelectItem value="PM" text="PM" />
             </TimePickerSelect>
             <TimePickerSelect
               id="time-picker-select-2"
-              labelText="Choose a timezone"
-            >
+              labelText="Choose a timezone">
               <SelectItem value="Timezone 1" text="Timezone 1" />
               <SelectItem value="Timezone 2" text="Timezone 2" />
             </TimePickerSelect>
@@ -1051,15 +1007,13 @@ export default class Components extends Component {
             <TimePicker id="time-picker-23" labelText="Select a time">
               <TimePickerSelect
                 id="time-picker-select-6"
-                labelText="Choose AM or PM"
-              >
+                labelText="Choose AM or PM">
                 <SelectItem value="AM" text="AM" />
                 <SelectItem value="PM" text="PM" />
               </TimePickerSelect>
               <TimePickerSelect
                 id="time-picker-select-87"
-                labelText="Choose a timezone"
-              >
+                labelText="Choose a timezone">
                 <SelectItem value="Timezone 1" text="Timezone 1" />
                 <SelectItem value="Timezone 2" text="Timezone 2" />
               </TimePickerSelect>
@@ -1069,22 +1023,20 @@ export default class Components extends Component {
 
         <div
           className={
-            checkedItems.includes("toggle") || !isFiltering
-              ? "component__container component__container--toggle"
-              : "component__container component__container--toggle component__container--hidden"
-          }
-        >
+            checkedItems.includes('toggle') || !isFiltering
+              ? 'component__container component__container--toggle'
+              : 'component__container component__container--toggle component__container--hidden'
+          }>
           <Toggle id="toggle-1" />
           <ToggleSmall id="toggle-2" ariaLabel="Small Toggle" />
         </div>
 
         <div
           className={
-            checkedItems.includes("tooltip") || !isFiltering
-              ? "component__container component__container--tooltip"
-              : "component__container component__container--hidden"
-          }
-        >
+            checkedItems.includes('tooltip') || !isFiltering
+              ? 'component__container component__container--tooltip'
+              : 'component__container component__container--hidden'
+          }>
           <TooltipDefinition tooltipText="Brief description of the dotted, underlined word above.">
             Definition Tooltip
           </TooltipDefinition>

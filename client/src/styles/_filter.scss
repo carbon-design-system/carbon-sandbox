@@ -20,7 +20,7 @@
   cursor: pointer;
 
   .bx--link {
-    @include font-size("12");
+    @include font-size('12');
     background-color: #fff;
     border: none;
     padding: 0;
@@ -37,7 +37,7 @@
 }
 
 .filter-text {
-  @include font-size("12");
+  @include font-size('12');
   font-weight: 700;
   display: inline-flex;
   align-items: center;
