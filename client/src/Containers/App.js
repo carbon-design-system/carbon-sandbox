@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import Sidebar from "./../Components/Sidebar";
-import Components from "./../Components/Components";
+import React, { Component } from 'react';
+import Sidebar from './../Components/Sidebar';
+import Components from './../Components/Components';
 
 export default class App extends Component {
   state = {
     isFiltering: false,
     checkedItems: [],
-    isNotSupported: false
+    isNotSupported: false,
   };
 
   componentDidMount = () => {
@@ -17,21 +17,21 @@ export default class App extends Component {
     const isNotSupported = isSafari || isIE;
 
     this.setState({
-      isNotSupported
+      isNotSupported,
     });
   };
 
   onChildChanged = newState => {
     this.setState({
       checkedItems: newState,
-      isFiltering: newState.length > 0
+      isFiltering: newState.length > 0,
     });
   };
 
   handleSkip = evt => {
     if (evt.which === 13) {
       document.activeElement.blur();
-      document.querySelector("#theme-switcher").focus();
+      document.querySelector('#theme-switcher').focus();
     }
   };
 
@@ -43,8 +43,7 @@ export default class App extends Component {
           className="skip-to-content"
           onKeyPress={this.handleSkip}
           tabIndex={0}
-          role="button"
-        >
+          role="button">
           Skip to main content
         </a>
         {isNotSupported ? (
@@ -57,11 +56,6 @@ export default class App extends Component {
           </div>
         ) : null}
         <Components checkedItems={checkedItems} isFiltering={isFiltering} />
-        <Sidebar
-          isNotSupported={isNotSupported}
-          callbackParent={newState => this.onChildChanged(newState)}
-          isFiltering={isFiltering}
-        />
       </div>
     );
   }

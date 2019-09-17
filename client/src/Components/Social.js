@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent } from 'react';
 
 const dribbble = (
   <svg width="32" height="32" viewBox="0 0 32 32">
@@ -46,29 +46,25 @@ export default class Social extends PureComponent {
         <a
           href="https://dribbble.com/_carbondesign"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           {dribbble}
         </a>
         <a
           href="https://medium.com/carbon-design-system"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           {medium}
         </a>
         <a
           href="https://twitter.com/_carbondesign"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           {twitter}
         </a>
         <a
           href="https://github.com/carbon-design-system"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           {github}
         </a>
       </div>

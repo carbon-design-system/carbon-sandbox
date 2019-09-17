@@ -1,95 +1,64 @@
-@import "../../../node_modules/carbon-components/src/components/button/button";
-@import "../../../node_modules/carbon-components/src/components/copy-button/copy-button";
-@import "../../../node_modules/carbon-components/src/components/file-uploader/file-uploader";
-@import "../../../node_modules/carbon-components/src/components/checkbox/checkbox";
-@import "../../../node_modules/carbon-components/src/components/combo-box/combo-box";
-@import "../../../node_modules/carbon-components/src/components/radio-button/radio-button";
-@import "../../../node_modules/carbon-components/src/components/toggle/toggle";
-@import "../../../node_modules/carbon-components/src/components/search/search";
-@import "../../../node_modules/carbon-components/src/components/select/select";
-@import "../../../node_modules/carbon-components/src/components/text-input/text-input";
-@import "../../../node_modules/carbon-components/src/components/text-area/text-area";
-@import "../../../node_modules/carbon-components/src/components/number-input/number-input";
-@import "../../../node_modules/carbon-components/src/components/form/form";
-@import "../../../node_modules/carbon-components/src/components/link/link";
-@import "../../../node_modules/carbon-components/src/components/list-box/list-box";
-@import "../../../node_modules/carbon-components/src/components/list/list";
-@import "../../../node_modules/carbon-components/src/components/data-table/data-table";
-@import "../../../node_modules/carbon-components/src/components/data-table-v2/data-table-v2";
-@import "../../../node_modules/carbon-components/src/components/structured-list/structured-list";
-@import "../../../node_modules/carbon-components/src/components/code-snippet/code-snippet";
-@import "../../../node_modules/carbon-components/src/components/overflow-menu/overflow-menu";
-@import "../../../node_modules/carbon-components/src/components/content-switcher/content-switcher";
-@import "../../../node_modules/carbon-components/src/components/date-picker/date-picker";
-@import "../../../node_modules/carbon-components/src/components/dropdown/dropdown";
-@import "../../../node_modules/carbon-components/src/components/loading/loading";
-@import "../../../node_modules/carbon-components/src/components/modal/modal";
-@import "../../../node_modules/carbon-components/src/components/multi-select/multi-select";
-@import "../../../node_modules/carbon-components/src/components/notification/inline-notification";
-@import "../../../node_modules/carbon-components/src/components/notification/toast-notification";
-@import "../../../node_modules/carbon-components/src/components/tooltip/tooltip";
-@import "../../../node_modules/carbon-components/src/components/tabs/tabs";
-@import "../../../node_modules/carbon-components/src/components/tag/tag";
-@import "../../../node_modules/carbon-components/src/components/pagination/pagination";
-@import "../../../node_modules/carbon-components/src/components/accordion/accordion";
-@import "../../../node_modules/carbon-components/src/components/progress-indicator/progress-indicator";
-@import "../../../node_modules/carbon-components/src/components/breadcrumb/breadcrumb";
-@import "../../../node_modules/carbon-components/src/components/toolbar/toolbar";
-@import "../../../node_modules/carbon-components/src/components/time-picker/time-picker";
-@import "../../../node_modules/carbon-components/src/components/slider/slider";
-@import "../../../node_modules/carbon-components/src/components/tile/tile";
-@import "../../../node_modules/carbon-components/src/components/carousel/carousel";
-@import "../../../node_modules/carbon-components/src/components/skeleton/skeleton";
+@import '../../../node_modules/carbon-components/src/components/button/button';
+@import '../../../node_modules/carbon-components/src/components/copy-button/copy-button';
+@import '../../../node_modules/carbon-components/src/components/file-uploader/file-uploader';
+@import '../../../node_modules/carbon-components/src/components/checkbox/checkbox';
+@import '../../../node_modules/carbon-components/src/components/combo-box/combo-box';
+@import '../../../node_modules/carbon-components/src/components/radio-button/radio-button';
+@import '../../../node_modules/carbon-components/src/components/toggle/toggle';
+@import '../../../node_modules/carbon-components/src/components/search/search';
+@import '../../../node_modules/carbon-components/src/components/select/select';
+@import '../../../node_modules/carbon-components/src/components/text-input/text-input';
+@import '../../../node_modules/carbon-components/src/components/text-area/text-area';
+@import '../../../node_modules/carbon-components/src/components/number-input/number-input';
+@import '../../../node_modules/carbon-components/src/components/form/form';
+@import '../../../node_modules/carbon-components/src/components/link/link';
+@import '../../../node_modules/carbon-components/src/components/list-box/list-box';
+@import '../../../node_modules/carbon-components/src/components/list/list';
+@import '../../../node_modules/carbon-components/src/components/data-table/data-table';
+@import '../../../node_modules/carbon-components/src/components/data-table-v2/data-table-v2';
+@import '../../../node_modules/carbon-components/src/components/structured-list/structured-list';
+@import '../../../node_modules/carbon-components/src/components/code-snippet/code-snippet';
+@import '../../../node_modules/carbon-components/src/components/overflow-menu/overflow-menu';
+@import '../../../node_modules/carbon-components/src/components/content-switcher/content-switcher';
+@import '../../../node_modules/carbon-components/src/components/date-picker/date-picker';
+@import '../../../node_modules/carbon-components/src/components/dropdown/dropdown';
+@import '../../../node_modules/carbon-components/src/components/loading/loading';
+@import '../../../node_modules/carbon-components/src/components/modal/modal';
+@import '../../../node_modules/carbon-components/src/components/multi-select/multi-select';
+@import '../../../node_modules/carbon-components/src/components/notification/inline-notification';
+@import '../../../node_modules/carbon-components/src/components/notification/toast-notification';
+@import '../../../node_modules/carbon-components/src/components/tooltip/tooltip';
+@import '../../../node_modules/carbon-components/src/components/tabs/tabs';
+@import '../../../node_modules/carbon-components/src/components/tag/tag';
+@import '../../../node_modules/carbon-components/src/components/pagination/pagination';
+@import '../../../node_modules/carbon-components/src/components/accordion/accordion';
+@import '../../../node_modules/carbon-components/src/components/progress-indicator/progress-indicator';
+@import '../../../node_modules/carbon-components/src/components/breadcrumb/breadcrumb';
+@import '../../../node_modules/carbon-components/src/components/toolbar/toolbar';
+@import '../../../node_modules/carbon-components/src/components/time-picker/time-picker';
+@import '../../../node_modules/carbon-components/src/components/slider/slider';
+@import '../../../node_modules/carbon-components/src/components/tile/tile';
+@import '../../../node_modules/carbon-components/src/components/carousel/carousel';
+@import '../../../node_modules/carbon-components/src/components/skeleton/skeleton';
 
 #app {
   .components {
-    height: 100%;
-    width: calc(100% - 300px);
-    display: flex;
-    flex-wrap: wrap;
     padding: 5%;
   }
 
   .component__container {
-    flex-basis: 80%;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
     margin: 2rem 0;
-
-    &:first-child {
-      margin-top: 0;
-    }
 
     & > * {
       margin: 1rem;
     }
 
-    &--hidden {
-      display: none;
-    }
-
-    &.date-picker .white-bg,
-    &.dropdown .white-bg,
-    &.multi-select .white-bg,
-    &.search .white-bg,
-    &.slider .white-bg,
-    &.textarea .white-bg,
-    &.text-input .white-bg,
-    &.time-picker .white-bg {
-      margin-left: 0;
-      width: 100%;
-    }
-
-    .white-bg {
-      width: auto;
-      height: auto;
-      background-color: $ui-01;
-      padding: 1rem;
+    &:first-child {
       margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
