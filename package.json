@@ -30,7 +30,7 @@
     "express-session": "^1.15.2",
     "fs-extra": "^3.0.1",
     "lodash.debounce": "^4.0.8",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.13.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.0.0",
